@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijaya Makkala Koota — LKG to Grade 10</title>
+    <meta name="description" content="Vijaya Makkala Koota offers nurturing education from 1 to Grade 10 with experienced faculty, modern infrastructure, and holistic development in a safe environment.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 50:'#f0f4fa', 100:'#dce4f2', 200:'#b8c9e5', 300:'#8aa7d3', 400:'#5a82be', 500:'#3b66aa', 600:'#2d5191', 700:'#274377', 800:'#162240', 900:'#0a1628', 950:'#060e1a' },
+                        gold: { 50:'#fdf9ef', 100:'#faf0d4', 200:'#f4dea5', 300:'#ecc96f', 400:'#e4b44a', 500:'#c9a84c', 600:'#b08a32', 700:'#926a2a', 800:'#785428', 900:'#644625' },
+                        slate2: '#f8f9fc'
+                    },
+                    fontFamily: { inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        *{font-family:'Inter',sans-serif;box-sizing:border-box}
+        ::-webkit-scrollbar{width:5px;height:5px}
+        ::-webkit-scrollbar-track{background:#f8f9fc}
+        ::-webkit-scrollbar-thumb{background:#b8c9e5;border-radius:4px}
+        .nav-bar{background:transparent;transition:all .4s ease}
+        .nav-bar.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,0.05)}
+        .nav-bar.scrolled .nl{color:#274377}.nav-bar.scrolled .nl:hover{color:#0a1628}
+        .nav-bar.scrolled .lt{color:#0a1628}.nav-bar.scrolled .lb-icon{color:#274377}
+        .nav-bar.scrolled .ph-text{color:#274377}
+        .nav-bar.scrolled .cta-btn{background:#c9a84c;color:#0a1628}.nav-bar.scrolled .cta-btn:hover{background:#b08a32}
+        .nl{color:rgba(255,255,255,0.8);font-size:13px;font-weight:500;transition:color .25s}.nl:hover{color:#fff}
+        .lt{color:white;transition:color .4s}.lb-icon{color:white;transition:color .4s}
+        .ph-text{color:rgba(255,255,255,0.8);transition:color .4s}
+        .mob{transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+        .mob.open{transform:translateX(0)}
+        .mob-ov{opacity:0;visibility:hidden;transition:all .35s}.mob-ov.open{opacity:1;visibility:visible}
+        .mob-link{display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:14px;transition:all .25s;color:rgba(255,255,255,0.7);font-size:14px;font-weight:500}
+        .mob-link:hover{background:rgba(255,255,255,0.06);color:white}
+        .mob-link .mob-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);flex-shrink:0;transition:all .25s}
+        .mob-link:hover .mob-ico{background:rgba(201,168,76,0.15)}.mob-link:hover .mob-ico svg{color:#e4b44a}
+        .mob-link .mob-lbl{flex:1}.mob-link .mob-arr{opacity:0;transition:all .25s;transform:translateX(-4px)}.mob-link:hover .mob-arr{opacity:0.4;transform:translateX(0)}
+        @keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+        .fu{animation:fu .8s ease forwards}.fd1{animation-delay:.1s;opacity:0}.fd2{animation-delay:.22s;opacity:0}.fd3{animation-delay:.34s;opacity:0}
+        .prof-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:8px;font-size:13px;font-weight:600;border:1.5px solid #d1d5db;background:#ffffff;color:#1f2937;transition:all .2s ease;cursor:pointer;text-decoration:none}
+        .prof-btn:hover{border-color:#374151;background:#f9fafb;color:#111827}.prof-btn svg{transition:transform .2s}.prof-btn:hover svg{transform:translateX(2px)}
+        .slider-wrap{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none}
+        .slider-wrap::-webkit-scrollbar{display:none}
+        .slider-track{display:flex;gap:20px;padding-left:max(20px,calc((100vw - 1280px)/2 + 20px));padding-right:40px}
+        .ac{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;border:1px solid #e8ecf2;transition:all .4s cubic-bezier(.25,.46,.45,.94);flex-shrink:0;scroll-snap-align:start}
+        .ac:hover{box-shadow:0 20px 50px -14px rgba(10,22,40,0.18);transform:translateY(-4px);border-color:#c9a84c}
+        .ac img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.25,.46,.45,.94)}
+        .ac:hover img{transform:scale(1.05)}
+        .ac .ac-t{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:44px 16px 16px;background:linear-gradient(to top,rgba(10,22,40,0.85) 0%,rgba(10,22,40,0.25) 55%,transparent 100%)}
+        .ac .ac-t h3{font-size:13px;font-weight:700;color:white;line-height:1.35;text-shadow:0 1px 6px rgba(0,0,0,0.2)}
+        .ac .ac-g{position:absolute;top:12px;left:12px;z-index:2;padding:4px 10px;border-radius:6px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+        .ac .ac-l{position:absolute;top:0;left:0;right:0;height:3px;z-index:3}
+        .g-a{background:rgba(59,102,170,0.85);color:white}.l-a{background:#3b66aa}
+        .g-s{background:rgba(16,185,129,0.85);color:white}.l-s{background:#10b981}
+        .g-o{background:rgba(124,58,237,0.85);color:white}.l-o{background:#7c3aed}
+        .g-d{background:rgba(225,29,72,0.82);color:white}.l-d{background:#e11d48}
+        .g-c{background:rgba(234,88,12,0.85);color:white}.l-c{background:#ea580c}
+        .g-t{background:rgba(8,145,178,0.85);color:white}.l-t{background:#0891b2}
+        .g-q{background:rgba(100,70,37,0.88);color:white}.l-q{background:#785428}
+        .g-m{background:rgba(201,168,76,0.92);color:#0a1628}.l-m{background:#c9a84c}
+        .nc{background:white;border-radius:20px;overflow:hidden;border:1px solid #e8ecf2;display:flex;flex-direction:column;transition:all .4s cubic-bezier(.25,.46,.45,.94);flex-shrink:0;scroll-snap-align:start}
+        .nc:hover{transform:translateY(-4px);box-shadow:0 18px 44px -12px rgba(10,22,40,0.12);border-color:#c9a84c}
+        .nc .ni{overflow:hidden;position:relative;flex-shrink:0}
+        .nc .ni img{transition:transform .65s cubic-bezier(.25,.46,.45,.94);display:block;width:100%;height:100%;object-fit:cover}
+        .nc:hover .ni img{transform:scale(1.04)}
+        .nc .nk{position:absolute;top:12px;left:12px;z-index:2;padding:4px 10px;border-radius:6px;font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:white;color:#0a1628;box-shadow:0 1px 8px rgba(0,0,0,0.06)}
+        .nc .nd{position:absolute;bottom:12px;right:12px;z-index:2;width:46px;height:50px;background:#0a1628;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(0,0,0,0.2)}
+        .nc .nd span:first-child{font-size:18px;font-weight:800;color:#c9a84c;line-height:1}
+        .nc .nd span:last-child{font-size:7.5px;font-weight:600;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:.08em;margin-top:1px}
+        .nc .nb{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column}
+        .nc .nm{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+        .nc .nmi{font-size:11px;color:#8aa7d3;font-weight:500}
+        .nc .nt{font-size:14.5px;font-weight:700;color:#0a1628;line-height:1.4;margin-bottom:6px}
+        .nc .np{font-size:12px;color:#5a82be;line-height:1.7;flex:1;margin-bottom:14px}
+        .nc .nr{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:#274377;transition:color .25s}
+        .nc .nr svg{transition:transform .25s}.nc:hover .nr{color:#b08a32}.nc:hover .nr svg{transform:translateX(3px)}
+        .tc{background:white;border-radius:20px;padding:32px 28px 28px;border:1px solid #e8ecf2;transition:all .35s;position:relative;flex-shrink:0;scroll-snap-align:start;display:flex;flex-direction:column}
+        .tc:hover{transform:translateY(-3px);box-shadow:0 12px 36px -10px rgba(10,22,40,0.1);border-color:#dce4f2}
+        .tc .tc-quote{position:absolute;top:20px;left:24px;font-size:56px;line-height:1;font-weight:900;color:#f0f4fa;font-family:Georgia,serif;pointer-events:none;user-select:none}
+        .tc .tc-text{font-size:14px;color:#374151;line-height:1.75;margin-top:24px;flex:1;position:relative;z-index:1}
+        .tc .tc-bottom{margin-top:20px;padding-top:18px;border-top:1px solid #edf1f7;display:flex;align-items:center;gap:10px;position:relative;z-index:1}
+        .tc .tc-avatar{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;color:white}
+        .tc .tc-name{font-size:13px;font-weight:700;color:#0a1628;line-height:1.3}.tc .tc-role{font-size:11px;color:#8aa7d3;font-weight:500;margin-top:1px}
+
+        .gal-deck{overflow:hidden}
+        .gal-deck:hover .gal-track{animation-play-state:paused!important}
+        .gal-track{display:flex;width:max-content;will-change:transform}
+        .gal-track.anim-right{animation:scrollRight 55s linear infinite}
+        .gal-track.anim-left{animation:scrollLeft 48s linear infinite}
+        @keyframes scrollRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+        @keyframes scrollLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+        .gcard{position:relative;border-radius:20px;overflow:hidden;flex-shrink:0;cursor:pointer;transition:transform .4s cubic-bezier(.25,.46,.45,.94);margin-right:12px}
+        .gcard:hover{transform:scale(1.06)}
+        .gcard img{display:block;width:100%;height:100%;object-fit:cover}
+        .gcard-ov{position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(to top,rgba(10,22,40,0.65) 0%,transparent 100%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end}
+        .gcard:hover .gcard-ov{opacity:1}
+        .gcard-ov span{font-size:11.5px;font-weight:600;color:white}
+
+        .fhcard{background:white;border:1px solid #edf1f7;border-radius:20px;overflow:hidden;transition:all .4s cubic-bezier(.25,.46,.45,.94);display:flex;flex-direction:column}
+        .fhcard:hover{transform:translateY(-4px);box-shadow:0 18px 48px -14px rgba(10,22,40,0.12);border-color:#dce4f2}
+        @media(min-width:768px){.fhcard{flex-direction:row}}
+        .fhcard .fh-img{position:relative;overflow:hidden;flex-shrink:0;height:200px}
+        @media(min-width:768px){.fhcard .fh-img{width:200px;height:auto;min-height:220px}}
+        .fhcard .fh-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+        .fhcard:hover .fh-img img{transform:scale(1.06)}
+        .fhcard .fh-body{padding:20px 22px;display:flex;flex-direction:column;justify-content:center;flex:1}
+        .fhcard .fh-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+        .fhcard .fh-ico{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s}
+        .fhcard:hover .fh-ico{transform:scale(1.08)}
+        .fhcard .fh-name{font-size:16px;font-weight:800;color:#0a1628;line-height:1.3;transition:color .25s}
+        .fhcard:hover .fh-name{color:#274377}
+        .fhcard .fh-desc{font-size:12.5px;color:#8aa7d3;line-height:1.7;margin-bottom:14px}
+        .fhcard .fh-metas{display:flex;flex-wrap:wrap;gap:8px}
+        .fhcard .fh-meta{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:7px;background:#f8f9fc;font-size:10.5px;font-weight:600;color:#5a82be;transition:all .25s}
+        .fhcard:hover .fh-meta{background:#fdf9ef;color:#b08a32}
+
+        .why-stat{background:white;border-radius:16px;padding:20px;border:1px solid #edf1f7;transition:all .3s}
+        .why-stat:hover{border-color:#c9a84c;box-shadow:0 8px 24px -6px rgba(201,168,76,0.12);transform:translateY(-2px)}
+        .why-feat{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid rgba(220,228,242,0.5)}.why-feat:last-child{border-bottom:none}
+        .why-feat-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .val-card{background:#f8f9fc;border-radius:20px;padding:24px 22px;border:1px solid rgba(220,228,242,0.5);transition:all .35s cubic-bezier(.25,.46,.45,.94)}
+        .val-card:hover{transform:translateY(-3px);box-shadow:0 14px 40px -10px rgba(10,22,40,0.08);border-color:#c9a84c}
+        .lb{opacity:0;visibility:hidden;transition:all .3s}.lb.on{opacity:1;visibility:visible}.lb img{transform:scale(.92);transition:transform .3s}.lb.on img{transform:scale(1)}
+        .tt{transform:translateY(80px);opacity:0;transition:all .4s}.tt.on{transform:translateY(0);opacity:1}
+        .cat-event{background:#ecfdf5;color:#059669}.cat-sports{background:#eff6ff;color:#2563eb}.cat-activity{background:#fefce8;color:#ca8a04}.cat-academic{background:#f0f4fa;color:#3b66aa}.cat-cultural{background:#fdf2f8;color:#db2777}.cat-meeting{background:#f5f3ff;color:#7c3aed}.cat-tech{background:#ecfeff;color:#0891b2}
+        @media(max-width:639px){.slider-track{padding-left:20px;padding-right:20px}}
+        .cf-input{width:100%;padding:12px 16px;border:1px solid #e2e6ee;border-radius:10px;font-size:13.5px;color:#0a1628;background:#fff;transition:all .2s;outline:none;font-family:'Inter',sans-serif}
+        .cf-input::placeholder{color:#b8c9e5}
+        .cf-input:focus{border-color:#3b66aa;box-shadow:0 0 0 3px rgba(59,102,170,0.08)}
+        .cf-input.err{border-color:#e11d48;box-shadow:0 0 0 3px rgba(225,29,72,0.06)}
+        .cf-label{display:block;font-size:12px;font-weight:600;color:#274377;margin-bottom:6px;letter-spacing:.01em}
+        .cf-err{font-size:11px;color:#e11d48;margin-top:4px;display:none}.cf-err.show{display:block}
+        .cf-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238aa7d3' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+        .cf-select option{color:#0a1628;background:#fff}
+        textarea.cf-input{resize:vertical;min-height:90px;line-height:1.6}
+    </style>
+</head>
+<body class="bg-white text-navy-900 antialiased">
+
+    <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-[68px]">
+                <a href="#" class="flex items-center gap-2.5"><div class="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="lt font-bold text-[16px] tracking-tight">Vijaya Makkala Koota</span></a>
+                <div class="hidden xl:flex items-center gap-8"><a href="#why" class="nl">Why Vijaya Makkala Koota</a><a href="#about" class="nl">About</a><a href="#ach" class="nl">Achievements</a><a href="#fac" class="nl">Facilities</a><a href="#news" class="nl">News</a><a href="#gallery" class="nl">Gallery</a><a href="#test" class="nl">Testimonials</a><a href="#contact" class="nl">Contact</a></div>
+                <div class="flex items-center gap-3">
+                    <a href="tel:+918012345678" class="hidden lg:flex items-center gap-1.5 ph-text text-xs"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+                    <a href="#contact" class="hidden sm:inline-flex items-center cta-btn bg-gold-500 hover:bg-gold-600 text-navy-900 text-xs font-bold px-5 py-2.5 rounded-full transition-all">Admissions 2026</a>
+                    <button id="mt" class="xl:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/10" aria-label="Menu"><i data-lucide="menu" class="lb-icon w-5 h-5"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="mo" class="mob-ov fixed inset-0 z-[55] bg-black/60 backdrop-blur-sm" onclick="cd()"></div>
+    <div id="md" class="mob fixed top-0 right-0 bottom-0 z-[60] w-[300px] bg-navy-900 shadow-2xl flex flex-col">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-white/5"><div class="flex items-center gap-2.5"><div class="w-8 h-8 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-400"></i></div><span class="text-sm font-bold text-white">Vijaya Makkala Koota</span></div><button onclick="cd()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5"><i data-lucide="x" class="w-4 h-4 text-white/40"></i></button></div>
+        <div class="flex-1 overflow-y-auto px-4 py-5 space-y-1">
+            <a href="#why" class="dl mob-link"><div class="mob-ico"><i data-lucide="star" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Why Vijaya Makkala Koota</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="#about" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="#ach" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="#fac" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Facilities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="#news" class="dl mob-link"><div class="mob-ico"><i data-lucide="newspaper" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">News & Events</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="#gallery" class="dl mob-link"><div class="mob-ico"><i data-lucide="image" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="#test" class="dl mob-link"><div class="mob-ico"><i data-lucide="message-circle" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Testimonials</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="#contact" class="dl mob-link"><div class="mob-ico"><i data-lucide="mail" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Contact Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+        </div>
+        <div class="px-5 py-5 border-t border-white/5 space-y-3">
+            <a href="#contact" class="dl flex items-center justify-center gap-2 w-full bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold py-3.5 rounded-xl transition-colors"><i data-lucide="graduation-cap" class="w-4 h-4"></i>Admissions 2026</a>
+            <a href="tel:+918012345678" class="dl flex items-center justify-center gap-2 w-full text-white/40 hover:text-white/60 text-xs font-medium py-2 transition-colors"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="relative min-h-[100dvh] flex items-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80&auto=format&fit=crop" alt="Campus" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-navy-950/70 via-navy-950/35 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/30 via-transparent to-navy-950/10"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full py-36">
+            <div class="max-w-xl">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-5 py-2 mb-8 fu"><span class="w-1.5 h-1.5 bg-gold-400 rounded-full"></span><span class="text-white/85 text-xs font-medium">CBSE · LKG to Grade 10</span></div>
+                <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] xl:text-[4rem] font-extrabold text-white leading-[1.06] tracking-tight mb-5 fu fd1">Where Learning<br>Becomes an <span class="text-gold-300">Adventure</span></h1>
+                <p class="text-[15px] sm:text-base text-white/55 font-light leading-relaxed max-w-md mb-9 fu fd2">A nurturing space where young minds from LKG explore, grow, and build the foundation for a bright future.</p>
+                <div class="flex flex-wrap gap-3 fu fd3">
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold px-7 py-3.5 rounded-full transition-all shadow-lg shadow-gold-500/20">Admissions Open <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    <a href="#about" class="inline-flex items-center gap-2 bg-white/8 hover:bg-white/14 backdrop-blur-sm border border-white/15 text-white text-sm font-medium px-7 py-3.5 rounded-full transition-all">Discover Vijaya Makkala Koota</a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2"><div class="w-5 h-8 rounded-full border-2 border-white/15 flex items-start justify-center p-1"><div class="w-1 h-2 bg-white/35 rounded-full animate-bounce"></div></div></div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why" class="py-16 sm:py-20 lg:py-24 bg-slate2 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[480px] h-[480px] bg-navy-100/30 rounded-full blur-[100px] -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[360px] h-[360px] bg-gold-100/25 rounded-full blur-[90px] translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12] mb-3"><span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-navy-400 mb-1">Why Vijaya Makkala Koota</span>Where Every Child Gets the <span class="text-gold-600">Best Start</span></h2>
+                    <p class="text-sm text-navy-400 font-light leading-relaxed mb-8 max-w-md">Every decision we make starts with one question — is this best for the child?</p>
+                    <div class="grid grid-cols-3 gap-3 mb-8">
+                        <div class="why-stat text-center"><div class="w-10 h-10 bg-gold-50 rounded-xl flex items-center justify-center mx-auto mb-2.5"><i data-lucide="award" class="w-5 h-5 text-gold-600"></i></div><span class="block text-xl font-extrabold text-navy-900 leading-none">100%</span><span class="block text-[9.5px] text-navy-400 font-medium mt-1 tracking-wide uppercase leading-snug">Results<br>Since 2020</span></div>
+                        <div class="why-stat text-center"><div class="w-10 h-10 bg-navy-50 rounded-xl flex items-center justify-center mx-auto mb-2.5"><i data-lucide="users" class="w-5 h-5 text-navy-600"></i></div><span class="block text-xl font-extrabold text-navy-900 leading-none">1800+</span><span class="block text-[9.5px] text-navy-400 font-medium mt-1 tracking-wide uppercase leading-snug">Happy<br>Students</span></div>
+                        <div class="why-stat text-center"><div class="w-10 h-10 bg-gold-50 rounded-xl flex items-center justify-center mx-auto mb-2.5"><i data-lucide="heart-handshake" class="w-5 h-5 text-gold-600"></i></div><span class="block text-xl font-extrabold text-navy-900 leading-none">15+</span><span class="block text-[9.5px] text-navy-400 font-medium mt-1 tracking-wide uppercase leading-snug">Years of<br>Trust</span></div>
+                    </div>
+                    <div>
+                        <div class="why-feat"><div class="why-feat-icon bg-navy-900"><i data-lucide="baby" class="w-[18px] h-[18px] text-gold-400"></i></div><div><h3 class="text-[13px] font-bold text-navy-900 mb-0.5">Gentle Start from LKG</h3><p class="text-xs text-navy-400 leading-relaxed">Play-based early learning that builds confidence.</p></div></div>
+                        <div class="why-feat"><div class="why-feat-icon bg-gold-500"><i data-lucide="graduation-cap" class="w-[18px] h-[18px] text-navy-900"></i></div><div><h3 class="text-[13px] font-bold text-navy-900 mb-0.5">100% Board Results Since 2020</h3><p class="text-xs text-navy-400 leading-relaxed">Every student has passed with distinction.</p></div></div>
+                        <div class="why-feat"><div class="why-feat-icon bg-navy-900"><i data-lucide="palette" class="w-[18px] h-[18px] text-gold-400"></i></div><div><h3 class="text-[13px] font-bold text-navy-900 mb-0.5">Beyond Textbooks</h3><p class="text-xs text-navy-400 leading-relaxed">Art, music, dance, sports woven into daily life.</p></div></div>
+                        <div class="why-feat"><div class="why-feat-icon bg-gold-500"><i data-lucide="shield-check" class="w-[18px] h-[18px] text-navy-900"></i></div><div><h3 class="text-[13px] font-bold text-navy-900 mb-0.5">Campus Safety First</h3><p class="text-xs text-navy-400 leading-relaxed">CCTV, guarded entry, female attendants, safety drills.</p></div></div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-xl shadow-navy-900/6"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80&auto=format&fit=crop" alt="Campus" class="w-full h-[340px] sm:h-[400px] lg:h-[480px] object-cover" loading="lazy"></div>
+                    <div class="absolute -left-3 sm:-left-6 top-6 sm:top-8 bg-white rounded-2xl p-3.5 sm:p-4 shadow-lg shadow-navy-900/8 border border-navy-100/50 flex items-center gap-3"><div class="w-11 h-11 sm:w-12 sm:h-12 bg-gold-50 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="trophy" class="w-5 h-5 sm:w-6 sm:h-6 text-gold-600"></i></div><div><span class="block text-base sm:text-lg font-extrabold text-navy-900 leading-none">100%</span><span class="block text-[9.5px] sm:text-[10px] text-navy-400 font-medium mt-0.5">Board Results</span><span class="block text-[9px] sm:text-[9.5px] text-gold-600 font-semibold">Since 2020</span></div></div>
+                    <div class="absolute -right-2 sm:-right-4 top-6 sm:top-8 bg-gold-500 rounded-xl sm:rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-lg shadow-gold-500/20"><span class="block text-[11px] sm:text-xs font-extrabold text-navy-900 tracking-wide">CBSE Affiliated</span><span class="block text-[8.5px] sm:text-[9px] text-navy-900/55 font-medium mt-0.5">LKG – Grade 10</span></div>
+                    <div class="absolute -right-2 sm:-right-4 bottom-20 sm:bottom-24 bg-navy-900 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-xl shadow-navy-900/25 flex items-center gap-2.5 sm:gap-3"><div class="flex -space-x-2"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80&auto=format&fit=crop" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-900 object-cover" alt="" loading="lazy"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&auto=format&fit=crop" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-900 object-cover" alt="" loading="lazy"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80&auto=format&fit=crop" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-900 object-cover" alt="" loading="lazy"></div><div><span class="block text-xs sm:text-sm font-bold text-white leading-none">1800+</span><span class="block text-[9px] sm:text-[10px] text-white/40 font-medium mt-0.5">Students</span></div></div>
+                    <div class="absolute -bottom-2 left-10 right-10 h-1 bg-gradient-to-r from-transparent via-gold-400/30 to-transparent rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-16 sm:py-20 lg:py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16"><h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]"><span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-gold-500 mb-1">About Us</span>A School That Feels Like Family</h2><p class="text-sm text-navy-400 font-light leading-relaxed mt-4 max-w-lg mx-auto">Where every child is known by name, and every family is part of our community.</p></div>
+            <div class="rounded-2xl overflow-hidden mb-10 sm:mb-14 shadow-xl shadow-navy-900/5"><img src="https://images.unsplash.com/photo-1562774053-701939374585?w=1400&q=80&auto=format&fit=crop" alt="Campus" class="w-full h-[200px] sm:h-[280px] lg:h-[360px] object-cover" loading="lazy"></div>
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14 sm:mb-20">
+                <div class="lg:col-span-5">
+                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">Founded in 2010 with a simple belief — that every child deserves to be seen, heard, and nurtured — Vijaya Makkala Koota has grown from a small neighborhood school into one of the most trusted CBSE institutions in Bangalore.</p>
+                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">Today, we serve over 1800 students from LKG through Grade 10. Our classrooms are bright and inviting, our teachers are deeply invested, and our campus is designed so children feel safe, curious, and happy every single day.</p>
+                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-8">We don't just prepare students for exams. We prepare them for life — with empathy, confidence, and the ability to think for themselves.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="#" onclick="showToast('Detailed about page coming soon.');return false" class="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold px-6 py-3 rounded-full transition-all">Know More <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        <div class="flex items-center gap-3"><div class="w-10 h-px bg-gold-400"></div><span class="text-xs text-navy-300 font-medium tracking-[0.15em] uppercase">Est. 2010</span></div>
+                    </div>
+                </div>
+                                <div class="bg-slate2 rounded-2xl p-5 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">1800+</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Students Enrolled</span></div>
+                <div class="bg-slate2 rounded-2xl p-5 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">100%</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Board Results</span></div>
+                <div class="bg-slate2 rounded-2xl p-5 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">1:20</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Teacher-Student Ratio</span></div>
+            </div>
+
+            <!-- Professional CTA -->
+            <div class="bg-navy-900 rounded-2xl p-8 sm:p-12 lg:p-14 text-center">
+                <h3 class="text-xl sm:text-2xl lg:text-[1.7rem] font-bold text-white tracking-tight leading-snug mb-3">Begin Your Child's Journey with Vijaya Makkala Koota</h3>
+                <p class="text-sm text-navy-300 font-light leading-relaxed max-w-lg mx-auto mb-8">Admissions are open for the 2026–27 academic year from LKG to Grade 10. Schedule a campus visit or submit an enquiry to get started.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold px-7 py-3.5 rounded-lg transition-all">Submit an Enquiry</a>
+                    <a href="tel:+918012345678" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-navy-700 hover:border-navy-600 text-navy-200 hover:text-white text-sm font-medium px-7 py-3.5 rounded-lg transition-all">Call +91 80 1234 5678</a>
+                </div>
+                <p class="text-[11px] text-navy-500 mt-5">Limited seats available. Early application recommended.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="ach" class="py-16 sm:py-20 lg:py-24 bg-slate2 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 mb-6 sm:mb-8"><h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]"><span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-gold-500 mb-1">Achievements</span>Moments of Pride</h2></div>
+        <div class="slider-wrap" id="achWrap"><div class="slider-track" id="achTrack"></div></div>
+    </section>
+
+    <!-- FACILITIES -->
+    <section id="fac" class="py-16 sm:py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="text-center max-w-lg mx-auto mb-12 sm:mb-14"><h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]"><span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-navy-400 mb-1">Facilities</span>Spaces That Inspire</h2><p class="text-sm text-navy-400 font-light mt-3">Designed with care for every age group, from LKG to Grade 10.</p></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80&auto=format&fit=crop" alt="Classrooms" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-navy-50"><i data-lucide="monitor" class="w-4 h-4 text-navy-600"></i></div><h3 class="fh-name">Bright Classrooms</h3></div><p class="fh-desc">Natural light, interactive smart boards, and age-appropriate furniture for every grade.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="layout-grid" class="w-3 h-3"></i>40+ Rooms</span><span class="fh-meta"><i data-lucide="wifi" class="w-3 h-3"></i>Smart Boards</span></div></div></div>
+                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&q=80&auto=format&fit=crop" alt="Labs" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-gold-50"><i data-lucide="flask-conical" class="w-4 h-4 text-gold-600"></i></div><h3 class="fh-name">Science Laboratories</h3></div><p class="fh-desc">Separate junior and senior labs with full equipment for hands-on experiments.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="beaker" class="w-3 h-3"></i>3 Labs</span><span class="fh-meta"><i data-lucide="pipette" class="w-3 h-3"></i>Fully Equipped</span></div></div></div>
+                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&q=80&auto=format&fit=crop" alt="Library" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-navy-50"><i data-lucide="library" class="w-4 h-4 text-navy-600"></i></div><h3 class="fh-name">Reading Library</h3></div><p class="fh-desc">8000+ books, a story corner for LKG kids, and quiet study zones for seniors.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="book-open" class="w-3 h-3"></i>8,000+ Books</span><span class="fh-meta"><i data-lucide="armchair" class="w-3 h-3"></i>Reading Zone</span></div></div></div>
+                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700&q=80&auto=format&fit=crop" alt="Sports" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-gold-50"><i data-lucide="trophy" class="w-4 h-4 text-gold-600"></i></div><h3 class="fh-name">Playground & Sports</h3></div><p class="fh-desc">Age-separated play areas, cricket nets, basketball court, and indoor games room.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="medal" class="w-3 h-3"></i>5+ Sports</span><span class="fh-meta"><i data-lucide="home" class="w-3 h-3"></i>Indoor Games</span></div></div></div>
+                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80&auto=format&fit=crop" alt="Computer Lab" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-navy-50"><i data-lucide="cpu" class="w-4 h-4 text-navy-600"></i></div><h3 class="fh-name">Computer Lab</h3></div><p class="fh-desc">Individual workstations with age-appropriate software from LKG through Grade 10.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="monitor" class="w-3 h-3"></i>40 Systems</span><span class="fh-meta"><i data-lucide="wifi" class="w-3 h-3"></i>Internet Access</span></div></div></div>
+                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80&auto=format&fit=crop" alt="Transport" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-gold-50"><i data-lucide="bus" class="w-4 h-4 text-gold-600"></i></div><h3 class="fh-name">Safe Transport</h3></div><p class="fh-desc">GPS-tracked buses with female attendants covering all major residential areas.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="map-pin" class="w-3 h-3"></i>15+ Routes</span><span class="fh-meta"><i data-lucide="shield-check" class="w-3 h-3"></i>GPS Tracked</span></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news" class="py-16 sm:py-20 lg:py-24 bg-slate2 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 mb-6 sm:mb-8"><h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]"><span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-gold-500 mb-1">News & Events</span>Happening at Vijaya Makkala Koota</h2></div>
+        <div class="slider-wrap" id="newsWrap"><div class="slider-track" id="newsTrack"></div></div>
+        <div class="flex justify-center mt-8 sm:mt-10"><a href="#" onclick="showToast('Full news archive coming soon.');return false" class="prof-btn">View All Updates <i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="py-16 sm:py-20 lg:py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 mb-10 sm:mb-14">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]"><span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-navy-400 mb-1">Gallery</span>Campus Moments</h2>
+        </div>
+        <div class="gal-deck mb-4 sm:mb-5" id="galUpper"></div>
+        <div class="gal-deck" id="galLower"></div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lb" class="lb fixed inset-0 z-[100] bg-navy-950/95 flex items-center justify-center p-4" onclick="clb()">
+        <button onclick="event.stopPropagation();clb()" class="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center z-10"><i data-lucide="x" class="w-5 h-5 text-white"></i></button>
+        <button onclick="event.stopPropagation();lp()" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center z-10"><i data-lucide="chevron-left" class="w-5 h-5 text-white"></i></button>
+        <button onclick="event.stopPropagation();ln()" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center z-10"><i data-lucide="chevron-right" class="w-5 h-5 text-white"></i></button>
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/35 text-xs z-10" id="lC"></div>
+        <img id="lI" src="" alt="" class="max-w-full max-h-[82vh] object-contain rounded-lg" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <section id="test" class="py-16 sm:py-20 lg:py-24 bg-slate2 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 mb-6 sm:mb-8"><h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]"><span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-gold-500 mb-1">Testimonials</span>Parent Voices</h2></div>
+        <div class="slider-wrap" id="testWrap"><div class="slider-track" id="testTrack"></div></div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="contact" class="py-16 sm:py-20 lg:py-24 bg-white">
+        <div class="max-w-2xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 sm:mb-10">
+                <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight leading-[1.12]"><span class="block text-base font-semibold tracking-[0.14em] uppercase text-gold-500 mb-1">Contact Us</span>Submit an Enquiry</h2>
+                <p class="text-sm text-navy-400 font-light leading-relaxed mt-3 max-w-md mx-auto">Fill out the form below and our admissions team will get back to you within one working day.</p>
+            </div>
+            <form id="cForm" class="bg-slate2 rounded-2xl p-6 sm:p-8 border border-navy-100/40" onsubmit="return handleForm(event)" novalidate>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
+                    <div>
+                        <label class="cf-label" for="fName">Parent / Guardian Name <span class="text-gold-600">*</span></label>
+                        <input type="text" id="fName" class="cf-input" placeholder="Full name" required>
+                        <div class="cf-err" id="fNameErr">Please enter your name.</div>
+                    </div>
+                    <div>
+                        <label class="cf-label" for="fPhone">Phone Number <span class="text-gold-600">*</span></label>
+                        <input type="tel" id="fPhone" class="cf-input" placeholder="+91 00000 00000" required>
+                        <div class="cf-err" id="fPhoneErr">Please enter a valid phone number.</div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
+                    <div>
+                        <label class="cf-label" for="fEmail">Email Address</label>
+                        <input type="email" id="fEmail" class="cf-input" placeholder="you@example.com">
+                        <div class="cf-err" id="fEmailErr">Please enter a valid email.</div>
+                    </div>
+                    <div>
+                        <label class="cf-label" for="fGrade">Grade Applying For <span class="text-gold-600">*</span></label>
+                        <select id="fGrade" class="cf-input cf-select" required>
+                            <option value="" disabled selected>Select grade</option>
+                            <option value="lkg">LKG</option>
+                            <option value="ukg">UKG</option>
+                            <option value="1">Grade 1</option>
+                            <option value="2">Grade 2</option>
+                            <option value="3">Grade 3</option>
+                            <option value="4">Grade 4</option>
+                            <option value="5">Grade 5</option>
+                            <option value="6">Grade 6</option>
+                            <option value="7">Grade 7</option>
+                            <option value="8">Grade 8</option>
+                            <option value="9">Grade 9</option>
+                            <option value="10">Grade 10</option>
+                        </select>
+                        <div class="cf-err" id="fGradeErr">Please select a grade.</div>
+                    </div>
+                </div>
+                <div class="mb-4 sm:mb-5">
+                    <label class="cf-label" for="fChild">Child's Name</label>
+                    <input type="text" id="fChild" class="cf-input" placeholder="Child's full name">
+                </div>
+                <div class="mb-5 sm:mb-6">
+                    <label class="cf-label" for="fMsg">Message</label>
+                    <textarea id="fMsg" class="cf-input" placeholder="Any specific questions or information you'd like to share..." rows="4"></textarea>
+                </div>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                    <button type="submit" id="fBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold px-7 py-3.5 rounded-lg transition-all">
+                        <span id="fBtnText">Submit Enquiry</span>
+                        <i data-lucide="send" class="w-4 h-4" id="fBtnIco"></i>
+                        <svg id="fBtnSpin" class="hidden animate-spin w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+                    </button>
+                    <p class="text-[11px] text-navy-300 leading-relaxed">We respond within one working day.</p>
+                </div>
+                <div id="fSuccess" class="hidden mt-5 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start gap-3">
+                    <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-600"></i></div>
+                    <div><p class="text-[13px] font-semibold text-green-800">Thank you for your enquiry.</p><p class="text-[12px] text-green-600 mt-0.5 leading-relaxed">Our admissions team will reach out to you within one working day.</p></div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 text-white pt-12 sm:pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+                <div><div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div><p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from LKG to Grade 10 with care, confidence, and character since 2010.</p><div class="flex items-center gap-2.5"><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="facebook" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="instagram" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="youtube" class="w-3.5 h-3.5 text-navy-300"></i></a></div></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Quick Links</h4><ul class="space-y-3"><li><a href="#about" class="text-sm text-navy-300 hover:text-white transition-colors">About Us</a></li><li><a href="#fac" class="text-sm text-navy-300 hover:text-white transition-colors">Facilities</a></li><li><a href="#ach" class="text-sm text-navy-300 hover:text-white transition-colors">Achievements</a></li><li><a href="#gallery" class="text-sm text-navy-300 hover:text-white transition-colors">Gallery</a></li></ul></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Academics</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Pre-Primary (LKG–UKG)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Primary (1–5)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Middle (6–8)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Secondary (9–10)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Exam Results</a></li></ul></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Contact</h4><ul class="space-y-3.5"><li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">42, Temple Road, Jayanagar, Bangalore – 560041</span></li><li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">+91 80 1234 5678</span></li><li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">info@Vijaya Makkala Koota.edu.in</span></li><li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li></ul></div>
+            </div>
+            <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-xs text-navy-500">© 2025 Vijaya Makkala Koota. All rights reserved.</p><div class="flex items-center gap-5"><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Privacy</a><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Terms</a></div></div>
+        </div>
+    </footer>
+
+    <!-- TOAST -->
+    <div id="tst" class="tt fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] bg-navy-900 text-white text-sm px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-2.5 max-w-sm border border-navy-800"><i data-lucide="info" class="w-4 h-4 text-gold-400 flex-shrink-0"></i><span id="tM2"></span></div>
+
+    <script>
+    lucide.createIcons();
+    const nb=document.querySelector('.nav-bar');
+    window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>40));
+    const md=document.getElementById('md'),mo=document.getElementById('mo');
+    function od(){md.classList.add('open');mo.classList.add('open');document.body.style.overflow='hidden'}
+    function cd(){md.classList.remove('open');mo.classList.remove('open');document.body.style.overflow=''}
+    document.getElementById('mt').addEventListener('click',od);
+    document.querySelectorAll('.dl').forEach(l=>l.addEventListener('click',cd));
+    function setupAutoScroll(wrapId,interval,step){const el=document.getElementById(wrapId);let timer=null;function tick(){const max=el.scrollWidth-el.clientWidth;if(el.scrollLeft>=max-2){el.scrollTo({left:0,behavior:'smooth'})}else{el.scrollBy({left:step,behavior:'smooth'})}}function start(){if(timer)return;timer=setInterval(tick,interval)}function stop(){if(timer){clearInterval(timer);timer=null}}el.addEventListener('mouseenter',stop);el.addEventListener('mouseleave',()=>setTimeout(start,1200));el.addEventListener('touchstart',stop,{passive:true});el.addEventListener('touchend',()=>setTimeout(start,1800),{passive:true});const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)start();else stop()})},{threshold:0.15});obs.observe(el)}
+    function getVisCount(breakpoints){const w=window.innerWidth;for(const bp of breakpoints){if(w<bp.br)return bp.n}return breakpoints[breakpoints.length-1].n}
+    function applyWidths(wrapId,trackId,breakpoints,minW,gap){const wrap=document.getElementById(wrapId);const track=document.getElementById(trackId);if(!wrap||!track)return;const n=getVisCount(breakpoints);const pl=parseFloat(getComputedStyle(track).paddingLeft);const pr=parseFloat(getComputedStyle(track).paddingRight);const usable=wrap.clientWidth-pl-pr;const cw=Math.max(minW,(usable-gap*(n-1))/n);track.querySelectorAll('[data-card]').forEach(c=>c.style.width=cw+'px')}
+
+    const achBP=[{br:480,n:1},{br:768,n:2},{br:1280,n:3},{br:99999,n:4}];
+    const achData=[{i:'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=700&q=80&auto=format&fit=crop',t:'Academics',g:'g-a',l:'l-a',h:'National Science Fair Winners'},{i:'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=700&q=80&auto=format&fit=crop',t:'Sports',g:'g-s',l:'l-s',h:'State Level Sports Champions'},{i:'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=700&q=80&auto=format&fit=crop',t:'Olympiad',g:'g-o',l:'l-o',h:'Math Olympiad Toppers'},{i:'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=700&q=80&auto=format&fit=crop',t:'Debate',g:'g-d',l:'l-d',h:'Inter-School Debate Champions'},{i:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=700&q=80&auto=format&fit=crop',t:'Cultural',g:'g-c',l:'l-c',h:'Annual Art Exhibition'},{i:'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80&auto=format&fit=crop',t:'Technology',g:'g-t',l:'l-t',h:'Robotics Competition Finalists'},{i:'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80&auto=format&fit=crop',t:'Quiz',g:'g-q',l:'l-q',h:'National Quiz Champions'},{i:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80&auto=format&fit=crop',t:'Community',g:'g-m',l:'l-m',h:'Best School Award 2024'}];
+    document.getElementById('achTrack').innerHTML=achData.map(d=>`<div class="ac" data-card><div class="ac-l ${d.l}"></div><img src="${d.i}" alt="${d.h}" loading="lazy"><span class="ac-g ${d.g}">${d.t}</span><div class="ac-t"><h3>${d.h}</h3></div></div>`).join('');
+    const newsBP=[{br:640,n:1},{br:1280,n:2},{br:99999,n:3}];
+    const newsData=[{i:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80&auto=format&fit=crop',c:'Event',k:'cat-event',dy:'15',mn:'Jan',tm:'3 min',h:'Annual Day Celebration',p:'A vibrant evening of performances, awards, and celebrations. Over 1000 parents joined.'},{i:'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=700&q=80&auto=format&fit=crop',c:'Sports',k:'cat-sports',dy:'28',mn:'Feb',tm:'4 min',h:'Inter-House Sports Meet',p:'Three days of competitive events with participation from all houses.'},{i:'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80&auto=format&fit=crop',c:'Activity',k:'cat-activity',dy:'05',mn:'Jun',tm:'2 min',h:'Environment Day Drive',p:'Students planted 200+ saplings and led a sustainability awareness campaign.'},{i:'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=700&q=80&auto=format&fit=crop',c:'Academic',k:'cat-academic',dy:'12',mn:'Aug',tm:'5 min',h:'Science Workshop',p:'Guest lecture and hands-on workshop by university professors.'},{i:'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=700&q=80&auto=format&fit=crop',c:'Cultural',k:'cat-cultural',dy:'20',mn:'Oct',tm:'4 min',h:'Cultural Fest — Utsav',p:'Two-day inter-school festival with competitions from 25 schools.'},{i:'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=700&q=80&auto=format&fit=crop',c:'Meeting',k:'cat-meeting',dy:'10',mn:'Nov',tm:'2 min',h:'Parent-Teacher Meet',p:'Quarterly PTM to discuss student progress and upcoming goals.'},{i:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&q=80&auto=format&fit=crop',c:'Tech',k:'cat-tech',dy:'05',mn:'Dec',tm:'3 min',h:'Coding Bootcamp',p:'A week-long intensive bootcamp for Python and web development.'}];
+    document.getElementById('newsTrack').innerHTML=newsData.map(d=>`<div class="nc" data-card><div class="ni"><img src="${d.i}" alt="${d.h}" loading="lazy"><span class="nk ${d.k}">${d.c}</span><div class="nd"><span>${d.dy}</span><span>${d.mn}</span></div></div><div class="nb"><div class="nm"><span class="nmi">${d.mn} 2025</span><span style="color:#e7e5e4">&middot;</span><span class="nmi"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${d.tm}</span></div><h3 class="nt">${d.h}</h3><p class="np">${d.p}</p><a href="#" onclick="showToast('Full article coming soon.');return false" class="nr">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 12 19"/></svg></a></div></div>`).join('');
+    const testBP=[{br:640,n:1},{br:1280,n:2},{br:99999,n:3}];
+    const avatarColors=['#274377','#b08a32','#0a1628','#3b66aa','#785428'];
+    const testData=[{n:'Pradeep Kumar',r:'Father of Arjun (Grade 5)',q:'My son joined in LKG and now in Grade 5. The teachers have been consistent, caring, and genuinely invested.'},{n:'Meera Krishnan',r:'Mother of Kavya (Grade 3)',q:'The pre-primary program was wonderful. Kavya learned to read, write, and socialize with such confidence.'},{n:'Suresh Babu',r:'Father of Nitin (Grade 10)',q:'The board exam preparation was thorough. Teachers stayed after school for extra classes. Nitin scored 94%.'},{n:'Anjali Rao',r:'Mother of Priya (LKG)',q:'As a first-time parent, sending my child to school was emotional. The teachers made the settling-in period so gentle.'},{n:'Vikram Shetty',r:'Father of Rahul (Grade 8)',q:'The sports program is excellent. Rahul represented the school at state level in cricket.'}];
+    document.getElementById('testTrack').innerHTML=testData.map((d,i)=>{const initials=d.n.split(' ').map(w=>w[0]).join('');const color=avatarColors[i%avatarColors.length];return`<div class="tc" data-card><span class="tc-quote">"</span><p class="tc-text">${d.q}</p><div class="tc-bottom"><div class="tc-avatar" style="background:${color}">${initials}</div><div><div class="tc-name">${d.n}</div><div class="tc-role">${d.r}</div></div></div></div>`}).join('');
+
+    function applyAll(){applyWidths('achWrap','achTrack',achBP,265,20);document.querySelectorAll('#achTrack .ac').forEach(c=>{c.style.height=Math.round(parseFloat(c.style.width)*1.28)+'px'});applyWidths('newsWrap','newsTrack',newsBP,295,24);const nih=window.innerWidth<640?192:212;document.querySelectorAll('#newsTrack .ni').forEach(c=>c.style.height=nih+'px');applyWidths('testWrap','testTrack',testBP,285,24)}
+    applyAll();window.addEventListener('resize',applyAll);
+    setupAutoScroll('achWrap',3500,300);setupAutoScroll('testWrap',4500,310);
+
+    /* Gallery Dual Deck */
+    const gd=[
+        {s:'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=80&auto=format&fit=crop',a:'Campus'},
+        {s:'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=700&q=80&auto=format&fit=crop',a:'Library'},
+        {s:'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=700&q=80&auto=format&fit=crop',a:'Sports Ground'},
+        {s:'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=700&q=80&auto=format&fit=crop',a:'Science Lab'},
+        {s:'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=700&q=80&auto=format&fit=crop',a:'Classroom'},
+        {s:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=700&q=80&auto=format&fit=crop',a:'Art Room'},
+        {s:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&q=80&auto=format&fit=crop',a:'Computer Lab'},
+        {s:'https://images.unsplash.com/photo-1562774053-701939374585?w=700&q=80&auto=format&fit=crop',a:'Building'},
+        {s:'https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&q=80&auto=format&fit=crop',a:'Garden'},
+        {s:'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80&auto=format&fit=crop',a:'Auditorium'}
+    ];
+    const upperIdx=[0,1,2,3,4],lowerIdx=[5,6,7,8,9];
+    function buildDeck(containerId,imgIndices,animClass){let oneSet='';imgIndices.forEach(idx=>{oneSet+=`<div class="gcard" style="width:280px;height:210px" onclick="olb(${idx})"><img src="${gd[idx].s}" alt="${gd[idx].a}" loading="lazy"><div class="gcard-ov"><span>${gd[idx].a}</span></div></div>`});document.getElementById(containerId).innerHTML=`<div class="gal-track ${animClass}">${oneSet}${oneSet}</div>`}
+    buildDeck('galUpper',upperIdx,'anim-right');
+    buildDeck('galLower',lowerIdx,'anim-left');
+
+    /* Lightbox */
+    let li=0;
+    function olb(i){li=i;const l=document.getElementById('lb');document.getElementById('lI').src=gd[i].s.replace(/w=\d+/,'w=1200');document.getElementById('lI').alt=gd[i].a;document.getElementById('lC').textContent=(i+1)+' / '+gd.length;l.classList.add('on');document.body.style.overflow='hidden'}
+    function clb(){document.getElementById('lb').classList.remove('on');document.body.style.overflow=''}
+    function lvn(dir){li=(li+dir+gd.length)%gd.length;document.getElementById('lI').src=gd[li].s.replace(/w=\d+/,'w=1200');document.getElementById('lI').alt=gd[li].a;document.getElementById('lC').textContent=(li+1)+' / '+gd.length}
+    function lp(){lvn(-1)}function ln(){lvn(1)}
+    document.addEventListener('keydown',e=>{if(!document.getElementById('lb').classList.contains('on'))return;if(e.key==='Escape')clb();if(e.key==='ArrowLeft')lp();if(e.key==='ArrowRight')ln()});
+
+    /* Contact form */
+    function handleForm(e){
+        e.preventDefault();let valid=true;
+        const name=document.getElementById('fName'),phone=document.getElementById('fPhone'),email=document.getElementById('fEmail'),grade=document.getElementById('fGrade');
+        [name,phone,email,grade].forEach(el=>{el.classList.remove('err');el.nextElementSibling.classList.remove('show')});
+        document.getElementById('fSuccess').classList.add('hidden');
+        if(!name.value.trim()){name.classList.add('err');document.getElementById('fNameErr').classList.add('show');valid=false}
+        if(!phone.value.trim()||phone.value.replace(/\D/g,'').length<10){phone.classList.add('err');document.getElementById('fPhoneErr').classList.add('show');valid=false}
+        if(email.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){email.classList.add('err');document.getElementById('fEmailErr').classList.add('show');valid=false}
+        if(!grade.value){grade.classList.add('err');document.getElementById('fGradeErr').classList.add('show');valid=false}
+        if(!valid){name.value.trim()?0:name.focus();return false}
+        const btn=document.getElementById('fBtn'),btnText=document.getElementById('fBtnText'),btnIco=document.getElementById('fBtnIco'),btnSpin=document.getElementById('fBtnSpin');
+        btn.disabled=true;btnText.textContent='Submitting...';btnIco.classList.add('hidden');btnSpin.classList.remove('hidden');
+        setTimeout(()=>{btn.disabled=false;btnText.textContent='Submit Enquiry';btnIco.classList.remove('hidden');btnSpin.classList.add('hidden');document.getElementById('fSuccess').classList.remove('hidden');document.getElementById('cForm').reset();lucide.createIcons();document.getElementById('fSuccess').scrollIntoView({behavior:'smooth',block:'nearest'})},1500);
+        return false;
+    }
+    ['fName','fPhone','fEmail','fGrade'].forEach(id=>{document.getElementById(id).addEventListener('input',function(){this.classList.remove('err');this.nextElementSibling.classList.remove('show')})});
+
+    let tto;function showToast(m){clearTimeout(tto);document.getElementById('tM2').textContent=m;document.getElementById('tst').classList.add('on');tto=setTimeout(()=>document.getElementById('tst').classList.remove('on'),4000)}
+    setTimeout(()=>lucide.createIcons(),500);
+    </script>
+</body>
+</html>
