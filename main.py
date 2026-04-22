@@ -26,6 +26,14 @@ app.add_middleware(
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
+import cloudinary
+import cloudinary.uploader
+
+cloudinary.config(
+    cloud_name="dy2zq2rdt",
+    api_key="583655695519391",
+    api_secret="rmtvnqj1Axbcaob4EAKU692__3I"
+)
 
 
 class Celebration(Base):
@@ -76,14 +84,13 @@ def get_db():
 # 🖼️ Upload Image
 @app.post("/upload-image")
 async def upload_image(file: UploadFile = File(...)):
-    ext = file.filename.split('.')[-1]
-    name = f"{uuid.uuid4()}.{ext}"
-    path = os.path.join(UPLOAD_DIR, name)
+    print("uploading...")
+    result = cloudinary.uploader.upload(file.file)
+    print("uploaded")
 
-    with open(path, "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
-
-    return {"url": f"/uploads/{name}"}
+    return {
+        "url": result["secure_url"]
+    }
 
 
 import re
