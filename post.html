@@ -387,7 +387,7 @@
         }
 
         try{
-            const res=await fetch(`http://127.0.0.1:8000/posts/${id}`);
+            const res=await fetch(`https://vmk-production-d390.up.railway.app/posts/${id}`);
             if(!res.ok) throw new Error('Server returned '+res.status);
             const data=await res.json();
 

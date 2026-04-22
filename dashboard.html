@@ -168,8 +168,8 @@ async function fetchCount(url) {
 }
 
 async function loadStats() {
-  const posts = await fetchCount('http://127.0.0.1:8000/posts');
-  const achs = await fetchCount('http://127.0.0.1:8000/achievements');
+  const posts = await fetchCount('https://vmk-production-d390.up.railway.app/posts');
+  const achs = await fetchCount('https://vmk-production-d390.up.railway.app/achievements');
   document.getElementById('postCount').textContent = posts;
   document.getElementById('achCount').textContent = achs;
 }

@@ -205,7 +205,7 @@ quill.getModule('toolbar').addHandler('image', () => {
     if (!file) return;
     const formData = new FormData();
     formData.append('file', file);
-    const res = await fetch('http://127.0.0.1:8000/upload-image', { method: 'POST', body: formData });
+    const res = await fetch('https://vmk-production-d390.up.railway.app/upload-image', { method: 'POST', body: formData });
     const data = await res.json();
     const range = quill.getSelection() || { index: 0 };
     quill.insertEmbed(range.index, 'image', data.url);
@@ -228,7 +228,7 @@ quill.root.addEventListener('paste', (e) => {
 });
 
 async function load() {
-  const res = await fetch(`http://127.0.0.1:8000/posts/${id}`);
+  const res = await fetch(`https://vmk-production-d390.up.railway.app/posts/${id}`);
   const data = await res.json();
   document.getElementById('title').value = data.title;
   document.getElementById('tags').value = data.tags || "";
@@ -244,7 +244,7 @@ async function load() {
 async function uploadThumbnail(file) {
   const formData = new FormData();
   formData.append('file', file);
-  const res = await fetch('http://127.0.0.1:8000/upload-image', { method: 'POST', body: formData });
+  const res = await fetch('https://vmk-production-d390.up.railway.app/upload-image', { method: 'POST', body: formData });
   const data = await res.json();
   return data.url;
 }
@@ -261,7 +261,7 @@ async function update() {
   formData.append('content', content);
   formData.append('tags', tags);
   formData.append('thumbnail', thumbnailUrl);
-  await fetch(`http://127.0.0.1:8000/posts/${id}`, { method: 'PUT', body: formData });
+  await fetch(`https://vmk-production-d390.up.railway.app/posts/${id}`, { method: 'PUT', body: formData });
   const toast = document.getElementById('toast');
   toast.classList.add('show');
   setTimeout(() => { window.location.href = "view.html"; }, 1200);

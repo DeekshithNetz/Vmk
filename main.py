@@ -7,9 +7,13 @@ from sqlalchemy.orm import sessionmaker, Session
 from datetime import datetime
 import shutil, uuid, os
 
-DATABASE_URL = "sqlite:///./blog.db"
+DATABASE_URL = "postgresql://postgres:CJIzUofmYwJiWzpvxPxyhdNZEKLoRZHn@metro.proxy.rlwy.net:15598/railway"
 
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+engine = create_engine(
+    DATABASE_URL,
+    pool_pre_ping=True,
+    pool_recycle=300
+)
 SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base()
 
