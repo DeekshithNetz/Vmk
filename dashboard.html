@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f5f7;
+      color: #1a1a2e;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: #fff; border-bottom: 1px solid #e2e4e9; padding: 0 16px;
+    }
+    .nav-top {
+      display: flex; align-items: center; justify-content: space-between; height: 52px;
+    }
+    .nav-top .logo { font-weight: 700; font-size: 18px; color: #1a1a2e; }
+    .hamburger {
+      background: none; border: none; font-size: 20px;
+      color: #1a1a2e; cursor: pointer; padding: 4px;
+    }
+    .nav-links {
+      display: none; flex-direction: column;
+      background: #fff; border-bottom: 1px solid #e2e4e9; padding: 4px 0 12px;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 16px; text-decoration: none; color: #444;
+      font-size: 14px; font-weight: 500; border-radius: 8px;
+      margin: 2px 8px; transition: background .15s;
+    }
+    .nav-links a:active, .nav-links a:hover { background: #f0f1f3; }
+    .nav-links a i { width: 18px; text-align: center; font-size: 15px; color: #777; }
+
+    .container { padding: 24px 16px; max-width: 600px; margin: 0 auto; }
+    .page-title { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+    .page-sub { font-size: 13px; color: #888; margin-bottom: 24px; }
+
+    /* ── Quick Stats ── */
+    .stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px;
+    }
+    .stat-card {
+      background: #fff; border-radius: 12px; padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .stat-card .stat-num {
+      font-size: 24px; font-weight: 700; color: #1a1a2e;
+    }
+    .stat-card .stat-label {
+      font-size: 12px; color: #888; margin-top: 2px;
+    }
+
+    /* ── Nav Cards ── */
+    .nav-cards { display: flex; flex-direction: column; gap: 10px; }
+    .nav-card {
+      display: flex; align-items: center; gap: 14px;
+      background: #fff; border-radius: 12px; padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-decoration: none; color: #1a1a2e;
+      transition: transform .12s, box-shadow .12s;
+    }
+    .nav-card:active { transform: scale(0.98); }
+    .nav-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .nav-icon.green { background: #e8f5e9; color: #2e7d32; }
+    .nav-icon.blue { background: #e3f2fd; color: #1565c0; }
+    .nav-icon.amber { background: #fff8e1; color: #f57f17; }
+    .nav-icon.purple { background: #f3e5f5; color: #7b1fa2; }
+    .nav-text h4 { font-size: 14px; font-weight: 600; }
+    .nav-text p { font-size: 12px; color: #999; margin-top: 1px; }
+    .nav-arrow { margin-left: auto; color: #ccc; font-size: 14px; }
+
+    .section-label {
+      font-size: 13px; font-weight: 600; color: #555; margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-top">
+    <div class="logo">MyBlog</div>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  <div class="nav-links">
+    <a href="create.html"><i class="fas fa-plus"></i>Create Blog</a>
+    <a href="view.html"><i class="fas fa-eye"></i>View Blog</a>
+    <a href="achievement.html"><i class="fas fa-trophy"></i>Achievement</a>
+    <a href="dashboard.html"><i class="fas fa-chart-pie"></i>Dashboard</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-title">Dashboard</div>
+  <div class="page-sub">Overview of your blog</div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-num" id="postCount">-</div>
+      <div class="stat-label">Total Posts</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="achCount">-</div>
+      <div class="stat-label">Achievements</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="section-label">Quick Access</div>
+  <div class="nav-cards">
+    <a href="create.html" class="nav-card">
+      <div class="nav-icon green"><i class="fas fa-plus"></i></div>
+      <div class="nav-text">
+        <h4>Create Blog</h4>
+        <p>Write a new post</p>
+      </div>
+      <i class="fas fa-chevron-right nav-arrow"></i>
+    </a>
+
+    <a href="view.html" class="nav-card">
+      <div class="nav-icon blue"><i class="fas fa-eye"></i></div>
+      <div class="nav-text">
+        <h4>View Blog</h4>
+        <p>Browse all posts</p>
+      </div>
+      <i class="fas fa-chevron-right nav-arrow"></i>
+    </a>
+
+    <a href="achievement.html" class="nav-card">
+      <div class="nav-icon amber"><i class="fas fa-trophy"></i></div>
+      <div class="nav-text">
+        <h4>Achievements</h4>
+        <p>Manage your achievements</p>
+      </div>
+      <i class="fas fa-chevron-right nav-arrow"></i>
+    </a>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+
+async function fetchCount(url) {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const arr = Array.isArray(data) ? data : data.data;
+    return arr ? arr.length : 0;
+  } catch { return 0; }
+}
+
+async function loadStats() {
+  const posts = await fetchCount('http://127.0.0.1:8000/posts');
+  const achs = await fetchCount('http://127.0.0.1:8000/achievements');
+  document.getElementById('postCount').textContent = posts;
+  document.getElementById('achCount').textContent = achs;
+}
+
+loadStats();
+</script>
+</body>
+</html>

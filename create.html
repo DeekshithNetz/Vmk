@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Blog</title>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f5f7;
+      color: #1a1a2e;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #e2e4e9;
+      padding: 0 16px;
+    }
+    .nav-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+    .nav-top .logo { font-weight: 700; font-size: 18px; color: #1a1a2e; }
+    .hamburger {
+      background: none; border: none; font-size: 20px;
+      color: #1a1a2e; cursor: pointer; padding: 4px;
+    }
+    .nav-links {
+      display: none; flex-direction: column;
+      background: #fff; border-bottom: 1px solid #e2e4e9; padding: 4px 0 12px;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 16px; text-decoration: none; color: #444;
+      font-size: 14px; font-weight: 500; border-radius: 8px;
+      margin: 2px 8px; transition: background .15s;
+    }
+    .nav-links a:active, .nav-links a:hover { background: #f0f1f3; }
+    .nav-links a i { width: 18px; text-align: center; font-size: 15px; color: #777; }
+
+    .container { padding: 20px 16px; max-width: 600px; margin: 0 auto; }
+    .page-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+
+    label {
+      display: block; font-size: 13px; font-weight: 600;
+      color: #555; margin-bottom: 6px;
+    }
+    .field { margin-bottom: 18px; }
+    input[type="text"] {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid #dde0e5; border-radius: 10px;
+      font-size: 14px; font-family: inherit; background: #fff;
+      outline: none; transition: border-color .2s;
+    }
+    input[type="text"]:focus { border-color: #1a1a2e; }
+
+    .thumb-area {
+      border: 2px dashed #d0d3da; border-radius: 12px;
+      padding: 20px; text-align: center; background: #fafbfc;
+      cursor: pointer; transition: border-color .2s;
+    }
+    .thumb-area:active { border-color: #1a1a2e; }
+    .thumb-area input { display: none; }
+    .thumb-area .icon { font-size: 28px; color: #b0b4bc; margin-bottom: 6px; }
+    .thumb-area .txt { font-size: 13px; color: #888; }
+    .thumb-area .txt span { color: #1a1a2e; font-weight: 600; }
+    #preview {
+      width: 100%; max-height: 180px; object-fit: cover;
+      border-radius: 8px; display: none; margin-top: 10px;
+    }
+
+    .ql-toolbar.ql-snow {
+      border: 1.5px solid #dde0e5 !important;
+      border-radius: 10px 10px 0 0 !important; background: #fafbfc;
+    }
+    .ql-container.ql-snow {
+      border: 1.5px solid #dde0e5 !important;
+      border-top: none !important;
+      border-radius: 0 0 10px 10px !important;
+      font-family: inherit !important; font-size: 14px !important;
+    }
+    #editor { height: 260px; }
+
+    .btn-publish {
+      width: 100%; padding: 13px; background: #1a1a2e; color: #fff;
+      border: none; border-radius: 10px; font-size: 15px;
+      font-weight: 600; font-family: inherit; cursor: pointer;
+      margin-top: 6px; transition: opacity .15s;
+    }
+    .btn-publish:active { opacity: .85; }
+
+    .toast {
+      position: fixed; bottom: 24px; left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #1a1a2e; color: #fff; padding: 12px 24px;
+      border-radius: 10px; font-size: 14px; font-weight: 500;
+      opacity: 0; transition: all .3s ease; z-index: 200; white-space: nowrap;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-top">
+    <div class="logo">MyBlog</div>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  <div class="nav-links">
+    <a href="create.html"><i class="fas fa-plus"></i>Create Blog</a>
+    <a href="view.html"><i class="fas fa-eye"></i>View Blog</a>
+    <a href="achievement.html"><i class="fas fa-trophy"></i>Achievement</a>
+    <a href="dashboard.html"><i class="fas fa-chart-pie"></i>Dashboard</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-title">Create Blog</div>
+
+  <div class="field">
+    <label>Thumbnail</label>
+    <div class="thumb-area" onclick="document.getElementById('thumbnail').click()">
+      <input type="file" id="thumbnail" accept="image/*" />
+      <div class="icon"><i class="fas fa-cloud-arrow-up"></i></div>
+      <div class="txt"><span>Tap to upload</span> thumbnail image</div>
+      <img id="preview" />
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Title</label>
+    <input type="text" id="title" placeholder="Blog title" />
+  </div>
+
+  <div class="field">
+    <label>Tags</label>
+    <input type="text" id="tags" placeholder="Enter tags (comma separated)" />
+  </div>
+
+  <div class="field">
+    <label>Content</label>
+    <div id="editor"></div>
+  </div>
+
+  <button class="btn-publish" onclick="publish()">Publish</button>
+</div>
+
+<div class="toast" id="toast">Published ✅</div>
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+const quill = new Quill('#editor', {
+  theme: 'snow',
+  modules: {
+    toolbar: [
+      [{ 'header': [1, 2, 3, false] }],
+      ['bold', 'italic', 'underline', 'strike'],
+      ['blockquote', 'code-block'],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      [{ 'script': 'sub'}, { 'script': 'super' }],
+      [{ 'indent': '-1'}, { 'indent': '+1' }],
+      [{ 'direction': 'rtl' }],
+      [{ 'size': ['small', false, 'large', 'huge'] }],
+      [{ 'color': [] }, { 'background': [] }],
+      [{ 'align': [] }],
+      ['link', 'image', 'video'],
+      ['clean']
+    ]
+  }
+});
+
+document.getElementById('thumbnail').addEventListener('change', function() {
+  const file = this.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = document.getElementById('preview');
+    img.src = e.target.result;
+    img.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+});
+
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+
+quill.getModule('toolbar').addHandler('image', () => {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.click();
+  input.onchange = async () => {
+    const file = input.files[0];
+    if (!file) return;
+    const formData = new FormData();
+    formData.append('file', file);
+    const res = await fetch('http://127.0.0.1:8000/upload-image', { method: 'POST', body: formData });
+    const data = await res.json();
+    const range = quill.getSelection() || { index: 0 };
+    quill.insertEmbed(range.index, 'image', data.url);
+  };
+});
+
+function getYouTubeEmbed(url) {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([^&?/]+)/);
+  return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+}
+quill.root.addEventListener('paste', (e) => {
+  const text = (e.clipboardData || window.clipboardData).getData('text');
+  const embedUrl = getYouTubeEmbed(text);
+  if (embedUrl) {
+    e.preventDefault();
+    const iframe = `<div style="margin:10px 0;"><iframe width="100%" height="350" src="${embedUrl}" frameborder="0" allowfullscreen></iframe></div>`;
+    const range = quill.getSelection(true);
+    quill.clipboard.dangerouslyPasteHTML(range.index, iframe);
+  }
+});
+
+async function uploadThumbnail(file) {
+  const formData = new FormData();
+  formData.append('file', file);
+  const res = await fetch('http://127.0.0.1:8000/upload-image', { method: 'POST', body: formData });
+  const data = await res.json();
+  return data.url;
+}
+
+async function publish() {
+  const title = document.getElementById('title').value;
+  const content = quill.root.innerHTML;
+  const file = document.getElementById('thumbnail').files[0];
+  let thumbnailUrl = "";
+  if (file) { thumbnailUrl = await uploadThumbnail(file); }
+  const formData = new FormData();
+  formData.append('title', title);
+  formData.append('content', content);
+  formData.append('thumbnail', thumbnailUrl);
+  formData.append('tags', document.getElementById('tags').value);
+  await fetch('http://127.0.0.1:8000/posts', { method: 'POST', body: formData });
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => { window.location.href = "view.html"; }, 1200);
+}
+</script>
+</body>
+</html>

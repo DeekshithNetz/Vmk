@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading…</title>
+
+    <!-- OPEN GRAPH META TAGS -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="" id="og-title">
+    <meta property="og:description" content="" id="og-desc">
+    <meta property="og:image" content="" id="og-image">
+    <meta property="og:url" content="" id="og-url">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 50:'#f0f4fa', 100:'#dce4f2', 200:'#b8c9e5', 300:'#8aa7d3', 400:'#5a82be', 500:'#3b66aa', 600:'#2d5191', 700:'#274377', 800:'#162240', 900:'#0a1628', 950:'#060e1a' },
+                        gold: { 50:'#fdf9ef', 100:'#faf0d4', 200:'#f4dea5', 300:'#ecc96f', 400:'#e4b44a', 500:'#c9a84c', 600:'#b08a32', 700:'#926a2a', 800:'#785428', 900:'#644625' },
+                        slate2: '#f8f9fc'
+                    },
+                    fontFamily: { inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        *{font-family:'Inter',sans-serif;box-sizing:border-box}
+        ::-webkit-scrollbar{width:5px;height:5px}
+        ::-webkit-scrollbar-track{background:#f8f9fc}
+        ::-webkit-scrollbar-thumb{background:#b8c9e5;border-radius:4px}
+        .nav-bar{background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,0.05)}
+        .nl{color:#274377;font-size:13px;font-weight:500;transition:color .25s}.nl:hover{color:#0a1628}
+        .lt{color:#0a1628}.lb-icon{color:#274377}
+        .ph-text{color:#274377}
+        .cta-btn{background:#c9a84c;color:#0a1628}.cta-btn:hover{background:#b08a32}
+        .mob{transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+        .mob.open{transform:translateX(0)}
+        .mob-ov{opacity:0;visibility:hidden;transition:all .35s}.mob-ov.open{opacity:1;visibility:visible}
+        .mob-link{display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:14px;transition:all .25s;color:rgba(255,255,255,0.7);font-size:14px;font-weight:500}
+        .mob-link:hover{background:rgba(255,255,255,0.06);color:white}
+        .mob-link .mob-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);flex-shrink:0;transition:all .25s}
+        .mob-link:hover .mob-ico{background:rgba(201,168,76,0.15)}.mob-link:hover .mob-ico svg{color:#e4b44a}
+        .mob-link .mob-lbl{flex:1}.mob-link .mob-arr{opacity:0;transition:all .25s;transform:translateX(-4px)}.mob-link:hover .mob-arr{opacity:0.4;transform:translateX(0)}
+
+        .cat-event{background:#ecfdf5;color:#059669;border-color:#d1fae5}
+        .cat-sports{background:#eff6ff;color:#2563eb;border-color:#dbeafe}
+        .cat-activity{background:#fefce8;color:#ca8a04;border-color:#fef08a}
+        .cat-academic{background:#f0f4fa;color:#3b66aa;border-color:#dce4f2}
+        .cat-cultural{background:#fdf2f8;color:#db2777;border-color:#fce7f3}
+        .cat-meeting{background:#f5f3ff;color:#7c3aed;border-color:#ede9fe}
+        .cat-tech{background:#ecfeff;color:#0891b2;border-color:#cffafe}
+        .cat-news{background:#f8f9fc;color:#274377;border-color:#e8ecf2}
+
+        .card-tag{display:inline-flex;align-items:center;padding:4px 10px;border-radius:7px;font-size:10px;font-weight:600;letter-spacing:.03em;cursor:pointer;transition:all .2s;border:1px solid transparent;text-decoration:none}
+        .card-tag:hover{transform:translateY(-1px);filter:brightness(0.95)}
+
+        /* ─── Article content styling ─── */
+        .article-body{font-size:15px;color:#374151;line-height:1.85;font-weight:300}
+        .article-body p{margin-bottom:1.25em}
+        .article-body h2{font-size:1.35rem;font-weight:800;color:#0a1628;margin:2em 0 0.6em;line-height:1.3}
+        .article-body h3{font-size:1.15rem;font-weight:700;color:#0a1628;margin:1.6em 0 0.5em;line-height:1.35}
+        .article-body h4{font-size:1rem;font-weight:700;color:#162240;margin:1.4em 0 0.4em;line-height:1.4}
+        .article-body img{width:100%;border-radius:14px;margin:1.5em 0;display:block}
+        .article-body a{color:#3b66aa;text-decoration:underline;text-underline-offset:3px;font-weight:500;transition:color .2s}
+        .article-body a:hover{color:#b08a32}
+        .article-body ul,.article-body ol{padding-left:1.5em;margin-bottom:1.25em}
+        .article-body li{margin-bottom:0.4em;line-height:1.75}
+        .article-body ul li{list-style-type:disc}
+        .article-body ol li{list-style-type:decimal}
+        .article-body blockquote{border-left:3px solid #c9a84c;padding:1em 1.25em;margin:1.5em 0;background:#fdf9ef;border-radius:0 12px 12px 0;font-style:italic;color:#5a82be}
+        .article-body table{width:100%;border-collapse:collapse;margin:1.5em 0;font-size:14px}
+        .article-body th{background:#0a1628;color:white;font-weight:600;padding:10px 14px;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+        .article-body th:first-child{border-radius:10px 0 0 0}
+        .article-body th:last-child{border-radius:0 10px 0 0}
+        .article-body td{padding:10px 14px;border-bottom:1px solid #e8ecf2}
+        .article-body tr:last-child td{border-bottom:none}
+        .article-body tr:nth-child(even) td{background:#f8f9fc}
+        .article-body hr{border:none;height:1px;background:linear-gradient(to right,transparent,#dce4f2,transparent);margin:2em 0}
+        .article-body strong{font-weight:700;color:#0a1628}
+        .article-body em{font-style:italic}
+        .article-body figure{margin:1.5em 0}
+        .article-body figcaption{font-size:12px;color:#8aa7d3;text-align:center;margin-top:8px;font-weight:500}
+        .article-body iframe{width:100%;border-radius:14px;margin:1.5em 0;display:block;aspect-ratio:16/9}
+        .article-body code{background:#f0f4fa;padding:2px 6px;border-radius:5px;font-size:13px;color:#274377;font-family:'Courier New',monospace}
+        .article-body pre{background:#0a1628;color:#e2e8f0;padding:1.25em;border-radius:14px;overflow-x:auto;margin:1.5em 0;font-size:13px;line-height:1.7}
+        .article-body pre code{background:none;padding:0;color:inherit;font-size:inherit}
+
+        .share-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;font-size:12.5px;font-weight:600;border:1.5px solid #e8ecf2;background:white;color:#274377;cursor:pointer;transition:all .25s;text-decoration:none}
+        .share-btn:hover{border-color:#dce4f2;background:#f8f9fc;transform:translateY(-1px)}
+        .share-btn svg{flex-shrink:0}
+        .share-btn.copied{border-color:#10b981;background:#ecfdf5;color:#059669}
+
+        .map-wrap{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.06)}
+        .map-wrap iframe{display:block;width:100%;height:180px;border:none;filter:grayscale(0.7) brightness(0.65) contrast(1.15)}
+        .map-wrap:hover iframe{filter:grayscale(0.3) brightness(0.75) contrast(1.1);transition:filter .5s}
+        .map-wrap .map-pin{position:absolute;bottom:10px;left:10px;z-index:2;display:flex;align-items:center;gap:6px;background:rgba(10,22,40,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.08)}
+        .map-wrap .map-pin span{font-size:10px;font-weight:600;color:rgba(255,255,255,0.7);white-space:nowrap}
+        .map-wrap .map-pin svg{color:#e4b44a;flex-shrink:0}
+
+        .skel{background:linear-gradient(90deg,#e8ecf2 25%,#f0f4fa 50%,#e8ecf2 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:12px}
+        @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+        /* Toast */
+        .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);z-index:200;background:#0a1628;color:white;font-size:13px;padding:12px 22px;border-radius:14px;box-shadow:0 12px 36px -8px rgba(10,22,40,0.3);display:flex;align-items:center;gap:8px;border:1px solid #162240;opacity:0;visibility:hidden;transition:all .3s ease;max-width:360px}
+        .toast.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+    </style>
+</head>
+<body class="bg-slate2 text-navy-900 antialiased">
+
+    <!-- NAV -->
+    <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-[68px]">
+                <a href="index.html" class="flex items-center gap-2.5"><div class="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="lt font-bold text-[16px] tracking-tight">Vijaya Makkala Koota</span></a>
+                <div class="hidden xl:flex items-center gap-8"><a href="index.html" class="nl">Home</a><a href="index.html#about" class="nl">About</a><a href="index.html#ach" class="nl">Achievements</a><a href="index.html#fac" class="nl">Facilities</a><a href="user.html" class="nl" style="color:#b08a32">Blog</a><a href="index.html#gallery" class="nl">Gallery</a><a href="index.html#test" class="nl">Testimonials</a><a href="index.html#contact" class="nl">Contact</a></div>
+                <div class="flex items-center gap-3">
+                    <a href="tel:+918012345678" class="hidden lg:flex items-center gap-1.5 ph-text text-xs"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+                    <a href="index.html#contact" class="hidden sm:inline-flex items-center cta-btn text-xs font-bold px-5 py-2.5 rounded-full transition-all">Admissions 2026</a>
+                    <button id="mt" class="xl:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-navy-50" aria-label="Menu"><i data-lucide="menu" class="lb-icon w-5 h-5"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="mo" class="mob-ov fixed inset-0 z-[55] bg-black/60 backdrop-blur-sm" onclick="cd()"></div>
+    <div id="md" class="mob fixed top-0 right-0 bottom-0 z-[60] w-[300px] bg-navy-900 shadow-2xl flex flex-col">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-white/5"><div class="flex items-center gap-2.5"><div class="w-8 h-8 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-400"></i></div><span class="text-sm font-bold text-white">Vijaya Makkala Koota</span></div><button onclick="cd()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5"><i data-lucide="x" class="w-4 h-4 text-white/40"></i></button></div>
+        <div class="flex-1 overflow-y-auto px-4 py-5 space-y-1">
+            <a href="index.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="home" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Home</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#about" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#ach" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#fac" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Facilities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="user.html" class="dl mob-link" style="background:rgba(201,168,76,0.08);color:#e4b44a"><div class="mob-ico" style="background:rgba(201,168,76,0.15)"><i data-lucide="newspaper" class="w-[16px] h-[16px]" style="color:#e4b44a"></i></div><span class="mob-lbl">Blog</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4" style="color:rgba(228,180,74,0.4)"></i></a>
+            <a href="index.html#gallery" class="dl mob-link"><div class="mob-ico"><i data-lucide="image" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#test" class="dl mob-link"><div class="mob-ico"><i data-lucide="message-circle" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Testimonials</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#contact" class="dl mob-link"><div class="mob-ico"><i data-lucide="mail" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Contact Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+        </div>
+        <div class="px-5 py-5 border-t border-white/5 space-y-3">
+            <a href="index.html#contact" class="dl flex items-center justify-center gap-2 w-full bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold py-3.5 rounded-xl transition-colors"><i data-lucide="graduation-cap" class="w-4 h-4"></i>Admissions 2026</a>
+            <a href="tel:+918012345678" class="dl flex items-center justify-center gap-2 w-full text-white/40 hover:text-white/60 text-xs font-medium py-2 transition-colors"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+        </div>
+    </div>
+
+    <!-- SKELETON STATE -->
+    <div id="skeletonState" class="pt-[88px] pb-20">
+        <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 mb-6"><div class="skel" style="width:60px;height:12px"></div><div class="skel" style="width:12px;height:12px;border-radius:50%"></div><div class="skel" style="width:40px;height:12px"></div></div>
+            <div class="skel" style="width:100%;height:340px;margin-bottom:24px"></div>
+            <div class="skel" style="width:80%;height:28px;margin-bottom:16px"></div>
+            <div class="flex items-center gap-3 mb-6"><div class="skel" style="width:120px;height:14px"></div><div class="skel" style="width:80px;height:14px"></div><div class="skel" style="width:70px;height:14px"></div></div>
+            <div class="skel" style="width:100%;height:14px;margin-bottom:12px"></div>
+            <div class="skel" style="width:100%;height:14px;margin-bottom:12px"></div>
+            <div class="skel" style="width:90%;height:14px;margin-bottom:12px"></div>
+            <div class="skel" style="width:100%;height:14px;margin-bottom:12px"></div>
+            <div class="skel" style="width:75%;height:14px;margin-bottom:12px"></div>
+            <div class="skel" style="width:100%;height:14px;margin-bottom:12px"></div>
+            <div class="skel" style="width:85%;height:14px;margin-bottom:12px"></div>
+        </div>
+    </div>
+
+    <!-- ARTICLE (hidden until loaded) -->
+    <div id="articleState" class="hidden">
+
+        <!-- Breadcrumb -->
+        <div class="pt-[88px] pb-0">
+            <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-2 text-xs">
+                    <a href="index.html" class="text-navy-400 hover:text-navy-700 transition-colors">Home</a>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navy-200"><polyline points="9 18 15 12 9 6"/></svg>
+                    <a href="user.html" class="text-navy-400 hover:text-navy-700 transition-colors">Blog</a>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navy-200"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span class="text-navy-700 font-semibold truncate max-w-[180px]" id="breadcrumbTitle"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Article -->
+        <article class="py-8 sm:py-12 lg:py-14">
+            <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+
+                <!-- Back link -->
+                <a href="user.html" class="inline-flex items-center gap-2 text-xs font-semibold text-navy-400 hover:text-navy-700 transition-colors mb-6">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    Back to Blog
+                </a>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 mb-5" id="articleTags"></div>
+
+                <!-- Title -->
+                <h1 class="text-2xl sm:text-3xl lg:text-[2.1rem] font-extrabold text-navy-900 leading-[1.15] tracking-tight mb-5" id="articleTitle"></h1>
+
+                <!-- Meta row -->
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-navy-400 font-medium mb-8 pb-8 border-b border-navy-100">
+                    <span class="flex items-center gap-1.5" id="articleDate">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <span class="flex items-center gap-1.5" id="articleReadTime">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </span>
+                </div>
+
+                <!-- Featured image -->
+                <div class="rounded-2xl overflow-hidden mb-10 sm:mb-12 shadow-lg shadow-navy-900/5" id="articleImageWrap">
+                    <img id="articleImage" src="" alt="" class="w-full h-[240px] sm:h-[340px] lg:h-[420px] object-cover" loading="eager">
+                </div>
+
+                <!-- Content -->
+                <div class="article-body" id="articleContent"></div>
+
+                <!-- Share section -->
+                <div class="mt-12 sm:mt-16 pt-8 border-t border-navy-100">
+                    <h3 class="text-sm font-bold text-navy-900 uppercase tracking-wider mb-5">Share this article</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="shareWhatsApp()" class="share-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            WhatsApp
+                        </button>
+                        <button onclick="shareTwitter()" class="share-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            Twitter / X
+                        </button>
+                        <button onclick="shareLinkedIn()" class="share-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </button>
+                        <button onclick="shareTelegram()" class="share-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                            Telegram
+                        </button>
+                        <button id="copyBtn" onclick="copyLink()" class="share-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                            <span id="copyLabel">Copy Link</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </div>
+
+    <!-- ERROR STATE -->
+    <div id="errorState" class="hidden pt-[88px] pb-20">
+        <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 mb-6 text-xs">
+                <a href="index.html" class="text-navy-400 hover:text-navy-700 transition-colors">Home</a>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navy-200"><polyline points="9 18 15 12 9 6"/></svg>
+                <a href="user.html" class="text-navy-400 hover:text-navy-700 transition-colors">Blog</a>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;text-align:center">
+                <div style="width:64px;height:64px;border-radius:18px;background:#fef2f2;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <p style="font-size:18px;font-weight:800;color:#0a1628;margin-bottom:6px" id="errorTitle">Post not found</p>
+                <p style="font-size:14px;color:#8aa7d3;margin-bottom:24px;max-width:380px" id="errorMsg">The article you're looking for doesn't exist or may have been removed.</p>
+                <a href="user.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-size:13px;font-weight:700;background:#0a1628;color:white;text-decoration:none;transition:background .2s" onmouseover="this.style.background='#162240'" onmouseout="this.style.background='#0a1628'">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    Back to Blog
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA BAND -->
+    <section id="ctaBand" class="bg-navy-900 py-14 sm:py-16 hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-xl sm:text-2xl lg:text-[1.7rem] font-bold text-white tracking-tight leading-snug mb-3">Have Questions About Admissions?</h3>
+            <p class="text-sm text-navy-300 font-light leading-relaxed max-w-lg mx-auto mb-8">Our team is happy to help you with enrollment, fee structure, campus visits, and more.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="index.html#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold px-7 py-3.5 rounded-lg transition-all">Submit an Enquiry</a>
+                <a href="tel:+918012345678" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-navy-700 hover:border-navy-600 text-navy-200 hover:text-white text-sm font-medium px-7 py-3.5 rounded-lg transition-all">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    Call +91 80 1234 5678
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footerBand" class="bg-navy-900 text-white pt-12 sm:pt-16 pb-8 border-t border-white/5 hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 mb-10 sm:mb-12">
+                <div class="lg:col-span-3">
+                    <div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div>
+                    <p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from LKG to Grade 10 with care, confidence, and character since 2010.</p>
+                    <div class="flex items-center gap-2.5">
+                        <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center transition-colors"><i data-lucide="facebook" class="w-3.5 h-3.5 text-navy-300"></i></a>
+                        <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center transition-colors"><i data-lucide="instagram" class="w-3.5 h-3.5 text-navy-300"></i></a>
+                        <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center transition-colors"><i data-lucide="youtube" class="w-3.5 h-3.5 text-navy-300"></i></a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2"><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Quick Links</h4><ul class="space-y-3"><li><a href="index.html" class="text-sm text-navy-300 hover:text-white transition-colors">Home</a></li><li><a href="index.html#about" class="text-sm text-navy-300 hover:text-white transition-colors">About Us</a></li><li><a href="index.html#fac" class="text-sm text-navy-300 hover:text-white transition-colors">Facilities</a></li><li><a href="user.html" class="text-sm text-gold-400 hover:text-gold-300 transition-colors">Blog</a></li></ul></div>
+                <div class="lg:col-span-2"><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Academics</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Pre-Primary (LKG–UKG)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Primary (1–5)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Middle (6–8)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Secondary (9–10)</a></li></ul></div>
+                <div class="lg:col-span-5">
+                    <h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Find Us</h4>
+                    <div class="map-wrap mb-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.587465425986!2d77.5791!3d12.9279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae150b0d0e3a83%3A0x3b4e1c57b62a65cd!2sJayanagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="School Location"></iframe>
+                        <div class="map-pin"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Jayanagar, Bangalore</span></div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">42, Temple Road, Jayanagar, Bangalore – 560041</span></li>
+                        <li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><a href="tel:+918012345678" class="text-sm text-navy-300 hover:text-white transition-colors">+91 80 1234 5678</a></li>
+                        <li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><a href="mailto:info@vijayamakkalakoota.edu.in" class="text-sm text-navy-300 hover:text-white transition-colors">info@vijayamakkalakoota.edu.in</a></li>
+                        <li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-xs text-navy-500">© 2025 Vijaya Makkala Koota. All rights reserved.</p><div class="flex items-center gap-5"><a href="#" class="text-xs text-navy-500 hover:text-navy-300 transition-colors">Privacy</a><a href="#" class="text-xs text-navy-500 hover:text-navy-300 transition-colors">Terms</a></div></div>
+        </div>
+    </footer>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e4b44a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span id="toastMsg"></span>
+    </div>
+
+    <script>
+    lucide.createIcons();
+
+    /* ─── Mobile menu ─── */
+    const mdEl=document.getElementById('md'),moEl=document.getElementById('mo');
+    function od(){mdEl.classList.add('open');moEl.classList.add('open');document.body.style.overflow='hidden'}
+    function cd(){mdEl.classList.remove('open');moEl.classList.remove('open');document.body.style.overflow=''}
+    document.getElementById('mt').addEventListener('click',od);
+    document.querySelectorAll('.dl').forEach(l=>l.addEventListener('click',cd));
+
+    /* ─── Toast ─── */
+    let toastTimer;
+    function showToast(msg){
+        clearTimeout(toastTimer);
+        const t=document.getElementById('toast');
+        document.getElementById('toastMsg').textContent=msg;
+        t.classList.add('show');
+        toastTimer=setTimeout(()=>t.classList.remove('show'),3000);
+    }
+
+    /* ─── Tag helpers ─── */
+    const tagClassMap={
+        'sports':'cat-sports','sport':'cat-sports','game':'cat-sports','games':'cat-sports','cricket':'cat-sports','football':'cat-sports',
+        'cultural':'cat-cultural','art':'cat-cultural','arts':'cat-cultural','music':'cat-cultural','dance':'cat-cultural','fest':'cat-cultural',
+        'event':'cat-event','events':'cat-event','celebration':'cat-event','annual':'cat-event',
+        'activity':'cat-activity','activities':'cat-activity','drive':'cat-activity','environment':'cat-activity','plant':'cat-activity',
+        'meeting':'cat-meeting','meetings':'cat-meeting','parent':'cat-meeting','ptm':'cat-meeting',
+        'tech':'cat-tech','technology':'cat-tech','coding':'cat-tech','robot':'cat-tech','computer':'cat-tech',
+        'academic':'cat-academic','academics':'cat-academic','exam':'cat-academic','workshop':'cat-academic','science':'cat-academic','olympiad':'cat-academic',
+        'news':'cat-news','update':'cat-news','updates':'cat-news','announcement':'cat-news'
+    };
+    function getTagClass(tag){
+        const t=(tag||'').toLowerCase().trim();
+        for(const [key,cls] of Object.entries(tagClassMap)){if(t===key)return cls}
+        return 'cat-news';
+    }
+
+    /* ─── Date helper ─── */
+    function formatDate(isoStr){
+        try{
+            const d=new Date(isoStr);
+            const day=d.getDate().toString().padStart(2,'0');
+            const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            return day+' '+months[d.getMonth()]+' '+d.getFullYear();
+        }catch(e){return '—'}
+    }
+
+    function readTime(text){
+        const clean=text.replace(/<[^>]*>/g,'').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim();
+        return Math.max(1,Math.ceil(clean.split(' ').length/200))+' min read';
+    }
+
+    /* ═══════════════════════════════════════════
+       LOAD POST
+       ═══════════════════════════════════════════ */
+    const params=new URLSearchParams(window.location.search);
+    const id=params.get('id');
+
+    async function loadPost(){
+        if(!id){
+            showError('Missing post ID','No post ID was provided in the URL.');
+            return;
+        }
+
+        try{
+            const res=await fetch(`http://127.0.0.1:8000/posts/${id}`);
+            if(!res.ok) throw new Error('Server returned '+res.status);
+            const data=await res.json();
+
+            /* Build thumbnail URL */
+            let fullImg='';
+            if(data.thumbnail){
+                if(data.thumbnail.startsWith('http')){fullImg=data.thumbnail}
+                else{fullImg=data.thumbnail}
+            }
+
+            /* Update page title */
+            document.title=data.title+' — Vijaya Makkala Koota';
+
+            /* Open Graph meta */
+            document.getElementById('og-title').setAttribute('content',data.title);
+            document.getElementById('og-desc').setAttribute('content',data.excerpt||'');
+            document.getElementById('og-image').setAttribute('content',fullImg);
+            document.getElementById('og-url').setAttribute('content',window.location.href);
+
+            /* Breadcrumb */
+            document.getElementById('breadcrumbTitle').textContent=data.title;
+
+            /* Tags */
+            const rawTags=(data.tags||'').split(/[\s,;]+/).filter(Boolean);
+            const tagsContainer=document.getElementById('articleTags');
+            tagsContainer.innerHTML=rawTags.map(t=>{
+                const cls=getTagClass(t);
+                const label=t.charAt(0).toUpperCase()+t.slice(1);
+                return `<a href="user.html" class="card-tag ${cls}">${label}</a>`;
+            }).join('');
+
+            /* Title */
+            document.getElementById('articleTitle').textContent=data.title;
+
+            /* Meta row */
+            document.getElementById('articleDate').innerHTML=`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`+formatDate(data.created_at);
+            document.getElementById('articleReadTime').innerHTML=`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`+readTime(data.content||'');
+
+            /* Image */
+            const imgEl=document.getElementById('articleImage');
+            const imgWrap=document.getElementById('articleImageWrap');
+            if(fullImg){
+                imgEl.src=fullImg;
+                imgEl.alt=data.title;
+                imgEl.onerror=function(){
+                    imgWrap.style.display='none';
+                };
+            }else{
+                imgWrap.style.display='none';
+            }
+
+            /* Content */
+            document.getElementById('articleContent').innerHTML=data.content||'<p>No content available.</p>';
+
+            /* Show article, hide skeleton */
+            document.getElementById('skeletonState').classList.add('hidden');
+            document.getElementById('articleState').classList.remove('hidden');
+            document.getElementById('ctaBand').classList.remove('hidden');
+            document.getElementById('footerBand').classList.remove('hidden');
+
+            /* Re-init lucide for any icons in content */
+            setTimeout(()=>lucide.createIcons(),100);
+
+        }catch(err){
+            console.error('Failed to load post:',err);
+            showError('Could not load article',err.message);
+        }
+    }
+
+    function showError(title,msg){
+        document.getElementById('errorTitle').textContent=title;
+        document.getElementById('errorMsg').textContent=msg;
+        document.getElementById('skeletonState').classList.add('hidden');
+        document.getElementById('errorState').classList.remove('hidden');
+        document.getElementById('ctaBand').classList.remove('hidden');
+        document.getElementById('footerBand').classList.remove('hidden');
+    }
+
+    /* ═══════════════════════════════════════════
+       SHARE FUNCTIONS
+       ═══════════════════════════════════════════ */
+    function getUrl(){return window.location.href}
+
+    function shareWhatsApp(){
+        const url=getUrl();
+        const title=document.getElementById('articleTitle')?.textContent||'';
+        window.open(`https://wa.me/?text=${encodeURIComponent(title+' — '+url)}`);
+    }
+
+    function shareTwitter(){
+        const url=getUrl();
+        const title=document.getElementById('articleTitle')?.textContent||'';
+        window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`);
+    }
+
+    function shareLinkedIn(){
+        const url=getUrl();
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`);
+    }
+
+    function shareTelegram(){
+        const url=getUrl();
+        const title=document.getElementById('articleTitle')?.textContent||'';
+        window.open(`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`);
+    }
+
+    function copyLink(){
+        const btn=document.getElementById('copyBtn');
+        const label=document.getElementById('copyLabel');
+        navigator.clipboard.writeText(getUrl()).then(()=>{
+            btn.classList.add('copied');
+            label.textContent='Copied!';
+            showToast('Link copied to clipboard');
+            setTimeout(()=>{
+                btn.classList.remove('copied');
+                label.textContent='Copy Link';
+            },2500);
+        }).catch(()=>{
+            /* Fallback for older browsers */
+            const ta=document.createElement('textarea');
+            ta.value=getUrl();ta.style.position='fixed';ta.style.opacity='0';
+            document.body.appendChild(ta);ta.select();
+            try{document.execCommand('copy');btn.classList.add('copied');label.textContent='Copied!';showToast('Link copied to clipboard');setTimeout(()=>{btn.classList.remove('copied');label.textContent='Copy Link'},2500)}
+            catch(e){showToast('Could not copy link')}
+            document.body.removeChild(ta);
+        });
+    }
+
+    /* ─── Init ─── */
+    loadPost();
+    </script>
+</body>
+</html>

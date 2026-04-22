@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Achievements</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f5f7;
+      color: #1a1a2e;
+      min-height: 100vh;
+      padding-bottom: 40px;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: #fff; border-bottom: 1px solid #e2e4e9; padding: 0 16px;
+    }
+    .nav-top {
+      display: flex; align-items: center; justify-content: space-between; height: 52px;
+    }
+    .nav-top .logo { font-weight: 700; font-size: 18px; color: #1a1a2e; }
+    .hamburger {
+      background: none; border: none; font-size: 20px;
+      color: #1a1a2e; cursor: pointer; padding: 4px;
+    }
+    .nav-links {
+      display: none; flex-direction: column;
+      background: #fff; border-bottom: 1px solid #e2e4e9; padding: 4px 0 12px;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 16px; text-decoration: none; color: #444;
+      font-size: 14px; font-weight: 500; border-radius: 8px;
+      margin: 2px 8px; transition: background .15s;
+    }
+    .nav-links a:active, .nav-links a:hover { background: #f0f1f3; }
+    .nav-links a i { width: 18px; text-align: center; font-size: 15px; color: #777; }
+
+    .container { padding: 20px 16px; max-width: 600px; margin: 0 auto; }
+    .page-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+    .section-label {
+      font-size: 13px; font-weight: 600; color: #555;
+      margin-bottom: 10px;
+    }
+
+    /* ── Form ── */
+    .add-card {
+      background: #fff; border-radius: 14px;
+      padding: 18px; margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .field { margin-bottom: 14px; }
+    input[type="text"] {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid #dde0e5; border-radius: 10px;
+      font-size: 14px; font-family: inherit; background: #fff;
+      outline: none; transition: border-color .2s;
+    }
+    input[type="text"]:focus { border-color: #1a1a2e; }
+
+    .upload-area {
+      border: 2px dashed #d0d3da; border-radius: 12px;
+      padding: 18px; text-align: center; background: #fafbfc;
+      cursor: pointer; transition: border-color .2s;
+    }
+    .upload-area:active { border-color: #1a1a2e; }
+    .upload-area input { display: none; }
+    .upload-area .icon { font-size: 26px; color: #b0b4bc; margin-bottom: 4px; }
+    .upload-area .txt { font-size: 13px; color: #888; }
+    .upload-area .txt span { color: #1a1a2e; font-weight: 600; }
+    #uploadPreview {
+      width: 100%; max-height: 160px; object-fit: cover;
+      border-radius: 8px; display: none; margin-top: 10px;
+    }
+
+    .btn-add {
+      width: 100%; padding: 12px; background: #1a1a2e; color: #fff;
+      border: none; border-radius: 10px; font-size: 14px;
+      font-weight: 600; font-family: inherit; cursor: pointer;
+      transition: opacity .15s;
+    }
+    .btn-add:active { opacity: .85; }
+
+    /* ── List ── */
+    .ach-list { display: flex; flex-direction: column; gap: 12px; }
+    .ach-card {
+      background: #fff; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: flex; gap: 14px; padding: 14px;
+      align-items: center;
+    }
+    .ach-card img {
+      width: 80px; height: 80px; object-fit: cover;
+      border-radius: 10px; flex-shrink: 0;
+    }
+    .ach-info { flex: 1; min-width: 0; }
+    .ach-info h4 {
+      font-size: 14px; font-weight: 600; margin-bottom: 8px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .ach-actions { display: flex; gap: 6px; }
+    .ach-actions button {
+      width: 34px; height: 34px; border: none; border-radius: 8px;
+      font-size: 13px; cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+      transition: opacity .15s; flex-shrink: 0;
+    }
+    .ach-actions button:active { opacity: .7; }
+    .btn-up { background: #e8f5e9; color: #2e7d32; }
+    .btn-down { background: #e3f2fd; color: #1565c0; }
+    .btn-del { background: #fbe9e7; color: #c62828; }
+
+    .empty {
+      text-align: center; padding: 50px 20px; color: #999;
+    }
+    .empty i { font-size: 40px; margin-bottom: 12px; display: block; color: #ccc; }
+    .empty p { font-size: 14px; }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed; bottom: 24px; left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #1a1a2e; color: #fff; padding: 12px 24px;
+      border-radius: 10px; font-size: 14px; font-weight: 500;
+      opacity: 0; transition: all .3s ease; z-index: 200; white-space: nowrap;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* ── Error toast ── */
+    .toast.error { background: #c62828; }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.4);
+      z-index: 300; display: none; align-items: center; justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.show { display: flex; }
+    .modal-box {
+      background: #fff; border-radius: 14px; padding: 24px;
+      width: 100%; max-width: 320px; text-align: center;
+    }
+    .modal-box p { font-size: 14px; color: #333; margin-bottom: 20px; line-height: 1.5; }
+    .modal-btns { display: flex; gap: 10px; }
+    .modal-btns button {
+      flex: 1; padding: 10px; border: none; border-radius: 10px;
+      font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer;
+    }
+    .modal-cancel { background: #f0f1f3; color: #555; }
+    .modal-confirm { background: #c62828; color: #fff; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-top">
+    <div class="logo">MyBlog</div>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  <div class="nav-links">
+    <a href="create.html"><i class="fas fa-plus"></i>Create Blog</a>
+    <a href="view.html"><i class="fas fa-eye"></i>View Blog</a>
+    <a href="achievement.html"><i class="fas fa-trophy"></i>Achievement</a>
+    <a href="dashboard.html"><i class="fas fa-chart-pie"></i>Dashboard</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-title">Achievements</div>
+
+  <!-- Add Form -->
+  <div class="add-card">
+    <div class="section-label">Add New</div>
+
+    <div class="field">
+      <input type="text" id="title" placeholder="Achievement title" />
+    </div>
+
+    <div class="field">
+      <div class="upload-area" onclick="document.getElementById('image').click()">
+        <input type="file" id="image" accept="image/*" />
+        <div class="icon"><i class="fas fa-cloud-arrow-up"></i></div>
+        <div class="txt"><span>Tap to upload</span> image</div>
+        <img id="uploadPreview" />
+      </div>
+    </div>
+
+    <button class="btn-add" onclick="add()">Add Achievement</button>
+  </div>
+
+  <!-- List -->
+  <div class="section-label">Latest Achievements</div>
+  <div class="ach-list" id="list"></div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Delete Modal -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal-box">
+    <p>Delete this achievement?</p>
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeModal()">Cancel</button>
+      <button class="modal-confirm" id="confirmDelete">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let deleteTargetId = null;
+
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+
+/* Upload preview */
+document.getElementById('image').addEventListener('change', function() {
+  const file = this.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = document.getElementById('uploadPreview');
+    img.src = e.target.result;
+    img.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+});
+
+function showToast(msg, isError) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast' + (isError ? ' error' : '');
+  requestAnimationFrame(() => t.classList.add('show'));
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function closeModal() {
+  document.getElementById('deleteModal').classList.remove('show');
+  deleteTargetId = null;
+}
+
+/* Upload image */
+async function uploadImage(file) {
+  const formData = new FormData();
+  formData.append('file', file);
+  const res = await fetch('http://127.0.0.1:8000/upload-image', { method: 'POST', body: formData });
+  const data = await res.json();
+  return data.url;
+}
+
+/* Add achievement */
+async function add() {
+  const title = document.getElementById('title').value;
+  const file = document.getElementById('image').files[0];
+
+  if (!title || !file) {
+    showToast('Title & image required', true);
+    return;
+  }
+
+  const imageUrl = await uploadImage(file);
+
+  const formData = new FormData();
+  formData.append('title', title);
+  formData.append('image', imageUrl);
+
+  await fetch('http://127.0.0.1:8000/achievements', { method: 'POST', body: formData });
+
+  document.getElementById('title').value = '';
+  document.getElementById('image').value = '';
+  document.getElementById('uploadPreview').style.display = 'none';
+
+  showToast('Added ✅');
+  load();
+}
+
+/* Load achievements */
+async function load() {
+  const res = await fetch('http://127.0.0.1:8000/achievements');
+  const data = await res.json();
+
+  const list = document.getElementById('list');
+  list.innerHTML = '';
+
+  if (!data || data.length === 0) {
+    list.innerHTML = `<div class="empty"><i class="fas fa-trophy"></i><p>No achievements yet</p></div>`;
+    return;
+  }
+
+  data.forEach(a => {
+    const div = document.createElement('div');
+    div.className = 'ach-card';
+    div.innerHTML = `
+      <img src="${a.image}" />
+      <div class="ach-info">
+        <h4>${a.title}</h4>
+        <div class="ach-actions">
+          <button class="btn-up" title="Move up"><i class="fas fa-arrow-up"></i></button>
+          <button class="btn-down" title="Move down"><i class="fas fa-arrow-down"></i></button>
+          <button class="btn-del" title="Delete"><i class="fas fa-trash"></i></button>
+        </div>
+      </div>`;
+
+    div.querySelector('.btn-up').onclick = () => move(a.id, 'up');
+    div.querySelector('.btn-down').onclick = () => move(a.id, 'down');
+    div.querySelector('.btn-del').onclick = () => {
+      deleteTargetId = a.id;
+      document.getElementById('deleteModal').classList.add('show');
+    };
+
+    list.appendChild(div);
+  });
+}
+
+/* Delete */
+document.getElementById('confirmDelete').onclick = async () => {
+  if (!deleteTargetId) return;
+  await fetch(`http://127.0.0.1:8000/achievements/${deleteTargetId}`, { method: 'DELETE' });
+  closeModal();
+  showToast('Deleted');
+  load();
+};
+
+/* Move */
+async function move(id, dir) {
+  await fetch(`http://127.0.0.1:8000/achievements/${id}/move?direction=${dir}`, { method: 'PUT' });
+  load();
+}
+
+load();
+</script>
+</body>
+</html>

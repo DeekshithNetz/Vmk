@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Celebration Settings</h2>
+
+<input id="title" placeholder="Enter title" /><br><br>
+
+<input type="file" id="image" /><br><br>
+
+<label>
+  <input type="checkbox" id="active" checked />
+  Enable Popup
+</label><br><br>
+
+<button onclick="upload()">Save</button>
+<button onclick="deleteData()">Delete</button>
+
+<hr>
+
+<h3>Preview</h3>
+<div id="preview"></div>
+
+<script>
+
+// load existing
+async function load() {
+  const res = await fetch('http://127.0.0.1:8000/celebration');
+  const data = await res.json();
+
+  if (!data) return;
+
+  document.getElementById('title').value = data.title || "";
+  document.getElementById('active').checked = data.is_active;
+
+  document.getElementById('preview').innerHTML = `
+    <img src="${data.image}" width="300"><br>
+    <b>${data.title || ""}</b>
+  `;
+}
+
+// upload image
+async function upload() {
+  const file = document.getElementById('image').files[0];
+  const title = document.getElementById('title').value;
+  const active = document.getElementById('active').checked;
+
+  let imageUrl = "";
+
+  if (file) {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const res = await fetch('http://127.0.0.1:8000/upload-image', {
+      method: 'POST',
+      body: formData
+    });
+
+    const data = await res.json();
+    imageUrl = data.url;
+  } else {
+    // keep old image
+    const res = await fetch('http://127.0.0.1:8000/celebration');
+    const data = await res.json();
+    imageUrl = data.image;
+  }
+
+  const saveData = new FormData();
+  saveData.append('title', title);
+  saveData.append('image', imageUrl);
+  saveData.append('is_active', active);
+
+  await fetch('http://127.0.0.1:8000/celebration', {
+    method: 'POST',
+    body: saveData
+  });
+
+  alert("Saved ✅");
+  load();
+}
+
+// delete
+async function deleteData() {
+  if (!confirm("Delete celebration?")) return;
+
+  await fetch('http://127.0.0.1:8000/celebration', {
+    method: 'DELETE'
+  });
+
+  document.getElementById('preview').innerHTML = "";
+  document.getElementById('title').value = "";
+
+  alert("Deleted ❌");
+}
+
+load();
+
+</script>
+
+</body>
+</html>
