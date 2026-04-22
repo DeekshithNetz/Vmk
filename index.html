@@ -53,7 +53,7 @@
         .slider-wrap{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none}
         .slider-wrap::-webkit-scrollbar{display:none}
         .slider-track{display:flex;gap:20px;padding-left:max(20px,calc((100vw - 1280px)/2 + 20px));padding-right:40px}
-        .ac{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;border:1px solid #e8ecf2;transition:all .4s cubic-bezier(.25,.46,.45,.94);flex-shrink:0;scroll-snap-align:start}
+        .ac{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;border:1px solid #e8ecf2;transition:all .4s cubic-bezier(.25,.46,.45,.94);flex-shrink:0;scroll-snap-align:start;text-decoration:none;display:block}
         .ac:hover{box-shadow:0 20px 50px -14px rgba(10,22,40,0.18);transform:translateY(-4px);border-color:#c9a84c}
         .ac img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.25,.46,.45,.94)}
         .ac:hover img{transform:scale(1.05)}
@@ -83,7 +83,7 @@
         .nc .nmi{font-size:11px;color:#8aa7d3;font-weight:500}
         .nc .nt{font-size:14.5px;font-weight:700;color:#0a1628;line-height:1.4;margin-bottom:6px}
         .nc .np{font-size:12px;color:#5a82be;line-height:1.7;flex:1;margin-bottom:14px}
-        .nc .nr{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:#274377;transition:color .25s}
+        .nc .nr{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:#274377;transition:color .25s;text-decoration:none}
         .nc .nr svg{transition:transform .25s}.nc:hover .nr{color:#b08a32}.nc:hover .nr svg{transform:translateX(3px)}
         .tc{background:white;border-radius:20px;padding:32px 28px 28px;border:1px solid #e8ecf2;transition:all .35s;position:relative;flex-shrink:0;scroll-snap-align:start;display:flex;flex-direction:column}
         .tc:hover{transform:translateY(-3px);box-shadow:0 12px 36px -10px rgba(10,22,40,0.1);border-color:#dce4f2}
@@ -144,6 +144,16 @@
         .cf-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238aa7d3' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
         .cf-select option{color:#0a1628;background:#fff}
         textarea.cf-input{resize:vertical;min-height:90px;line-height:1.6}
+        .skel{background:linear-gradient(90deg,#e8ecf2 25%,#f0f4fa 50%,#e8ecf2 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:12px}
+        @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+        .nskel{background:white;border-radius:20px;overflow:hidden;border:1px solid #e8ecf2;display:flex;flex-direction:column;flex-shrink:0;scroll-snap-align:start}
+        .nskel .nskel-img{height:212px}
+        .nskel .nskel-body{padding:18px 20px 20px}
+        .nskel .nskel-line{height:10px;margin-bottom:10px;border-radius:6px}
+        .nskel .nskel-line.w60{width:60%}.nskel .nskel-line.w80{width:80%}.nskel .nskel-line.w40{width:40%}
+        .nskel .nskel-title{height:16px;margin-bottom:10px;border-radius:6px;width:85%}
+        .askel{border-radius:20px;overflow:hidden;border:1px solid #e8ecf2;flex-shrink:0;scroll-snap-align:start;background:#e8ecf2}
+        .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;text-align:center}
     </style>
 </head>
 <body class="bg-white text-navy-900 antialiased">
@@ -152,7 +162,7 @@
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-[68px]">
                 <a href="#" class="flex items-center gap-2.5"><div class="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="lt font-bold text-[16px] tracking-tight">Vijaya Makkala Koota</span></a>
-                <div class="hidden xl:flex items-center gap-8"><a href="#why" class="nl">Why Vijaya Makkala Koota</a><a href="#about" class="nl">About</a><a href="#ach" class="nl">Achievements</a><a href="#fac" class="nl">Facilities</a><a href="#news" class="nl">News</a><a href="#gallery" class="nl">Gallery</a><a href="#test" class="nl">Testimonials</a><a href="#contact" class="nl">Contact</a></div>
+                <div class="hidden xl:flex items-center gap-8"><a href="#why" class="nl">Why Vijaya Makkala Koota</a><a href="#about" class="nl">About</a><a href="#ach" class="nl">Achievements</a><a href="#fac" class="nl">Facilities</a><a href="user.html" class="nl">News</a><a href="#gallery" class="nl">Gallery</a><a href="#test" class="nl">Testimonials</a><a href="#contact" class="nl">Contact</a></div>
                 <div class="flex items-center gap-3">
                     <a href="tel:+918012345678" class="hidden lg:flex items-center gap-1.5 ph-text text-xs"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
                     <a href="#contact" class="hidden sm:inline-flex items-center cta-btn bg-gold-500 hover:bg-gold-600 text-navy-900 text-xs font-bold px-5 py-2.5 rounded-full transition-all">Admissions 2026</a>
@@ -169,7 +179,7 @@
             <a href="#about" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             <a href="#ach" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             <a href="#fac" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Facilities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="#news" class="dl mob-link"><div class="mob-ico"><i data-lucide="newspaper" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">News & Events</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="user.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="newspaper" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">News & Events</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             <a href="#gallery" class="dl mob-link"><div class="mob-ico"><i data-lucide="image" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             <a href="#test" class="dl mob-link"><div class="mob-ico"><i data-lucide="message-circle" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Testimonials</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             <a href="#contact" class="dl mob-link"><div class="mob-ico"><i data-lucide="mail" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Contact Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
@@ -246,12 +256,12 @@
                         <div class="flex items-center gap-3"><div class="w-10 h-px bg-gold-400"></div><span class="text-xs text-navy-300 font-medium tracking-[0.15em] uppercase">Est. 2010</span></div>
                     </div>
                 </div>
-                                <div class="bg-slate2 rounded-2xl p-5 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">1800+</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Students Enrolled</span></div>
-                <div class="bg-slate2 rounded-2xl p-5 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">100%</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Board Results</span></div>
-                <div class="bg-slate2 rounded-2xl p-5 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">1:20</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Teacher-Student Ratio</span></div>
+                <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div class="bg-slate2 rounded-2xl p-5 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">1800+</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Students Enrolled</span></div>
+                    <div class="bg-slate2 rounded-2xl p-5 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">100%</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Board Results</span></div>
+                    <div class="bg-slate2 rounded-2xl p-5 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">1:20</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Teacher-Student Ratio</span></div>
+                </div>
             </div>
-
-            <!-- Professional CTA -->
             <div class="bg-navy-900 rounded-2xl p-8 sm:p-12 lg:p-14 text-center">
                 <h3 class="text-xl sm:text-2xl lg:text-[1.7rem] font-bold text-white tracking-tight leading-snug mb-3">Begin Your Child's Journey with Vijaya Makkala Koota</h3>
                 <p class="text-sm text-navy-300 font-light leading-relaxed max-w-lg mx-auto mb-8">Admissions are open for the 2026–27 academic year from LKG to Grade 10. Schedule a campus visit or submit an enquiry to get started.</p>
@@ -289,7 +299,7 @@
     <section id="news" class="py-16 sm:py-20 lg:py-24 bg-slate2 overflow-hidden">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 mb-6 sm:mb-8"><h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]"><span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-gold-500 mb-1">News & Events</span>Happening at Vijaya Makkala Koota</h2></div>
         <div class="slider-wrap" id="newsWrap"><div class="slider-track" id="newsTrack"></div></div>
-        <div class="flex justify-center mt-8 sm:mt-10"><a href="#" onclick="showToast('Full news archive coming soon.');return false" class="prof-btn">View All Updates <i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
+        <div class="flex justify-center mt-8 sm:mt-10"><a href="user.html"  class="prof-btn">View All Updates <i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
     </section>
 
     <!-- GALLERY -->
@@ -301,7 +311,7 @@
         <div class="gal-deck" id="galLower"></div>
     </section>
 
-    <!-- LIGHTBOX -->
+    <!-- GALLERY LIGHTBOX -->
     <div id="lb" class="lb fixed inset-0 z-[100] bg-navy-950/95 flex items-center justify-center p-4" onclick="clb()">
         <button onclick="event.stopPropagation();clb()" class="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center z-10"><i data-lucide="x" class="w-5 h-5 text-white"></i></button>
         <button onclick="event.stopPropagation();lp()" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center z-10"><i data-lucide="chevron-left" class="w-5 h-5 text-white"></i></button>
@@ -325,63 +335,20 @@
             </div>
             <form id="cForm" class="bg-slate2 rounded-2xl p-6 sm:p-8 border border-navy-100/40" onsubmit="return handleForm(event)" novalidate>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
-                    <div>
-                        <label class="cf-label" for="fName">Parent / Guardian Name <span class="text-gold-600">*</span></label>
-                        <input type="text" id="fName" class="cf-input" placeholder="Full name" required>
-                        <div class="cf-err" id="fNameErr">Please enter your name.</div>
-                    </div>
-                    <div>
-                        <label class="cf-label" for="fPhone">Phone Number <span class="text-gold-600">*</span></label>
-                        <input type="tel" id="fPhone" class="cf-input" placeholder="+91 00000 00000" required>
-                        <div class="cf-err" id="fPhoneErr">Please enter a valid phone number.</div>
-                    </div>
+                    <div><label class="cf-label" for="fName">Parent / Guardian Name <span class="text-gold-600">*</span></label><input type="text" id="fName" class="cf-input" placeholder="Full name" required><div class="cf-err" id="fNameErr">Please enter your name.</div></div>
+                    <div><label class="cf-label" for="fPhone">Phone Number <span class="text-gold-600">*</span></label><input type="tel" id="fPhone" class="cf-input" placeholder="+91 00000 00000" required><div class="cf-err" id="fPhoneErr">Please enter a valid phone number.</div></div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
-                    <div>
-                        <label class="cf-label" for="fEmail">Email Address</label>
-                        <input type="email" id="fEmail" class="cf-input" placeholder="you@example.com">
-                        <div class="cf-err" id="fEmailErr">Please enter a valid email.</div>
-                    </div>
-                    <div>
-                        <label class="cf-label" for="fGrade">Grade Applying For <span class="text-gold-600">*</span></label>
-                        <select id="fGrade" class="cf-input cf-select" required>
-                            <option value="" disabled selected>Select grade</option>
-                            <option value="lkg">LKG</option>
-                            <option value="ukg">UKG</option>
-                            <option value="1">Grade 1</option>
-                            <option value="2">Grade 2</option>
-                            <option value="3">Grade 3</option>
-                            <option value="4">Grade 4</option>
-                            <option value="5">Grade 5</option>
-                            <option value="6">Grade 6</option>
-                            <option value="7">Grade 7</option>
-                            <option value="8">Grade 8</option>
-                            <option value="9">Grade 9</option>
-                            <option value="10">Grade 10</option>
-                        </select>
-                        <div class="cf-err" id="fGradeErr">Please select a grade.</div>
-                    </div>
+                    <div><label class="cf-label" for="fEmail">Email Address</label><input type="email" id="fEmail" class="cf-input" placeholder="you@example.com"><div class="cf-err" id="fEmailErr">Please enter a valid email.</div></div>
+                    <div><label class="cf-label" for="fGrade">Grade Applying For <span class="text-gold-600">*</span></label><select id="fGrade" class="cf-input cf-select" required><option value="" disabled selected>Select grade</option><option value="lkg">LKG</option><option value="ukg">UKG</option><option value="1">Grade 1</option><option value="2">Grade 2</option><option value="3">Grade 3</option><option value="4">Grade 4</option><option value="5">Grade 5</option><option value="6">Grade 6</option><option value="7">Grade 7</option><option value="8">Grade 8</option><option value="9">Grade 9</option><option value="10">Grade 10</option></select><div class="cf-err" id="fGradeErr">Please select a grade.</div></div>
                 </div>
-                <div class="mb-4 sm:mb-5">
-                    <label class="cf-label" for="fChild">Child's Name</label>
-                    <input type="text" id="fChild" class="cf-input" placeholder="Child's full name">
-                </div>
-                <div class="mb-5 sm:mb-6">
-                    <label class="cf-label" for="fMsg">Message</label>
-                    <textarea id="fMsg" class="cf-input" placeholder="Any specific questions or information you'd like to share..." rows="4"></textarea>
-                </div>
+                <div class="mb-4 sm:mb-5"><label class="cf-label" for="fChild">Child's Name</label><input type="text" id="fChild" class="cf-input" placeholder="Child's full name"></div>
+                <div class="mb-5 sm:mb-6"><label class="cf-label" for="fMsg">Message</label><textarea id="fMsg" class="cf-input" placeholder="Any specific questions or information you'd like to share..." rows="4"></textarea></div>
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                    <button type="submit" id="fBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold px-7 py-3.5 rounded-lg transition-all">
-                        <span id="fBtnText">Submit Enquiry</span>
-                        <i data-lucide="send" class="w-4 h-4" id="fBtnIco"></i>
-                        <svg id="fBtnSpin" class="hidden animate-spin w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
-                    </button>
+                    <button type="submit" id="fBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold px-7 py-3.5 rounded-lg transition-all"><span id="fBtnText">Submit Enquiry</span><i data-lucide="send" class="w-4 h-4" id="fBtnIco"></i><svg id="fBtnSpin" class="hidden animate-spin w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg></button>
                     <p class="text-[11px] text-navy-300 leading-relaxed">We respond within one working day.</p>
                 </div>
-                <div id="fSuccess" class="hidden mt-5 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start gap-3">
-                    <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-600"></i></div>
-                    <div><p class="text-[13px] font-semibold text-green-800">Thank you for your enquiry.</p><p class="text-[12px] text-green-600 mt-0.5 leading-relaxed">Our admissions team will reach out to you within one working day.</p></div>
-                </div>
+                <div id="fSuccess" class="hidden mt-5 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start gap-3"><div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-600"></i></div><div><p class="text-[13px] font-semibold text-green-800">Thank you for your enquiry.</p><p class="text-[12px] text-green-600 mt-0.5 leading-relaxed">Our admissions team will reach out to you within one working day.</p></div></div>
             </form>
         </div>
     </section>
@@ -393,7 +360,7 @@
                 <div><div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div><p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from LKG to Grade 10 with care, confidence, and character since 2010.</p><div class="flex items-center gap-2.5"><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="facebook" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="instagram" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="youtube" class="w-3.5 h-3.5 text-navy-300"></i></a></div></div>
                 <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Quick Links</h4><ul class="space-y-3"><li><a href="#about" class="text-sm text-navy-300 hover:text-white transition-colors">About Us</a></li><li><a href="#fac" class="text-sm text-navy-300 hover:text-white transition-colors">Facilities</a></li><li><a href="#ach" class="text-sm text-navy-300 hover:text-white transition-colors">Achievements</a></li><li><a href="#gallery" class="text-sm text-navy-300 hover:text-white transition-colors">Gallery</a></li></ul></div>
                 <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Academics</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Pre-Primary (LKG–UKG)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Primary (1–5)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Middle (6–8)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Secondary (9–10)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Exam Results</a></li></ul></div>
-                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Contact</h4><ul class="space-y-3.5"><li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">42, Temple Road, Jayanagar, Bangalore – 560041</span></li><li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">+91 80 1234 5678</span></li><li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">info@Vijaya Makkala Koota.edu.in</span></li><li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li></ul></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Contact</h4><ul class="space-y-3.5"><li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">42, Temple Road, Jayanagar, Bangalore – 560041</span></li><li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">+91 80 1234 5678</span></li><li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">info@vijayamakkalakoota.edu.in</span></li><li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li></ul></div>
             </div>
             <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-xs text-navy-500">© 2025 Vijaya Makkala Koota. All rights reserved.</p><div class="flex items-center gap-5"><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Privacy</a><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Terms</a></div></div>
         </div>
@@ -404,33 +371,283 @@
 
     <script>
     lucide.createIcons();
+
+    /* ─── Nav scroll ─── */
     const nb=document.querySelector('.nav-bar');
     window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>40));
+
+    /* ─── Mobile menu ─── */
     const md=document.getElementById('md'),mo=document.getElementById('mo');
     function od(){md.classList.add('open');mo.classList.add('open');document.body.style.overflow='hidden'}
     function cd(){md.classList.remove('open');mo.classList.remove('open');document.body.style.overflow=''}
     document.getElementById('mt').addEventListener('click',od);
     document.querySelectorAll('.dl').forEach(l=>l.addEventListener('click',cd));
-    function setupAutoScroll(wrapId,interval,step){const el=document.getElementById(wrapId);let timer=null;function tick(){const max=el.scrollWidth-el.clientWidth;if(el.scrollLeft>=max-2){el.scrollTo({left:0,behavior:'smooth'})}else{el.scrollBy({left:step,behavior:'smooth'})}}function start(){if(timer)return;timer=setInterval(tick,interval)}function stop(){if(timer){clearInterval(timer);timer=null}}el.addEventListener('mouseenter',stop);el.addEventListener('mouseleave',()=>setTimeout(start,1200));el.addEventListener('touchstart',stop,{passive:true});el.addEventListener('touchend',()=>setTimeout(start,1800),{passive:true});const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)start();else stop()})},{threshold:0.15});obs.observe(el)}
-    function getVisCount(breakpoints){const w=window.innerWidth;for(const bp of breakpoints){if(w<bp.br)return bp.n}return breakpoints[breakpoints.length-1].n}
-    function applyWidths(wrapId,trackId,breakpoints,minW,gap){const wrap=document.getElementById(wrapId);const track=document.getElementById(trackId);if(!wrap||!track)return;const n=getVisCount(breakpoints);const pl=parseFloat(getComputedStyle(track).paddingLeft);const pr=parseFloat(getComputedStyle(track).paddingRight);const usable=wrap.clientWidth-pl-pr;const cw=Math.max(minW,(usable-gap*(n-1))/n);track.querySelectorAll('[data-card]').forEach(c=>c.style.width=cw+'px')}
 
+    /* ─── Scroll helpers ─── */
+    function setupAutoScroll(wrapId,interval,step){
+        const el=document.getElementById(wrapId);if(!el)return;
+        let timer=null;
+        function tick(){const max=el.scrollWidth-el.clientWidth;if(el.scrollLeft>=max-2){el.scrollTo({left:0,behavior:'smooth'})}else{el.scrollBy({left:step,behavior:'smooth'})}}
+        function start(){if(timer)return;timer=setInterval(tick,interval)}
+        function stop(){if(timer){clearInterval(timer);timer=null}}
+        el.addEventListener('mouseenter',stop);el.addEventListener('mouseleave',()=>setTimeout(start,1200));
+        el.addEventListener('touchstart',stop,{passive:true});el.addEventListener('touchend',()=>setTimeout(start,1800),{passive:true});
+        const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)start();else stop()})},{threshold:0.15});
+        obs.observe(el);
+    }
+    function getVisCount(breakpoints){const w=window.innerWidth;for(const bp of breakpoints){if(w<bp.br)return bp.n}return breakpoints[breakpoints.length-1].n}
+    function applyWidths(wrapId,trackId,breakpoints,minW,gap){
+        const wrap=document.getElementById(wrapId);const track=document.getElementById(trackId);if(!wrap||!track)return;
+        const cards=track.querySelectorAll('[data-card]');if(!cards.length)return;
+        const n=getVisCount(breakpoints);
+        const pl=parseFloat(getComputedStyle(track).paddingLeft)||0;
+        const pr=parseFloat(getComputedStyle(track).paddingRight)||0;
+        const usable=wrap.clientWidth-pl-pr;
+        const cw=Math.max(minW,(usable-gap*(n-1))/n);
+        cards.forEach(c=>c.style.width=cw+'px');
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       ACHIEVEMENTS — Dynamic fetch from /achivements API
+       ═══════════════════════════════════════════════════════ */
     const achBP=[{br:480,n:1},{br:768,n:2},{br:1280,n:3},{br:99999,n:4}];
-    const achData=[{i:'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=700&q=80&auto=format&fit=crop',t:'Academics',g:'g-a',l:'l-a',h:'National Science Fair Winners'},{i:'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=700&q=80&auto=format&fit=crop',t:'Sports',g:'g-s',l:'l-s',h:'State Level Sports Champions'},{i:'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=700&q=80&auto=format&fit=crop',t:'Olympiad',g:'g-o',l:'l-o',h:'Math Olympiad Toppers'},{i:'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=700&q=80&auto=format&fit=crop',t:'Debate',g:'g-d',l:'l-d',h:'Inter-School Debate Champions'},{i:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=700&q=80&auto=format&fit=crop',t:'Cultural',g:'g-c',l:'l-c',h:'Annual Art Exhibition'},{i:'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80&auto=format&fit=crop',t:'Technology',g:'g-t',l:'l-t',h:'Robotics Competition Finalists'},{i:'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80&auto=format&fit=crop',t:'Quiz',g:'g-q',l:'l-q',h:'National Quiz Champions'},{i:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80&auto=format&fit=crop',t:'Community',g:'g-m',l:'l-m',h:'Best School Award 2024'}];
-    document.getElementById('achTrack').innerHTML=achData.map(d=>`<div class="ac" data-card><div class="ac-l ${d.l}"></div><img src="${d.i}" alt="${d.h}" loading="lazy"><span class="ac-g ${d.g}">${d.t}</span><div class="ac-t"><h3>${d.h}</h3></div></div>`).join('');
-    const newsBP=[{br:640,n:1},{br:1280,n:2},{br:99999,n:3}];
-    const newsData=[{i:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80&auto=format&fit=crop',c:'Event',k:'cat-event',dy:'15',mn:'Jan',tm:'3 min',h:'Annual Day Celebration',p:'A vibrant evening of performances, awards, and celebrations. Over 1000 parents joined.'},{i:'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=700&q=80&auto=format&fit=crop',c:'Sports',k:'cat-sports',dy:'28',mn:'Feb',tm:'4 min',h:'Inter-House Sports Meet',p:'Three days of competitive events with participation from all houses.'},{i:'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80&auto=format&fit=crop',c:'Activity',k:'cat-activity',dy:'05',mn:'Jun',tm:'2 min',h:'Environment Day Drive',p:'Students planted 200+ saplings and led a sustainability awareness campaign.'},{i:'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=700&q=80&auto=format&fit=crop',c:'Academic',k:'cat-academic',dy:'12',mn:'Aug',tm:'5 min',h:'Science Workshop',p:'Guest lecture and hands-on workshop by university professors.'},{i:'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=700&q=80&auto=format&fit=crop',c:'Cultural',k:'cat-cultural',dy:'20',mn:'Oct',tm:'4 min',h:'Cultural Fest — Utsav',p:'Two-day inter-school festival with competitions from 25 schools.'},{i:'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=700&q=80&auto=format&fit=crop',c:'Meeting',k:'cat-meeting',dy:'10',mn:'Nov',tm:'2 min',h:'Parent-Teacher Meet',p:'Quarterly PTM to discuss student progress and upcoming goals.'},{i:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&q=80&auto=format&fit=crop',c:'Tech',k:'cat-tech',dy:'05',mn:'Dec',tm:'3 min',h:'Coding Bootcamp',p:'A week-long intensive bootcamp for Python and web development.'}];
-    document.getElementById('newsTrack').innerHTML=newsData.map(d=>`<div class="nc" data-card><div class="ni"><img src="${d.i}" alt="${d.h}" loading="lazy"><span class="nk ${d.k}">${d.c}</span><div class="nd"><span>${d.dy}</span><span>${d.mn}</span></div></div><div class="nb"><div class="nm"><span class="nmi">${d.mn} 2025</span><span style="color:#e7e5e4">&middot;</span><span class="nmi"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${d.tm}</span></div><h3 class="nt">${d.h}</h3><p class="np">${d.p}</p><a href="#" onclick="showToast('Full article coming soon.');return false" class="nr">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 12 19"/></svg></a></div></div>`).join('');
+    let achAutoSetup=false;
+
+    /* Color palette cycling for achievement cards */
+    const achColors=[
+        {g:'g-a',l:'l-a'},{g:'g-s',l:'l-s'},{g:'g-o',l:'l-o'},{g:'g-d',l:'l-d'},
+        {g:'g-c',l:'l-c'},{g:'g-t',l:'l-t'},{g:'g-q',l:'l-q'},{g:'g-m',l:'l-m'}
+    ];
+
+    function renderAchSkeletons(){
+        const track=document.getElementById('achTrack');
+        let html='';
+        for(let i=0;i<4;i++){
+            html+=`<div class="askel" data-card style="width:265px"><div class="skel" style="height:339px"></div></div>`;
+        }
+        track.innerHTML=html;
+        applyAchWidths();
+    }
+
+    function applyAchWidths(){
+        applyWidths('achWrap','achTrack',achBP,265,20);
+        document.querySelectorAll('#achTrack [data-card]').forEach(c=>{c.style.height=Math.round(parseFloat(c.style.width)*1.28)+'px'});
+    }
+
+    function buildAchCard(item,idx){
+        const color=achColors[idx%achColors.length];
+        const imgSrc=item.image||'';
+        return `<a class="ac" data-card>
+            <div class="ac-l ${color.l}"></div>
+            ${imgSrc?`<img src="${imgSrc}" alt="${item.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=700&q=60&auto=format&fit=crop'">`:`<div style="width:100%;height:100%;background:linear-gradient(135deg,#dce4f2,#b8c9e5);display:flex;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8aa7d3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 010-5H6"/><path d="M18 9h1.5a2.5 2.5 0 000-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20 17 22"/><path d="M18 2H6v7a6 6 0 0012 0V2z"/></svg></div>`}
+            <span class="ac-g ${color.g}">Achievement</span>
+            <div class="ac-t"><h3>${item.title}</h3></div>
+        </a>`;
+    }
+
+    function renderAchEmpty(){
+        document.getElementById('achTrack').innerHTML=`<div class="empty-state" style="width:100%;min-width:300px">
+            <div style="width:56px;height:56px;border-radius:16px;background:#f0f4fa;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8aa7d3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 010-5H6"/><path d="M18 9h1.5a2.5 2.5 0 000-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20 17 22"/><path d="M18 2H6v7a6 6 0 0012 0V2z"/></svg>
+            </div>
+            <p style="font-size:14px;font-weight:600;color:#0a1628;margin-bottom:4px">No achievements yet</p>
+            <p style="font-size:12px;color:#8aa7d3">Check back soon for our proudest moments.</p>
+        </div>`;
+    }
+
+    function renderAchError(msg){
+        document.getElementById('achTrack').innerHTML=`<div class="empty-state" style="width:100%;min-width:300px">
+            <div style="width:56px;height:56px;border-radius:16px;background:#fef2f2;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <p style="font-size:14px;font-weight:600;color:#0a1628;margin-bottom:4px">Could not load achievements</p>
+            <p style="font-size:12px;color:#8aa7d3;margin-bottom:16px">${msg||'Something went wrong.'}</p>
+            <button onclick="fetchAchievements()" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:600;background:#0a1628;color:white;border:none;cursor:pointer;transition:background .2s" onmouseover="this.style.background='#162240'" onmouseout="this.style.background='#0a1628'">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+                Retry
+            </button>
+        </div>`;
+    }
+
+    async function fetchAchievements(){
+        renderAchSkeletons();
+        try{
+            const res=await fetch('http://127.0.0.1:8000/achievements');
+            if(!res.ok) throw new Error('Server returned '+res.status);
+            const data=await res.json();
+            const items=Array.isArray(data)?data:(Array.isArray(data.data)?data.data:[]);
+            if(!items.length){renderAchEmpty();return}
+            /* Sort by position */
+            items.sort((a,b)=>(a.position||999)-(b.position||999));
+            const track=document.getElementById('achTrack');
+            track.innerHTML=items.map((item,i)=>buildAchCard(item,i)).join('');
+            applyAchWidths();
+            if(!achAutoSetup){setupAutoScroll('achWrap',3500,300);achAutoSetup=true}
+        }catch(err){
+            console.error('Failed to fetch achievements:',err);
+            renderAchError(err.message);
+        }
+    }
+
+    /* Lazy-trigger achievement fetch */
+    const achObs=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{if(e.isIntersecting){fetchAchievements();achObs.disconnect()}});
+    },{rootMargin:'200px'});
+    achObs.observe(document.getElementById('ach'));
+
+    /* ─── Testimonials (static) ─── */
     const testBP=[{br:640,n:1},{br:1280,n:2},{br:99999,n:3}];
     const avatarColors=['#274377','#b08a32','#0a1628','#3b66aa','#785428'];
-    const testData=[{n:'Pradeep Kumar',r:'Father of Arjun (Grade 5)',q:'My son joined in LKG and now in Grade 5. The teachers have been consistent, caring, and genuinely invested.'},{n:'Meera Krishnan',r:'Mother of Kavya (Grade 3)',q:'The pre-primary program was wonderful. Kavya learned to read, write, and socialize with such confidence.'},{n:'Suresh Babu',r:'Father of Nitin (Grade 10)',q:'The board exam preparation was thorough. Teachers stayed after school for extra classes. Nitin scored 94%.'},{n:'Anjali Rao',r:'Mother of Priya (LKG)',q:'As a first-time parent, sending my child to school was emotional. The teachers made the settling-in period so gentle.'},{n:'Vikram Shetty',r:'Father of Rahul (Grade 8)',q:'The sports program is excellent. Rahul represented the school at state level in cricket.'}];
+    const testData=[
+        {n:'Pradeep Kumar',r:'Father of Arjun (Grade 5)',q:'ಎಲ್ಲರಿಗೂ ನಮಸ್ಕಾರ ನನ್ನ ಮಗ ಸಮರ್ಥ್ ಚಿಟ್ಟಾಣಿ ವಿಜಯ ಮಕ್ಕಳ ಕೂಟ ಶಾಲೆಗೆ ಸೇರಿ ಎರಡು ವರ್ಷ ಆಯಿತು. ಮೊದಲು ಕನ್ನಡ ಮೀಡಿಯಂ ಶಾಲೆಗೆ ಹೋಗುತ್ತಿದ್ದ ಈಗ ನಮ್ಮ ವಿಜಯಮಕ್ಕಳ ಕೂಟ ಶಾಲೆಯಲ್ಲಿ ಕಲಿತು ಇಂಗ್ಲೀಷ್ನಲಿ ಒಂದೇ ವರ್ಷದಲ್ಲಿ ಪರಿಪೂರ್ಣತೆ ಹೊಂದಿರುದಲ್ಲದೆ,ಒಳ್ಳೆಯ ವಿದ್ಯಾರ್ಥಿ ಆಗಿದ್ದಾನೆ ಬರೀ ಕಲಿಕೆಯಲ್ಲಿ ಮಾತ್ರವಲ್ಲದೆ ಅವನು ಬೇರೆ ಬೇರೆ ಚಟುವಟಿಕೆಯಲ್ಲಿ ಬಹಳ ಆಸಕ್ತಿಯಿಂದ ಭಾಗವಹಿಸುತ್ತಾನೆ..  ಮತ್ತು ಶಾಲೆಯ ಸುತ್ತಮುತ್ತಲಿನ ಪರಿಸರ... ಶಾಲೆಯ ಮುಖ್ಯ ಶಿಕ್ಷಕರು ಮತ್ತು ಸಹಶಿಕ್ಷಕರು ಮಕ್ಕಳೊಂದಿಗೆ ತುಂಬಾ ಒಳ್ಳೆಯ ಶಿಕ್ಷಣದ ಜೊತೆಗೆ ಒಳ್ಳೆಯ ಹವ್ಯಾಸಗಳನ್ನು ಕಲಿಸುತ್ತಿದ್ದಾರೆ... ಈ ಶಾಲೆಯ ವಿಶೇಷತೆ ಎಂದರೆ ನಮ್ಮ ಸಂಸ್ಕೃತಿಯ ಬಗ್ಗೆ  ಅಂದರೆ ಕುಣಿತ ಭಜನೆ ಯಕ್ಷಗಾನ ವಿವಿಧ ಹಬ್ಬಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ತಿಳಿಸಿಕೊಡುತ್ತಾರೆ ತುಂಬಾ ಧನ್ಯವಾದಗಳು'},
+        {n:'Meera Krishnan',r:'Mother of Kavya (Grade 3)',q:'ಇನ್ನೂ ಶಾಲೆಯ ವಾತಾವರಣವಾಗಲಿ, ಸೌಲಭ್ಯಗಳಾಗಲಿ—ಎಲ್ಲವೂ ವಿದ್ಯಾರ್ಥಿಗಳ ಕಲಿಕೆಗೆ ಪೂರಕವಾಗಿದ್ದು, ಅವರನ್ನು ಪ್ರತಿಯೊಂದು ಹಂತದಲ್ಲೂ ಪ್ರೋತ್ಸಾಹಿಸುತ್ತಿದೆ . ಶಾಲೆಯಲ್ಲಿನ ಶಿಕ್ಷಕರು ಪಠ್ಯದ ಜೊತೆಗೆ ಪಠ್ಯಪೂರಕ ಚಟುವಟಿಕೆಗಳಿಗೂ ಉತ್ತೇಜನ ನೀಡುತ್ತಾ, ಮಕ್ಕಳು ವಿವಿಧ ಸ್ಪರ್ಧೆಗಳಲ್ಲಿ ಭಾಗವಹಿಸಿ ಯಶಸ್ಸು ಸಾಧಿಸುವಂತೆ ಮಾರ್ಗದರ್ಶನ ಮಾಡುತ್ತಿದ್ದಾರೆ.ನನ್ನ ಮಗಳ ಸಮಗ್ರ ಅಭಿವೃದ್ಧಿಗೆ ಪೂರಕವಾದ ಶಿಕ್ಷಣ, ಸಂಸ್ಕಾರ ಮತ್ತು ಮಾರ್ಗದರ್ಶನ ನೀಡುತ್ತಿರುವ ವಿಜಯ ಮಕ್ಕಳ ಕೂಟ ಶಾಲೆಯ ಆಡಳಿತ ಮಂಡಳಿ ಹಾಗೂ ಶಿಕ್ಷಕ ವೃಂದಕ್ಕೆ ನನ್ನ ಹೃತ್ಪೂರ್ವಕ ಧನ್ಯವಾದಗಳು. ಇಂತಹ ಉತ್ತಮ ಶಿಕ್ಷಣ ಸಂಸ್ಥೆಯೊಂದರ ಭಾಗವಾಗಿರುವುದು ನಮ್ಮ ಪಾಲಿಗೆ ಹೆಮ್ಮೆಯ ವಿಷಯ. ಮುಂದಿನ ದಿನಗಳಲ್ಲಿಯೂ ಇದೇ ರೀತಿ ಇನ್ನಷ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ಉತ್ತಮ ನಾಗರಿಕರನ್ನಾಗಿ ರೂಪಿಸಲಿ ಎಂಬ ಹಾರೈಕೆಯೊಂದಿಗೆ ನನ್ನ ಮಾತುಗಳನ್ನು ಇಲ್ಲಿಗೆ ಮುಕ್ತಾಯಗೊಳಿಸುತ್ತೇನೆ. ಧನ್ಯವಾದಗಳು.'},
+        {n:'Suresh Babu',r:'Father of Nitin (Grade 10)',q:'The board exam preparation was thorough. Teachers stayed after school for extra classes. Nitin scored 94%.'},
+        {n:'Anjali Rao',r:'Mother of Priya (LKG)',q:'As a first-time parent, sending my child to school was emotional. The teachers made the settling-in period so gentle.'},
+        {n:'Vikram Shetty',r:'Father of Rahul (Grade 8)',q:'The sports program is excellent. Rahul represented the school at state level in cricket.'}
+    ];
     document.getElementById('testTrack').innerHTML=testData.map((d,i)=>{const initials=d.n.split(' ').map(w=>w[0]).join('');const color=avatarColors[i%avatarColors.length];return`<div class="tc" data-card><span class="tc-quote">"</span><p class="tc-text">${d.q}</p><div class="tc-bottom"><div class="tc-avatar" style="background:${color}">${initials}</div><div><div class="tc-name">${d.n}</div><div class="tc-role">${d.r}</div></div></div></div>`}).join('');
 
-    function applyAll(){applyWidths('achWrap','achTrack',achBP,265,20);document.querySelectorAll('#achTrack .ac').forEach(c=>{c.style.height=Math.round(parseFloat(c.style.width)*1.28)+'px'});applyWidths('newsWrap','newsTrack',newsBP,295,24);const nih=window.innerWidth<640?192:212;document.querySelectorAll('#newsTrack .ni').forEach(c=>c.style.height=nih+'px');applyWidths('testWrap','testTrack',testBP,285,24)}
-    applyAll();window.addEventListener('resize',applyAll);
-    setupAutoScroll('achWrap',3500,300);setupAutoScroll('testWrap',4500,310);
+    function applyStatic(){
+        applyWidths('testWrap','testTrack',testBP,285,24);
+    }
+    applyStatic();
+    window.addEventListener('resize',()=>{applyStatic();applyNewsWidths();applyAchWidths()});
+    setupAutoScroll('testWrap',4500,310);
 
-    /* Gallery Dual Deck */
+    /* ═══════════════════════════════════════════════════════
+       NEWS — Dynamic fetch from /posts API
+       ═══════════════════════════════════════════════════════ */
+    const newsBP=[{br:640,n:1},{br:1280,n:2},{br:99999,n:3}];
+    let newsAutoSetup=false;
+
+    function getCategory(tags){
+        const t=(tags||'').toLowerCase().trim();
+        if(!t) return {cls:'cat-academic',label:'News'};
+        if(t.includes('sport')||t.includes('game')||t.includes('cricket')||t.includes('football')) return {cls:'cat-sports',label:'Sports'};
+        if(t.includes('cultur')||t.includes('art')||t.includes('music')||t.includes('dance')||t.includes('fest')) return {cls:'cat-cultural',label:'Cultural'};
+        if(t.includes('event')||t.includes('celebrat')||t.includes('annual')) return {cls:'cat-event',label:'Event'};
+        if(t.includes('activ')||t.includes('drive')||t.includes('environment')||t.includes('plant')) return {cls:'cat-activity',label:'Activity'};
+        if(t.includes('meet')||t.includes('parent')||t.includes('ptm')) return {cls:'cat-meeting',label:'Meeting'};
+        if(t.includes('tech')||t.includes('cod')||t.includes('robot')||t.includes('computer')) return {cls:'cat-tech',label:'Tech'};
+        if(t.includes('academ')||t.includes('exam')||t.includes('workshop')||t.includes('science')||t.includes('olympiad')) return {cls:'cat-academic',label:'Academic'};
+        const firstWord=t.split(/[\s,;]+/)[0];
+        const label=firstWord.charAt(0).toUpperCase()+firstWord.slice(1);
+        return {cls:'cat-academic',label:label};
+    }
+
+    function parseDate(isoStr){
+        try{
+            const d=new Date(isoStr);
+            const day=d.getDate().toString().padStart(2,'0');
+            const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            const month=months[d.getMonth()];
+            const year=d.getFullYear();
+            return {day,month,year,full:day+' '+month+' '+year};
+        }catch(e){return {day:'--',month:'---',year:'----',full:'-- --- ----'}}
+    }
+
+    function readTime(text){
+        const clean=text.replace(/<[^>]*>/g,'').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim();
+        const words=clean.split(' ').length;
+        return Math.max(1,Math.ceil(words/200))+' min';
+    }
+
+    function stripHtml(html){
+        const tmp=document.createElement('div');tmp.innerHTML=html;return tmp.textContent||tmp.innerText||'';
+    }
+
+    function renderNewsSkeletons(){
+        const track=document.getElementById('newsTrack');
+        let html='';
+        for(let i=0;i<3;i++){
+            html+=`<div class="nskel" data-card style="width:295px"><div class="nskel-img skel"></div><div class="nskel-body"><div class="nskel-line w60 skel"></div><div class="nskel-title skel"></div><div class="nskel-line w80 skel"></div><div class="nskel-line w40 skel"></div></div></div>`;
+        }
+        track.innerHTML=html;
+        applyNewsWidths();
+    }
+
+    function applyNewsWidths(){
+        applyWidths('newsWrap','newsTrack',newsBP,295,24);
+        const nih=window.innerWidth<640?192:212;
+        document.querySelectorAll('#newsTrack .ni').forEach(c=>c.style.height=nih+'px');
+    }
+
+    function buildNewsCard(post){
+        const cat=getCategory(post.tags);
+        const dt=parseDate(post.created_at);
+        const excerpt=post.excerpt?post.excerpt:stripHtml(post.content).slice(0,120);
+        const truncated=excerpt.length>120?excerpt.slice(0,117)+'...':excerpt;
+        const rt=readTime(post.content||'');
+        const thumb=post.thumbnail||'';
+        const postUrl='post.html?id='+post.id;
+
+        return `<div class="nc" data-card>
+            <a href="${postUrl}" class="ni" style="display:flex;text-decoration:none">
+                ${thumb?`<img src="${thumb}" alt="${post.title}"  loading="lazy"onerror="this.src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=60&auto=format&fit=crop'">`:`<div style="width:100%;height:100%;background:linear-gradient(135deg,#dce4f2,#b8c9e5);display:flex;align-items:center;justify-content:center"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8aa7d3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>`}
+                <span class="nk ${cat.cls}">${cat.label}</span>
+                <div class="nd"><span>${dt.day}</span><span>${dt.month}</span></div>
+            </a>
+            <div class="nb">
+                <div class="nm">
+                    <span class="nmi">${dt.full}</span>
+                    <span style="color:#e7e5e4">&middot;</span>
+                    <span class="nmi"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${rt}</span>
+                </div>
+                <a href="${postUrl}" class="nt" style="text-decoration:none;color:#0a1628;display:block">${post.title}</a>
+                <p class="np">${truncated}</p>
+                <a href="${postUrl}" class="nr">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 12 19"/></svg></a>
+            </div>
+        </div>`;
+    }
+
+    function renderNewsEmpty(){
+        document.getElementById('newsTrack').innerHTML=`<div class="empty-state" style="width:100%;min-width:300px">
+            <div style="width:56px;height:56px;border-radius:16px;background:#f0f4fa;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8aa7d3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg>
+            </div>
+            <p style="font-size:14px;font-weight:600;color:#0a1628;margin-bottom:4px">No updates yet</p>
+            <p style="font-size:12px;color:#8aa7d3">Check back soon for the latest news and events.</p>
+        </div>`;
+    }
+
+    function renderNewsError(msg){
+        document.getElementById('newsTrack').innerHTML=`<div class="empty-state" style="width:100%;min-width:300px">
+            <div style="width:56px;height:56px;border-radius:16px;background:#fef2f2;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <p style="font-size:14px;font-weight:600;color:#0a1628;margin-bottom:4px">Could not load news</p>
+            <p style="font-size:12px;color:#8aa7d3;margin-bottom:16px">${msg||'Something went wrong. Please try again later.'}</p>
+            <button onclick="fetchNews()" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:600;background:#0a1628;color:white;border:none;cursor:pointer;transition:background .2s" onmouseover="this.style.background='#162240'" onmouseout="this.style.background='#0a1628'">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+                Retry
+            </button>
+        </div>`;
+    }
+
+    async function fetchNews(){
+        renderNewsSkeletons();
+        try{
+            const res=await fetch('http://127.0.0.1:8000/posts');
+            if(!res.ok) throw new Error('Server returned '+res.status);
+            const json=await res.json();
+            const posts=Array.isArray(json.data)?json.data:[];
+            if(!posts.length){renderNewsEmpty();return}
+            const track=document.getElementById('newsTrack');
+            track.innerHTML=posts.map(p=>buildNewsCard(p)).join('');
+            applyNewsWidths();
+            if(!newsAutoSetup){setupAutoScroll('newsWrap',4500,310);newsAutoSetup=true}
+        }catch(err){
+            console.error('Failed to fetch news:',err);
+            renderNewsError(err.message);
+        }
+    }
+
+    const newsObs=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{if(e.isIntersecting){fetchNews();newsObs.disconnect()}});
+    },{rootMargin:'200px'});
+    newsObs.observe(document.getElementById('news'));
+
+    /* ─── Gallery Dual Deck ─── */
     const gd=[
         {s:'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=80&auto=format&fit=crop',a:'Campus'},
         {s:'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=700&q=80&auto=format&fit=crop',a:'Library'},
@@ -448,7 +665,7 @@
     buildDeck('galUpper',upperIdx,'anim-right');
     buildDeck('galLower',lowerIdx,'anim-left');
 
-    /* Lightbox */
+    /* ─── Gallery Lightbox ─── */
     let li=0;
     function olb(i){li=i;const l=document.getElementById('lb');document.getElementById('lI').src=gd[i].s.replace(/w=\d+/,'w=1200');document.getElementById('lI').alt=gd[i].a;document.getElementById('lC').textContent=(i+1)+' / '+gd.length;l.classList.add('on');document.body.style.overflow='hidden'}
     function clb(){document.getElementById('lb').classList.remove('on');document.body.style.overflow=''}
@@ -456,7 +673,7 @@
     function lp(){lvn(-1)}function ln(){lvn(1)}
     document.addEventListener('keydown',e=>{if(!document.getElementById('lb').classList.contains('on'))return;if(e.key==='Escape')clb();if(e.key==='ArrowLeft')lp();if(e.key==='ArrowRight')ln()});
 
-    /* Contact form */
+    /* ─── Contact form ─── */
     function handleForm(e){
         e.preventDefault();let valid=true;
         const name=document.getElementById('fName'),phone=document.getElementById('fPhone'),email=document.getElementById('fEmail'),grade=document.getElementById('fGrade');
@@ -474,7 +691,9 @@
     }
     ['fName','fPhone','fEmail','fGrade'].forEach(id=>{document.getElementById(id).addEventListener('input',function(){this.classList.remove('err');this.nextElementSibling.classList.remove('show')})});
 
+    /* ─── Toast ─── */
     let tto;function showToast(m){clearTimeout(tto);document.getElementById('tM2').textContent=m;document.getElementById('tst').classList.add('on');tto=setTimeout(()=>document.getElementById('tst').classList.remove('on'),4000)}
+
     setTimeout(()=>lucide.createIcons(),500);
     </script>
 </body>
