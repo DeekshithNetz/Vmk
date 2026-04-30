@@ -379,6 +379,8 @@
        ═══════════════════════════════════════════ */
     const params=new URLSearchParams(window.location.search);
     const id=params.get('id');
+    let currentPost = {};
+
 
     async function loadPost(){
         if(!id){
@@ -390,6 +392,9 @@
             const res=await fetch(`https://vmk-production-d390.up.railway.app/posts/${id}`);
             if(!res.ok) throw new Error('Server returned '+res.status);
             const data=await res.json();
+            
+    currentPost = data; // ✅ store full post
+    
 
             /* Build thumbnail URL */
             let fullImg='';
@@ -470,12 +475,25 @@
        SHARE FUNCTIONS
        ═══════════════════════════════════════════ */
     function getUrl(){return window.location.href}
-
+function getEmoji(){
+    const tags = (currentPost.tags || '').toLowerCase();
+    if(tags.includes('sports')) return '🏆';
+    if(tags.includes('event')) return '🎉';
+    if(tags.includes('tech')) return '💻';
+    if(tags.includes('academic')) return '📚';
+    return '📢';
+}
     function shareWhatsApp(){
-        const url=getUrl();
-        const title=document.getElementById('articleTitle')?.textContent||'';
-        window.open(`https://wa.me/?text=${encodeURIComponent(title+' — '+url)}`);
-    }
+    const url = getUrl();
+    const title = (currentPost.title || '').trim();
+    const excerpt = (currentPost.excerpt || '').trim();
+
+    const emoji = getEmoji ? getEmoji() : '📢';
+
+    const text = `${emoji} *${title}*\n\n${excerpt}\n\n👉 Read more: ${url}`;
+
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
+}
 
     function shareTwitter(){
         const url=getUrl();

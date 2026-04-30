@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extracurricular Activities — Vijaya Makkala Koota</title>
+    <meta name="description" content="Vijaya Makkala Koota offers Yakshagana, Bharatanatyam, Western Dance, Singing, Karate, and Bhajana Singing to nurture holistic student development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 50:'#f0f4fa', 100:'#dce4f2', 200:'#b8c9e5', 300:'#8aa7d3', 400:'#5a82be', 500:'#3b66aa', 600:'#2d5191', 700:'#274377', 800:'#162240', 900:'#0a1628', 950:'#060e1a' },
+                        gold: { 50:'#fdf9ef', 100:'#faf0d4', 200:'#f4dea5', 300:'#ecc96f', 400:'#e4b44a', 500:'#c9a84c', 600:'#b08a32', 700:'#926a2a', 800:'#785428', 900:'#644625' },
+                        slate2: '#f8f9fc'
+                    },
+                    fontFamily: { inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        *{font-family:'Inter',sans-serif;box-sizing:border-box}
+        ::-webkit-scrollbar{width:5px;height:5px}
+        ::-webkit-scrollbar-track{background:#f8f9fc}
+        ::-webkit-scrollbar-thumb{background:#b8c9e5;border-radius:4px}
+        .nav-bar{background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,0.05)}
+        .nl{color:#274377;font-size:13px;font-weight:500;transition:color .25s}.nl:hover{color:#0a1628}
+        .lt{color:#0a1628}.lb-icon{color:#274377}
+        .ph-text{color:#274377}
+        .cta-btn{background:#c9a84c;color:#0a1628}.cta-btn:hover{background:#b08a32}
+        .mob{transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+        .mob.open{transform:translateX(0)}
+        .mob-ov{opacity:0;visibility:hidden;transition:all .35s}.mob-ov.open{opacity:1;visibility:visible}
+        .mob-link{display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:14px;transition:all .25s;color:rgba(255,255,255,0.7);font-size:14px;font-weight:500}
+        .mob-link:hover{background:rgba(255,255,255,0.06);color:white}
+        .mob-link .mob-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);flex-shrink:0;transition:all .25s}
+        .mob-link:hover .mob-ico{background:rgba(201,168,76,0.15)}.mob-link:hover .mob-ico svg{color:#e4b44a}
+        .mob-link .mob-lbl{flex:1}.mob-link .mob-arr{opacity:0;transition:all .25s;transform:translateX(-4px)}.mob-link:hover .mob-arr{opacity:0.4;transform:translateX(0)}
+        .act-card{background:white;border-radius:24px;overflow:hidden;border:1px solid #e8ecf2;transition:all .4s cubic-bezier(.25,.46,.45,.94);display:flex;flex-direction:column}
+        .act-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px -16px rgba(10,22,40,0.14);border-color:#c9a84c}
+        .act-card .act-img{position:relative;overflow:hidden;height:240px;flex-shrink:0}
+        .act-card .act-img img{transition:transform .65s cubic-bezier(.25,.46,.45,.94);display:block;width:100%;height:100%;object-fit:cover}
+        .act-card:hover .act-img img{transform:scale(1.06)}
+        .act-card .act-badge{position:absolute;top:16px;left:16px;z-index:2;padding:6px 14px;border-radius:8px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+        .act-card .act-body{padding:24px 24px 28px;flex:1;display:flex;flex-direction:column}
+        .act-card .act-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:all .3s}
+        .act-card:hover .act-icon{transform:scale(1.08)}
+        .act-card .act-name{font-size:20px;font-weight:800;color:#0a1628;line-height:1.3;margin-bottom:10px}
+        .act-card .act-desc{font-size:13px;color:#5a82be;line-height:1.75;flex:1}
+        .act-card .act-footer{margin-top:20px;padding-top:16px;border-top:1px solid #edf1f7}
+        .act-card .act-meta{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:#8aa7d3}
+        .tt{transform:translateY(80px);opacity:0;transition:all .4s}.tt.on{transform:translateY(0);opacity:1}
+    </style>
+</head>
+<body class="bg-white text-navy-900 antialiased">
+
+    <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-[68px]">
+                <a href="index.html" class="flex items-center gap-2.5"><div class="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="lt font-bold text-[16px] tracking-tight">Vijaya Makkala Koota</span></a>
+                <div class="hidden xl:flex items-center gap-8"><a href="index.html#why" class="nl">Why Vijaya Makkala Koota</a><a href="index.html#about" class="nl">About</a><a href="index.html#ach" class="nl">Achievements</a><a href="index.html#fac" class="nl">Facilities</a><a href="user.html" class="nl">News</a><a href="#" class="nl text-gold-600 font-semibold">Activities</a><a href="index.html#gallery" class="nl">Gallery</a><a href="index.html#test" class="nl">Testimonials</a><a href="index.html#contact" class="nl">Contact</a></div>
+                <div class="flex items-center gap-3">
+                    <a href="tel:+918012345678" class="hidden lg:flex items-center gap-1.5 ph-text text-xs"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+                    <a href="index.html#contact" class="hidden sm:inline-flex items-center cta-btn text-xs font-bold px-5 py-2.5 rounded-full transition-all">Admissions 2026</a>
+                    <button id="mt" class="xl:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-navy-50" aria-label="Menu"><i data-lucide="menu" class="lb-icon w-5 h-5"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="mo" class="mob-ov fixed inset-0 z-[55] bg-black/60 backdrop-blur-sm" onclick="cd()"></div>
+    <div id="md" class="mob fixed top-0 right-0 bottom-0 z-[60] w-[300px] bg-navy-900 shadow-2xl flex flex-col">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-white/5"><div class="flex items-center gap-2.5"><div class="w-8 h-8 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-400"></i></div><span class="text-sm font-bold text-white">Vijaya Makkala Koota</span></div><button onclick="cd()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5"><i data-lucide="x" class="w-4 h-4 text-white/40"></i></button></div>
+        <div class="flex-1 overflow-y-auto px-4 py-5 space-y-1">
+            <a href="index.html#why" class="dl mob-link"><div class="mob-ico"><i data-lucide="star" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Why Vijaya Makkala Koota</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#about" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#ach" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#fac" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Facilities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="user.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="newspaper" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">News & Events</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="#" class="dl mob-link" style="background:rgba(201,168,76,0.1);color:#e4b44a"><div class="mob-ico" style="background:rgba(201,168,76,0.15)"><i data-lucide="music" class="w-[16px] h-[16px] text-gold-400"></i></div><span class="mob-lbl">Activities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-gold-400/40" style="opacity:1;transform:translateX(0)"></i></a>
+            <a href="index.html#gallery" class="dl mob-link"><div class="mob-ico"><i data-lucide="image" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#test" class="dl mob-link"><div class="mob-ico"><i data-lucide="message-circle" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Testimonials</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#contact" class="dl mob-link"><div class="mob-ico"><i data-lucide="mail" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Contact Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+        </div>
+        <div class="px-5 py-5 border-t border-white/5 space-y-3">
+            <a href="index.html#contact" class="dl flex items-center justify-center gap-2 w-full bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold py-3.5 rounded-xl transition-colors"><i data-lucide="graduation-cap" class="w-4 h-4"></i>Admissions 2026</a>
+            <a href="tel:+918012345678" class="dl flex items-center justify-center gap-2 w-full text-white/40 hover:text-white/60 text-xs font-medium py-2 transition-colors"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+        </div>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <section class="pt-[100px] pb-10 sm:pt-[110px] sm:pb-14 bg-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <a href="index.html" class="inline-flex items-center gap-2 text-xs text-navy-400 hover:text-navy-700 font-medium transition-colors mb-6">
+                <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>Back to Home
+            </a>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]">
+                <span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-gold-500 mb-1">Beyond the Classroom</span>
+                Extracurricular Activities
+            </h1>
+            <p class="text-sm text-navy-400 font-light leading-relaxed mt-4 max-w-lg">Nurturing talent, building confidence, and preserving our cultural heritage through diverse activities.</p>
+        </div>
+    </section>
+
+    <!-- ACTIVITIES GRID -->
+    <section class="pb-16 sm:pb-20 lg:pb-24 bg-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+
+                <!-- Yakshagana -->
+                <div class="act-card">
+                    <div class="act-img">
+                        <img src="https://images.unsplash.com/photo-1504253163759-c23fccaebb55?w=700&q=80&auto=format&fit=crop" alt="Yakshagana" loading="lazy">
+                        <span class="act-badge bg-navy-900/80 text-white">Traditional</span>
+                    </div>
+                    <div class="act-body">
+                        <div class="act-icon bg-navy-900"><i data-lucide="drama" class="w-5 h-5 text-gold-400"></i></div>
+                        <h3 class="act-name">Yakshagana</h3>
+                        <p class="act-desc">Our traditional Yakshagana training preserves Karnataka's rich folk art heritage. Students learn the art of expression through dance, dialogue, and elaborate costumes.</p>
+                        <div class="act-footer">
+                            <span class="act-meta"><i data-lucide="users" class="w-3.5 h-3.5"></i>Grade 3 – 10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bharatanatyam -->
+                <div class="act-card">
+                    <div class="act-img">
+                        <img src="https://images.unsplash.com/photo-1534131707746-25d604851a1f?w=700&q=80&auto=format&fit=crop" alt="Bharatanatyam" loading="lazy">
+                        <span class="act-badge bg-gold-500/90 text-navy-900">Classical Dance</span>
+                    </div>
+                    <div class="act-body">
+                        <div class="act-icon bg-gold-500"><i data-lucide="sparkles" class="w-5 h-5 text-navy-900"></i></div>
+                        <h3 class="act-name">Bharatanatyam</h3>
+                        <p class="act-desc">Students master the fundamentals of Bharatanatyam including adavus, mudras, and abhinaya. Regular performances help build stage confidence and grace.</p>
+                        <div class="act-footer">
+                            <span class="act-meta"><i data-lucide="users" class="w-3.5 h-3.5"></i>LKG – Grade 10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Western Dance -->
+                <div class="act-card">
+                    <div class="act-img">
+                        <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=700&q=80&auto=format&fit=crop" alt="Western Dance" loading="lazy">
+                        <span class="act-badge bg-navy-600/85 text-white">Contemporary</span>
+                    </div>
+                    <div class="act-body">
+                        <div class="act-icon bg-navy-900"><i data-lucide="music-2" class="w-5 h-5 text-gold-400"></i></div>
+                        <h3 class="act-name">Western Dance</h3>
+                        <p class="act-desc">From hip-hop to contemporary, our Western dance classes teach rhythm, coordination, and creative expression. Students perform at school events and competitions.</p>
+                        <div class="act-footer">
+                            <span class="act-meta"><i data-lucide="users" class="w-3.5 h-3.5"></i>Grade 1 – 10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Singing -->
+                <div class="act-card">
+                    <div class="act-img">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=700&q=80&auto=format&fit=crop" alt="Singing" loading="lazy">
+                        <span class="act-badge bg-navy-900/80 text-white">Music</span>
+                    </div>
+                    <div class="act-body">
+                        <div class="act-icon bg-gold-500"><i data-lucide="mic" class="w-5 h-5 text-navy-900"></i></div>
+                        <h3 class="act-name">Singing</h3>
+                        <p class="act-desc">Vocal training covers classical, semi-classical, and light music. Students develop breath control, pitch accuracy, and stage presence through regular practice.</p>
+                        <div class="act-footer">
+                            <span class="act-meta"><i data-lucide="users" class="w-3.5 h-3.5"></i>LKG – Grade 10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Karate -->
+                <div class="act-card">
+                    <div class="act-img">
+                        <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=700&q=80&auto=format&fit=crop" alt="Karate" loading="lazy">
+                        <span class="act-badge bg-red-600/85 text-white">Martial Arts</span>
+                    </div>
+                    <div class="act-body">
+                        <div class="act-icon bg-navy-900"><i data-lucide="shield" class="w-5 h-5 text-gold-400"></i></div>
+                        <h3 class="act-name">Karate</h3>
+                        <p class="act-desc">Our certified karate program teaches self-defense, discipline, and respect. Students progress through belt levels and participate in district and state championships.</p>
+                        <div class="act-footer">
+                            <span class="act-meta"><i data-lucide="users" class="w-3.5 h-3.5"></i>Grade 1 – 10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bhajana Singing -->
+                <div class="act-card">
+                    <div class="act-img">
+                        <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=700&q=80&auto=format&fit=crop" alt="Bhajana Singing" loading="lazy">
+                        <span class="act-badge bg-gold-500/90 text-navy-900">Devotional</span>
+                    </div>
+                    <div class="act-body">
+                        <div class="act-icon bg-gold-500"><i data-lucide="heart" class="w-5 h-5 text-navy-900"></i></div>
+                        <h3 class="act-name">Bhajana Singing</h3>
+                        <p class="act-desc">Students learn traditional devotional songs and keerthanes, connecting with our spiritual roots. Regular bhajana sessions foster community bonding and inner peace.</p>
+                        <div class="act-footer">
+                            <span class="act-meta"><i data-lucide="users" class="w-3.5 h-3.5"></i>All Grades</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 sm:py-20 bg-navy-900">
+        <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-snug mb-4">Give Your Child the Gift of <span class="text-gold-300">Holistic Growth</span></h2>
+            <p class="text-sm text-navy-300 font-light leading-relaxed max-w-lg mx-auto mb-8">Our extracurricular activities complement academic learning and help students become confident, well-rounded individuals.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="index.html#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold px-7 py-3.5 rounded-lg transition-all">Submit an Enquiry</a>
+                <a href="tel:+918012345678" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-navy-700 hover:border-navy-600 text-navy-200 hover:text-white text-sm font-medium px-7 py-3.5 rounded-lg transition-all">Call +91 80 1234 5678</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-white pt-12 sm:pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+                <div><div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div><p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from LKG to Grade 10 with care, confidence, and character since 2010.</p><div class="flex items-center gap-2.5"><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="facebook" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="instagram" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="youtube" class="w-3.5 h-3.5 text-navy-300"></i></a></div></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Quick Links</h4><ul class="space-y-3"><li><a href="index.html#about" class="text-sm text-navy-300 hover:text-white transition-colors">About Us</a></li><li><a href="index.html#fac" class="text-sm text-navy-300 hover:text-white transition-colors">Facilities</a></li><li><a href="index.html#ach" class="text-sm text-navy-300 hover:text-white transition-colors">Achievements</a></li><li><a href="index.html#gallery" class="text-sm text-navy-300 hover:text-white transition-colors">Gallery</a></li></ul></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Activities</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Yakshagana</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Bharatanatyam</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Western Dance</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Singing</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Karate</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Bhajana Singing</a></li></ul></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Contact</h4><ul class="space-y-3.5"><li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">42, Temple Road, Jayanagar, Bangalore – 560041</span></li><li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">+91 80 1234 5678</span></li><li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">info@vijayamakkalakoota.edu.in</span></li><li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li></ul></div>
+            </div>
+            <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-xs text-navy-500">© 2025 Vijaya Makkala Koota. All rights reserved.</p><div class="flex items-center gap-5"><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Privacy</a><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Terms</a></div></div>
+        </div>
+    </footer>
+
+    <!-- TOAST -->
+    <div id="tst" class="tt fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] bg-navy-900 text-white text-sm px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-2.5 max-w-sm border border-navy-800"><i data-lucide="info" class="w-4 h-4 text-gold-400 flex-shrink-0"></i><span id="tM2"></span></div>
+
+    <script>
+    lucide.createIcons();
+    const md=document.getElementById('md'),mo=document.getElementById('mo');
+    function od(){md.classList.add('open');mo.classList.add('open');document.body.style.overflow='hidden'}
+    function cd(){md.classList.remove('open');mo.classList.remove('open');document.body.style.overflow=''}
+    document.getElementById('mt').addEventListener('click',od);
+    document.querySelectorAll('.dl').forEach(l=>l.addEventListener('click',cd));
+    let tto;function showToast(m){clearTimeout(tto);document.getElementById('tM2').textContent=m;document.getElementById('tst').classList.add('on');tto=setTimeout(()=>document.getElementById('tst').classList.remove('on'),4000)}
+    setTimeout(()=>lucide.createIcons(),500);
+    </script>
+</body>
+</html>

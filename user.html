@@ -435,10 +435,13 @@
         if(isLoading) return;
         isLoading=true;
         renderSkeletons();
-        console.log(currentTag);
+        //console.log(currentTag);
         try{
-            const res=await fetch(`https://vmk-production-d390.up.railway.app/posts?page=${currentPage}&limit=${POSTS_PER_PAGE}&tag=${currentTag}`);
-            if(!res.ok) throw new Error('Server returned '+res.status);
+        console.log("TAG:", currentTag);
+console.log("FINAL URL:", `https://vmk-production-d390.up.railway.app/posts?page=${currentPage}&limit=${POSTS_PER_PAGE}&tag=${currentTag}`);
+            const res = await fetch(
+  `https://vmk-production-d390.up.railway.app/posts?page=${currentPage}&limit=${POSTS_PER_PAGE}&tag=${encodeURIComponent(currentTag || '')}`
+);            if(!res.ok) throw new Error('Server returned '+res.status);
             const result=await res.json();
             const posts=Array.isArray(result.data)?result.data:[];
 
@@ -494,8 +497,14 @@
 
     let resizeTimer;
     window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>buildPagination(),250)});
-
-    load();
+    
+function getTagFromURL(){
+    const params = new URLSearchParams(window.location.search);
+    return (params.get('tag') || '').toLowerCase();
+}
+currentTag = getTagFromURL(); // ⭐ important
+load();
+    
     setTimeout(()=>lucide.createIcons(),500);
     </script>
 </body>

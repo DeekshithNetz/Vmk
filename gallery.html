@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — Vijaya Makkala Koota</title>
+    <meta name="description" content="Explore campus life at Vijaya Makkala Koota through our gallery — classrooms, events, sports, labs, and everyday moments.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 50:'#f0f4fa', 100:'#dce4f2', 200:'#b8c9e5', 300:'#8aa7d3', 400:'#5a82be', 500:'#3b66aa', 600:'#2d5191', 700:'#274377', 800:'#162240', 900:'#0a1628', 950:'#060e1a' },
+                        gold: { 50:'#fdf9ef', 100:'#faf0d4', 200:'#f4dea5', 300:'#ecc96f', 400:'#e4b44a', 500:'#c9a84c', 600:'#b08a32', 700:'#926a2a', 800:'#785428', 900:'#644625' },
+                        slate2: '#f8f9fc'
+                    },
+                    fontFamily: { inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        *{font-family:'Inter',sans-serif;box-sizing:border-box}
+        ::-webkit-scrollbar{width:5px;height:5px}
+        ::-webkit-scrollbar-track{background:#f8f9fc}
+        ::-webkit-scrollbar-thumb{background:#b8c9e5;border-radius:4px}
+        .nav-bar{background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,0.05)}
+        .nl{color:#274377;font-size:13px;font-weight:500;transition:color .25s}.nl:hover{color:#0a1628}
+        .lt{color:#0a1628}
+        .lb-icon{color:#274377}
+        .ph-text{color:#274377}
+        .cta-btn{background:#c9a84c;color:#0a1628}.cta-btn:hover{background:#b08a32}
+        .mob{transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+        .mob.open{transform:translateX(0)}
+        .mob-ov{opacity:0;visibility:hidden;transition:all .35s}.mob-ov.open{opacity:1;visibility:visible}
+        .mob-link{display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:14px;transition:all .25s;color:rgba(255,255,255,0.7);font-size:14px;font-weight:500}
+        .mob-link:hover{background:rgba(255,255,255,0.06);color:white}
+        .mob-link .mob-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);flex-shrink:0;transition:all .25s}
+        .mob-link:hover .mob-ico{background:rgba(201,168,76,0.15)}.mob-link:hover .mob-ico svg{color:#e4b44a}
+        .mob-link .mob-lbl{flex:1}.mob-link .mob-arr{opacity:0;transition:all .25s;transform:translateX(-4px)}.mob-link:hover .mob-arr{opacity:0.4;transform:translateX(0)}
+        @keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+        .fu{animation:fu .8s ease forwards}.fd1{animation-delay:.1s;opacity:0}.fd2{animation-delay:.22s;opacity:0}.fd3{animation-delay:.34s;opacity:0}
+
+        /* Filter pills */
+        .fpill{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:100px;font-size:12.5px;font-weight:600;border:1.5px solid #e2e6ee;background:white;color:#5a82be;cursor:pointer;transition:all .25s ease;white-space:nowrap;user-select:none}
+        .fpill:hover{border-color:#b8c9e5;color:#274377;background:#f0f4fa}
+        .fpill.active{background:#0a1628;color:white;border-color:#0a1628}
+        .fpill .fc{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 5px;border-radius:100px;font-size:10px;font-weight:700;background:rgba(90,130,190,0.12);color:#5a82be;transition:all .25s}
+        .fpill.active .fc{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.85)}
+
+        /* Gallery grid */
+        .ggrid{display:grid;grid-template-columns:repeat(1,1fr);gap:16px}
+        @media(min-width:480px){.ggrid{grid-template-columns:repeat(2,1fr);gap:18px}}
+        @media(min-width:768px){.ggrid{grid-template-columns:repeat(3,1fr);gap:20px}}
+        @media(min-width:1024px){.ggrid{grid-template-columns:repeat(4,1fr);gap:20px}}
+
+        /* Gallery item */
+        .gitem{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;border:1px solid #e8ecf2;transition:all .4s cubic-bezier(.25,.46,.45,.94);background:#e8ecf2}
+        .gitem:hover{transform:translateY(-4px);box-shadow:0 18px 48px -14px rgba(10,22,40,0.18);border-color:#c9a84c}
+        .gitem img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.25,.46,.45,.94)}
+        .gitem:hover img{transform:scale(1.06)}
+        .gitem-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.7) 0%,rgba(10,22,40,0.1) 45%,transparent 100%);opacity:0;transition:opacity .35s;display:flex;flex-direction:column;justify-content:flex-end;padding:18px 16px}
+        .gitem:hover .gitem-ov{opacity:1}
+        .gitem-ov h4{font-size:13.5px;font-weight:700;color:white;line-height:1.35;margin-bottom:4px;text-shadow:0 1px 6px rgba(0,0,0,0.15)}
+        .gitem-ov span{font-size:10.5px;font-weight:500;color:rgba(255,255,255,0.65)}
+        .gitem-badge{position:absolute;top:12px;left:12px;z-index:2;padding:4px 10px;border-radius:7px;font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(255,255,255,0.92);color:#0a1628;box-shadow:0 1px 8px rgba(0,0,0,0.06);opacity:0;transform:translateY(-6px);transition:all .3s}
+        .gitem:hover .gitem-badge{opacity:1;transform:translateY(0)}
+        .gitem-zoom{position:absolute;top:12px;right:12px;z-index:2;width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(-6px);transition:all .3s;box-shadow:0 1px 8px rgba(0,0,0,0.06)}
+        .gitem:hover .gitem-zoom{opacity:1;transform:translateY(0)}
+
+        /* Featured (tall) item */
+        .gitem.featured{grid-row:span 2}
+
+        /* Lightbox */
+        .lb{opacity:0;visibility:hidden;transition:all .3s}.lb.on{opacity:1;visibility:visible}.lb img{transform:scale(.92);transition:transform .3s}.lb.on img{transform:scale(1)}
+        .tt{transform:translateY(80px);opacity:0;transition:all .4s}.tt.on{transform:translateY(0);opacity:1}
+
+        /* Counter bar */
+        .cbar{background:white;border-radius:100px;padding:6px 16px;border:1px solid #e8ecf2;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#5a82be;transition:all .3s}
+        .cbar span{color:#0a1628}
+
+        /* Skeleton */
+        .skel{background:linear-gradient(90deg,#e8ecf2 25%,#f0f4fa 50%,#e8ecf2 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:12px}
+        @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+        .gskel{border-radius:20px;border:1px solid #e8ecf2}
+
+        /* Empty state */
+        .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;text-align:center}
+
+        /* Back to top */
+        .btt{position:fixed;bottom:24px;right:24px;z-50;width:44px;height:44px;border-radius:14px;background:#0a1628;color:white;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(10,22,40,0.25);opacity:0;visibility:hidden;transform:translateY(12px);transition:all .35s;cursor:pointer;border:none;z-index:40}
+        .btt.on{opacity:1;visibility:visible;transform:translateY(0)}
+        .btt:hover{background:#162240;transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,22,40,0.3)}
+    </style>
+</head>
+<body class="bg-slate2 text-navy-900 antialiased">
+
+    <!-- NAV -->
+    <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-[68px]">
+                <a href="index.html" class="flex items-center gap-2.5"><div class="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="lt font-bold text-[16px] tracking-tight">Vijaya Makkala Koota</span></a>
+                <div class="hidden xl:flex items-center gap-8"><a href="index.html#why" class="nl">Why Vijaya Makkala Koota</a><a href="index.html#about" class="nl">About</a><a href="index.html#ach" class="nl">Achievements</a><a href="index.html#fac" class="nl">Facilities</a><a href="user.html" class="nl">News</a><a href="gallery.html" class="nl" style="color:#0a1628;font-weight:700">Gallery</a><a href="index.html#test" class="nl">Testimonials</a><a href="index.html#contact" class="nl">Contact</a></div>
+                <div class="flex items-center gap-3">
+                    <a href="tel:+918012345678" class="hidden lg:flex items-center gap-1.5 ph-text text-xs"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+                    <a href="index.html#contact" class="hidden sm:inline-flex items-center cta-btn text-xs font-bold px-5 py-2.5 rounded-full transition-all">Admissions 2026</a>
+                    <button id="mt" class="xl:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-navy-50" aria-label="Menu"><i data-lucide="menu" class="lb-icon w-5 h-5"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="mo" class="mob-ov fixed inset-0 z-[55] bg-black/60 backdrop-blur-sm" onclick="cd()"></div>
+    <div id="md" class="mob fixed top-0 right-0 bottom-0 z-[60] w-[300px] bg-navy-900 shadow-2xl flex flex-col">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-white/5"><div class="flex items-center gap-2.5"><div class="w-8 h-8 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-400"></i></div><span class="text-sm font-bold text-white">Vijaya Makkala Koota</span></div><button onclick="cd()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5"><i data-lucide="x" class="w-4 h-4 text-white/40"></i></button></div>
+        <div class="flex-1 overflow-y-auto px-4 py-5 space-y-1">
+            <a href="index.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="home" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Home</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#why" class="dl mob-link"><div class="mob-ico"><i data-lucide="star" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Why Vijaya Makkala Koota</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#about" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#ach" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#fac" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Facilities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="user.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="newspaper" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">News & Events</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="gallery.html" class="mob-link" style="background:rgba(201,168,76,0.1);color:#e4b44a;border-radius:14px"><div class="mob-ico" style="background:rgba(201,168,76,0.15)"><i data-lucide="image" class="w-[16px] h-[16px] text-gold-400"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4" style="opacity:0.6;color:#e4b44a"></i></a>
+            <a href="index.html#test" class="dl mob-link"><div class="mob-ico"><i data-lucide="message-circle" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Testimonials</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#contact" class="dl mob-link"><div class="mob-ico"><i data-lucide="mail" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Contact Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+        </div>
+        <div class="px-5 py-5 border-t border-white/5 space-y-3">
+            <a href="index.html#contact" class="dl flex items-center justify-center gap-2 w-full bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold py-3.5 rounded-xl transition-colors"><i data-lucide="graduation-cap" class="w-4 h-4"></i>Admissions 2026</a>
+            <a href="tel:+918012345678" class="dl flex items-center justify-center gap-2 w-full text-white/40 hover:text-white/60 text-xs font-medium py-2 transition-colors"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+        </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="relative pt-[68px] overflow-hidden">
+        <div class="relative h-[280px] sm:h-[340px] lg:h-[380px]">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80&auto=format&fit=crop" alt="Gallery" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-950/50 to-navy-950/20"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-10 sm:pb-14">
+                <div class="fu">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-4 py-1.5 mb-4"><span class="w-1.5 h-1.5 bg-gold-400 rounded-full"></span><span class="text-white/85 text-[11px] font-medium">Photo Gallery</span></div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.08] mb-2">Campus <span class="text-gold-300">Gallery</span></h1>
+                    <p class="text-sm text-white/50 font-light max-w-md">A visual journey through the spaces, faces, and moments that make Vijaya Makkala Koota special.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTERS + GRID -->
+    <section class="py-10 sm:py-14 lg:py-16">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <!-- Filters -->
+            <div class="flex items-center gap-3 mb-8 overflow-x-auto pb-2" style="scrollbar-width:none;-ms-overflow-style:none" id="filterWrap">
+                <button class="fpill active" data-cat="all" onclick="filterGallery('all',this)">
+                    <i data-lucide="grid-3x3" class="w-3.5 h-3.5"></i>All<span class="fc" id="cAll">0</span>
+                </button>
+                <button class="fpill" data-cat="campus" onclick="filterGallery('campus',this)">Campus<span class="fc" id="cCampus">0</span></button>
+                <button class="fpill" data-cat="classroom" onclick="filterGallery('classroom',this)">Classrooms<span class="fc" id="cClassroom">0</span></button>
+                <button class="fpill" data-cat="sports" onclick="filterGallery('sports',this)">Sports<span class="fc" id="cSports">0</span></button>
+                <button class="fpill" data-cat="labs" onclick="filterGallery('labs',this)">Labs<span class="fc" id="cLabs">0</span></button>
+                <button class="fpill" data-cat="library" onclick="filterGallery('library',this)">Library<span class="fc" id="cLibrary">0</span></button>
+                <button class="fpill" data-cat="events" onclick="filterGallery('events',this)">Events<span class="fc" id="cEvents">0</span></button>
+                <button class="fpill" data-cat="activities" onclick="filterGallery('activities',this)">Activities<span class="fc" id="cActivities">0</span></button>
+            </div>
+
+            <!-- Counter bar -->
+            <div class="flex items-center justify-between mb-6">
+                <div class="cbar" id="counterBar"><span id="showingCount">0</span> photos</div>
+                <div class="flex items-center gap-2">
+                    <button onclick="setLayout('grid')" id="btnGrid" class="w-9 h-9 rounded-lg bg-navy-900 text-white flex items-center justify-center transition-all" title="Grid view"><i data-lucide="grid-3x3" class="w-4 h-4"></i></button>
+                    <button onclick="setLayout('masonry')" id="btnMasonry" class="w-9 h-9 rounded-lg bg-white text-navy-400 border border-navy-100 flex items-center justify-center hover:bg-navy-50 transition-all" title="Masonry view"><i data-lucide="layout-dashboard" class="w-4 h-4"></i></button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="ggrid" id="galleryGrid"></div>
+
+            <!-- Load more -->
+            <div class="flex justify-center mt-10" id="loadMoreWrap" style="display:none">
+                <button onclick="loadMore()" class="inline-flex items-center gap-2 bg-white hover:bg-navy-50 text-navy-900 text-xs font-bold px-6 py-3 rounded-full border border-navy-100 transition-all shadow-sm hover:shadow-md">
+                    <span id="loadMoreText">Load More Photos</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY CTA -->
+    <section class="py-14 sm:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="bg-navy-900 rounded-2xl p-8 sm:p-12 lg:p-14 text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-navy-800/50 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-[200px] h-[200px] bg-gold-500/10 rounded-full blur-[60px] translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
+                <div class="relative z-10">
+                    <div class="w-14 h-14 bg-gold-500/15 rounded-2xl flex items-center justify-center mx-auto mb-5"><i data-lucide="camera" class="w-7 h-7 text-gold-400"></i></div>
+                    <h3 class="text-xl sm:text-2xl lg:text-[1.7rem] font-bold text-white tracking-tight leading-snug mb-3">Want to See Our Campus in Person?</h3>
+                    <p class="text-sm text-navy-300 font-light leading-relaxed max-w-lg mx-auto mb-8">Schedule a campus visit and experience the Vijaya Makkala Koota difference firsthand. We'd love to show you around.</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                        <a href="index.html#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold px-7 py-3.5 rounded-lg transition-all">Schedule a Visit</a>
+                        <a href="tel:+918012345678" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-navy-700 hover:border-navy-600 text-navy-200 hover:text-white text-sm font-medium px-7 py-3.5 rounded-lg transition-all">Call +91 80 1234 5678</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 text-white pt-12 sm:pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+                <div><div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div><p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from LKG to Grade 10 with care, confidence, and character since 2010.</p><div class="flex items-center gap-2.5"><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="facebook" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="instagram" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="youtube" class="w-3.5 h-3.5 text-navy-300"></i></a></div></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Quick Links</h4><ul class="space-y-3"><li><a href="index.html#about" class="text-sm text-navy-300 hover:text-white transition-colors">About Us</a></li><li><a href="index.html#fac" class="text-sm text-navy-300 hover:text-white transition-colors">Facilities</a></li><li><a href="index.html#ach" class="text-sm text-navy-300 hover:text-white transition-colors">Achievements</a></li><li><a href="gallery.html" class="text-sm text-navy-300 hover:text-white transition-colors">Gallery</a></li></ul></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Academics</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Pre-Primary (LKG–UKG)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Primary (1–5)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Middle (6–8)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Secondary (9–10)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Exam Results</a></li></ul></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Contact</h4><ul class="space-y-3.5"><li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">42, Temple Road, Jayanagar, Bangalore – 560041</span></li><li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">+91 80 1234 5678</span></li><li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">info@vijayamakkalakoota.edu.in</span></li><li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li></ul></div>
+            </div>
+            <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-xs text-navy-500">© 2025 Vijaya Makkala Koota. All rights reserved.</p><div class="flex items-center gap-5"><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Privacy</a><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Terms</a></div></div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div id="lb" class="lb fixed inset-0 z-[100] bg-navy-950/95 flex items-center justify-center p-4" onclick="clb()">
+        <button onclick="event.stopPropagation();clb()" class="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center z-10 transition-colors"><i data-lucide="x" class="w-5 h-5 text-white"></i></button>
+        <button onclick="event.stopPropagation();lp()" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center z-10 transition-colors"><i data-lucide="chevron-left" class="w-5 h-5 text-white"></i></button>
+        <button onclick="event.stopPropagation();ln()" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center z-10 transition-colors"><i data-lucide="chevron-right" class="w-5 h-5 text-white"></i></button>
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-4 z-10">
+            <div class="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 text-white/50 text-xs font-medium" id="lC"></div>
+        </div>
+        <div class="absolute bottom-5 right-5 z-10" id="lInfo" style="display:none">
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-2.5 text-right">
+                <div class="text-white text-xs font-bold" id="lTitle"></div>
+                <div class="text-white/40 text-[10px] font-medium mt-0.5" id="lCat"></div>
+            </div>
+        </div>
+        <img id="lI" src="" alt="" class="max-w-full max-h-[82vh] object-contain rounded-lg" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- TOAST -->
+    <div id="tst" class="tt fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] bg-navy-900 text-white text-sm px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-2.5 max-w-sm border border-navy-800"><i data-lucide="info" class="w-4 h-4 text-gold-400 flex-shrink-0"></i><span id="tM2"></span></div>
+
+    <!-- BACK TO TOP -->
+    <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i data-lucide="arrow-up" class="w-5 h-5"></i></button>
+
+    <script>
+    lucide.createIcons();
+
+    /* ─── Mobile menu ─── */
+    const md=document.getElementById('md'),mo=document.getElementById('mo');
+    function od(){md.classList.add('open');mo.classList.add('open');document.body.style.overflow='hidden'}
+    function cd(){md.classList.remove('open');mo.classList.remove('open');document.body.style.overflow=''}
+    document.getElementById('mt').addEventListener('click',od);
+    document.querySelectorAll('.dl').forEach(l=>l.addEventListener('click',cd));
+
+    /* ─── Back to top ─── */
+    const btt=document.getElementById('btt');
+    window.addEventListener('scroll',()=>{btt.classList.toggle('on',window.scrollY>400)});
+
+    /* ═══════════════════════════════════════════════════════
+       GALLERY DATA
+       ═══════════════════════════════════════════════════════ */
+    const allPhotos = [
+        // Campus
+        {id:1, src:'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80&auto=format&fit=crop', title:'Main Building Entrance', cat:'campus', h:320},
+        {id:2, src:'https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80&auto=format&fit=crop', title:'School Campus Aerial View', cat:'campus', h:280},
+        {id:3, src:'https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&q=80&auto=format&fit=crop', title:'Front Garden & Pathway', cat:'campus', h:360},
+        {id:4, src:'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80&auto=format&fit=crop', title:'School Auditorium', cat:'campus', h:300},
+        {id:5, src:'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80&auto=format&fit=crop', title:'Campus Greenery', cat:'campus', h:340},
+        // Classrooms
+        {id:6, src:'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&q=80&auto=format&fit=crop', title:'Smart Classroom Session', cat:'classroom', h:300},
+        {id:7, src:'https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80&auto=format&fit=crop', title:'Interactive Learning', cat:'classroom', h:320},
+        {id:8, src:'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80&auto=format&fit=crop', title:'Group Discussion', cat:'classroom', h:280},
+        {id:9, src:'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80&auto=format&fit=crop', title:'Kindergarten Activity Room', cat:'classroom', h:340},
+        // Sports
+        {id:10, src:'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=800&q=80&auto=format&fit=crop', title:'Cricket Practice Nets', cat:'sports', h:320},
+        {id:11, src:'https://images.unsplash.com/photo-1461896836934-bd45ba8a0a68?w=800&q=80&auto=format&fit=crop', title:'Annual Sports Day', cat:'sports', h:280},
+        {id:12, src:'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80&auto=format&fit=crop', title:'Basketball Court', cat:'sports', h:340},
+        {id:13, src:'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80&auto=format&fit=crop', title:'Track & Field Events', cat:'sports', h:300},
+        {id:14, src:'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80&auto=format&fit=crop', title:'Indoor Games Room', cat:'sports', h:290},
+        // Labs
+        {id:15, src:'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80&auto=format&fit=crop', title:'Science Laboratory', cat:'labs', h:320},
+        {id:16, src:'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80&auto=format&fit=crop', title:'Chemistry Lab Experiments', cat:'labs', h:300},
+        {id:17, src:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80&auto=format&fit=crop', title:'Computer Lab', cat:'labs', h:280},
+        {id:18, src:'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=800&q=80&auto=format&fit=crop', title:'Mathematics Lab', cat:'labs', h:340},
+        // Library
+        {id:19, src:'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&q=80&auto=format&fit=crop', title:'Main Library Hall', cat:'library', h:320},
+        {id:20, src:'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80&auto=format&fit=crop', title:'Reading Section', cat:'library', h:340},
+        {id:21, src:'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80&auto=format&fit=crop', title:'Story Corner for LKG', cat:'library', h:300},
+        // Events
+        {id:22, src:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80&auto=format&fit=crop', title:'Annual Day Celebrations', cat:'events', h:320},
+        {id:23, src:'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80&auto=format&fit=crop', title:'Republic Day Parade', cat:'events', h:280},
+        {id:24, src:'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80&auto=format&fit=crop', title:'School Festival', cat:'events', h:340},
+        {id:25, src:'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80&auto=format&fit=crop', title:'Graduation Ceremony', cat:'events', h:300},
+        {id:26, src:'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80&auto=format&fit=crop', title:'Prize Distribution', cat:'events', h:310},
+        // Activities
+        {id:27, src:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80&auto=format&fit=crop', title:'Art & Craft Session', cat:'activities', h:320},
+        {id:28, src:'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80&auto=format&fit=crop', title:'Music Class', cat:'activities', h:300},
+        {id:29, src:'https://images.unsplash.com/photo-1547153760-18fc86324498?w=800&q=80&auto=format&fit=crop', title:'Dance Practice', cat:'activities', h:340},
+        {id:30, src:'https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=800&q=80&auto=format&fit=crop', title:'Yoga & Meditation', cat:'activities', h:290},
+        {id:31, src:'https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=800&q=80&auto=format&fit=crop', title:'Science Exhibition', cat:'activities', h:310},
+        {id:32, src:'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80&auto=format&fit=crop', title:'Plantation Drive', cat:'activities', h:330},
+    ];
+
+    /* ─── State ─── */
+    let currentCat = 'all';
+    let currentLayout = 'grid';
+    let visibleCount = 16;
+    const batchSize = 12;
+    let filteredPhotos = [...allPhotos];
+
+    /* ─── Count categories ─── */
+    function updateCounts() {
+        const cats = ['all','campus','classroom','sports','labs','library','events','activities'];
+        cats.forEach(c => {
+            const count = c === 'all' ? allPhotos.length : allPhotos.filter(p => p.cat === c).length;
+            const el = document.getElementById('c' + c.charAt(0).toUpperCase() + c.slice(1));
+            if (el) el.textContent = count;
+        });
+    }
+
+    /* ─── Filter ─── */
+    function filterGallery(cat, btn) {
+        currentCat = cat;
+        visibleCount = 16;
+        filteredPhotos = cat === 'all' ? [...allPhotos] : allPhotos.filter(p => p.cat === cat);
+        document.querySelectorAll('.fpill').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        renderGrid();
+    }
+
+    /* ─── Set layout ─── */
+    function setLayout(layout) {
+        currentLayout = layout;
+        const grid = document.getElementById('galleryGrid');
+        const btnG = document.getElementById('btnGrid');
+        const btnM = document.getElementById('btnMasonry');
+        if (layout === 'grid') {
+            grid.style.gridTemplateColumns = '';
+            grid.style.gridAutoRows = '';
+            btnG.className = 'w-9 h-9 rounded-lg bg-navy-900 text-white flex items-center justify-center transition-all';
+            btnM.className = 'w-9 h-9 rounded-lg bg-white text-navy-400 border border-navy-100 flex items-center justify-center hover:bg-navy-50 transition-all';
+        } else {
+            grid.style.gridTemplateColumns = 'repeat(4, 1fr)';
+            grid.style.gridAutoRows = '10px';
+            btnG.className = 'w-9 h-9 rounded-lg bg-white text-navy-400 border border-navy-100 flex items-center justify-center hover:bg-navy-50 transition-all';
+            btnM.className = 'w-9 h-9 rounded-lg bg-navy-900 text-white flex items-center justify-center transition-all';
+        }
+        renderGrid();
+    }
+
+    /* ─── Render ─── */
+    function renderGrid() {
+        const grid = document.getElementById('galleryGrid');
+        const toShow = filteredPhotos.slice(0, visibleCount);
+        const hasMore = visibleCount < filteredPhotos.length;
+
+        document.getElementById('showingCount').textContent = toShow.length;
+        document.getElementById('loadMoreWrap').style.display = hasMore ? 'flex' : 'none';
+        document.getElementById('loadMoreText').textContent = `Load More (${filteredPhotos.length - visibleCount} remaining)`;
+
+        if (!toShow.length) {
+            grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1">
+                <div style="width:56px;height:56px;border-radius:16px;background:#f0f4fa;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8aa7d3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                </div>
+                <p style="font-size:14px;font-weight:600;color:#0a1628;margin-bottom:4px">No photos in this category</p>
+                <p style="font-size:12px;color:#8aa7d3">Try selecting a different category above.</p>
+            </div>`;
+            return;
+        }
+
+        let html = '';
+        toShow.forEach((photo, i) => {
+            const span = currentLayout === 'masonry' ? `grid-row: span ${Math.round(photo.h / 50)}` : '';
+            const height = currentLayout === 'grid' ? photo.h + 'px' : 'auto';
+            const catLabel = photo.cat.charAt(0).toUpperCase() + photo.cat.slice(1);
+            const globalIdx = allPhotos.indexOf(photo);
+
+            html += `<div class="gitem" style="${span};height:${height}" onclick="olb(${globalIdx})" data-cat="${photo.cat}">
+                <img src="${photo.src}" alt="${photo.title}" loading="lazy" onerror="this.src='https://picsum.photos/seed/vmk${photo.id}/800/600.jpg'">
+                <div class="gitem-badge">${catLabel}</div>
+                <div class="gitem-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+                <div class="gitem-ov">
+                    <h4>${photo.title}</h4>
+                    <span>${catLabel}</span>
+                </div>
+            </div>`;
+        });
+
+        grid.innerHTML = html;
+
+        /* Responsive columns for masonry on smaller screens */
+        if (currentLayout === 'masonry') {
+            const mq = window.matchMedia('(max-width: 1023px)');
+            if (mq.matches) {
+                grid.style.gridTemplateColumns = window.innerWidth < 480 ? '1fr' : 'repeat(2, 1fr)';
+            }
+        }
+    }
+
+    /* ─── Load more ─── */
+    function loadMore() {
+        visibleCount += batchSize;
+        renderGrid();
+    }
+
+    /* ─── Lightbox ─── */
+    let li = 0;
+    function olb(i) {
+        li = i;
+        const photo = allPhotos[i];
+        const lb = document.getElementById('lb');
+        document.getElementById('lI').src = photo.src.replace(/w=\d+/, 'w=1400');
+        document.getElementById('lI').alt = photo.title;
+        document.getElementById('lC').textContent = (i + 1) + ' / ' + allPhotos.length;
+        document.getElementById('lTitle').textContent = photo.title;
+        document.getElementById('lCat').textContent = photo.cat.charAt(0).toUpperCase() + photo.cat.slice(1);
+        document.getElementById('lInfo').style.display = 'block';
+        lb.classList.add('on');
+        document.body.style.overflow = 'hidden';
+    }
+    function clb() {
+        document.getElementById('lb').classList.remove('on');
+        document.body.style.overflow = '';
+    }
+    function lvn(dir) {
+        li = (li + dir + allPhotos.length) % allPhotos.length;
+        const photo = allPhotos[li];
+        document.getElementById('lI').src = photo.src.replace(/w=\d+/, 'w=1400');
+        document.getElementById('lI').alt = photo.title;
+        document.getElementById('lC').textContent = (li + 1) + ' / ' + allPhotos.length;
+        document.getElementById('lTitle').textContent = photo.title;
+        document.getElementById('lCat').textContent = photo.cat.charAt(0).toUpperCase() + photo.cat.slice(1);
+    }
+    function lp() { lvn(-1) }
+    function ln() { lvn(1) }
+
+    document.addEventListener('keydown', e => {
+        if (!document.getElementById('lb').classList.contains('on')) return;
+        if (e.key === 'Escape') clb();
+        if (e.key === 'ArrowLeft') lp();
+        if (e.key === 'ArrowRight') ln();
+    });
+
+    /* Touch swipe for lightbox */
+    let touchStartX = 0;
+    document.getElementById('lb').addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    document.getElementById('lb').addEventListener('touchend', e => {
+        const diff = e.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) lp(); else ln();
+        }
+    }, { passive: true });
+
+    /* ─── Toast ─── */
+    let tto;
+    function showToast(m) {
+        clearTimeout(tto);
+        document.getElementById('tM2').textContent = m;
+        document.getElementById('tst').classList.add('on');
+        tto = setTimeout(() => document.getElementById('tst').classList.remove('on'), 4000);
+    }
+
+    /* ─── Responsive masonry fix ─── */
+    window.addEventListener('resize', () => {
+        if (currentLayout === 'masonry') {
+            const grid = document.getElementById('galleryGrid');
+            if (window.innerWidth < 480) grid.style.gridTemplateColumns = '1fr';
+            else if (window.innerWidth < 768) grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            else if (window.innerWidth < 1024) grid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+            else grid.style.gridTemplateColumns = 'repeat(4, 1fr)';
+        }
+    });
+
+    /* ─── Init ─── */
+    updateCounts();
+    renderGrid();
+    setTimeout(() => lucide.createIcons(), 300);
+    </script>
+</body>
+</html>

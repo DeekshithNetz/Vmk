@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Vijaya Makkala Koota</title>
+    <meta name="description" content="Get in touch with Vijaya Makkala Koota for admissions, enquiries, or campus visits. LKG to Grade 10 CBSE school in Jayanagar, Bangalore.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 50:'#f0f4fa', 100:'#dce4f2', 200:'#b8c9e5', 300:'#8aa7d3', 400:'#5a82be', 500:'#3b66aa', 600:'#2d5191', 700:'#274377', 800:'#162240', 900:'#0a1628', 950:'#060e1a' },
+                        gold: { 50:'#fdf9ef', 100:'#faf0d4', 200:'#f4dea5', 300:'#ecc96f', 400:'#e4b44a', 500:'#c9a84c', 600:'#b08a32', 700:'#926a2a', 800:'#785428', 900:'#644625' },
+                        slate2: '#f8f9fc'
+                    },
+                    fontFamily: { inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        *{font-family:'Inter',sans-serif;box-sizing:border-box}
+        ::-webkit-scrollbar{width:5px;height:5px}
+        ::-webkit-scrollbar-track{background:#f8f9fc}
+        ::-webkit-scrollbar-thumb{background:#b8c9e5;border-radius:4px}
+        .nav-bar{background:rgba(10,22,40,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transition:all .4s ease}
+        .nav-bar.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,0.05)}
+        .nav-bar.scrolled .nl{color:#274377}.nav-bar.scrolled .nl:hover{color:#0a1628}
+        .nav-bar.scrolled .lt{color:#0a1628}.nav-bar.scrolled .lb-icon{color:#274377}
+        .nav-bar.scrolled .ph-text{color:#274377}
+        .nav-bar.scrolled .cta-btn{background:#c9a84c;color:#0a1628}.nav-bar.scrolled .cta-btn:hover{background:#b08a32}
+        .nl{color:rgba(255,255,255,0.8);font-size:13px;font-weight:500;transition:color .25s}.nl:hover{color:#fff}
+        .lt{color:white;transition:color .4s}.lb-icon{color:white;transition:color .4s}
+        .ph-text{color:rgba(255,255,255,0.8);transition:color .4s}
+        .mob{transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+        .mob.open{transform:translateX(0)}
+        .mob-ov{opacity:0;visibility:hidden;transition:all .35s}.mob-ov.open{opacity:1;visibility:visible}
+        .mob-link{display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:14px;transition:all .25s;color:rgba(255,255,255,0.7);font-size:14px;font-weight:500}
+        .mob-link:hover{background:rgba(255,255,255,0.06);color:white}
+        .mob-link .mob-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);flex-shrink:0;transition:all .25s}
+        .mob-link:hover .mob-ico{background:rgba(201,168,76,0.15)}.mob-link:hover .mob-ico svg{color:#e4b44a}
+        .mob-link .mob-lbl{flex:1}.mob-link .mob-arr{opacity:0;transition:all .25s;transform:translateX(-4px)}.mob-link:hover .mob-arr{opacity:0.4;transform:translateX(0)}
+
+        .cf-input{width:100%;padding:12px 16px;border:1px solid #e2e6ee;border-radius:10px;font-size:13.5px;color:#0a1628;background:#fff;transition:all .2s;outline:none;font-family:'Inter',sans-serif}
+        .cf-input::placeholder{color:#b8c9e5}
+        .cf-input:focus{border-color:#3b66aa;box-shadow:0 0 0 3px rgba(59,102,170,0.08)}
+        .cf-input.err{border-color:#e11d48;box-shadow:0 0 0 3px rgba(225,29,72,0.06)}
+        .cf-label{display:block;font-size:12px;font-weight:600;color:#274377;margin-bottom:6px;letter-spacing:.01em}
+        .cf-err{font-size:11px;color:#e11d48;margin-top:4px;display:none}.cf-err.show{display:block}
+        .cf-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238aa7d3' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+        .cf-select option{color:#0a1628;background:#fff}
+        textarea.cf-input{resize:vertical;min-height:90px;line-height:1.6}
+
+        .contact-card{background:white;border-radius:20px;padding:28px 24px;border:1px solid #e8ecf2;transition:all .4s cubic-bezier(.25,.46,.45,.94);position:relative;overflow:hidden}
+        .contact-card:hover{transform:translateY(-4px);box-shadow:0 18px 48px -14px rgba(10,22,40,0.12);border-color:#c9a84c}
+        .contact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transition:opacity .3s;opacity:0}
+        .contact-card:hover::before{opacity:1}
+        .contact-card.card-phone::before{background:#3b66aa}
+        .contact-card.card-email::before{background:#10b981}
+        .contact-card.card-address::before{background:#c9a84c}
+        .contact-card.card-hours::before{background:#7c3aed}
+        .contact-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s}
+        .contact-card:hover .contact-icon{transform:scale(1.08)}
+
+        .faq-item{background:white;border:1px solid #e8ecf2;border-radius:16px;overflow:hidden;transition:all .35s}
+        .faq-item:hover{border-color:#dce4f2}
+        .faq-item.active{border-color:#c9a84c;box-shadow:0 8px 24px -6px rgba(201,168,76,0.1)}
+        .faq-q{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;cursor:pointer;user-select:none}
+        .faq-q h3{font-size:14px;font-weight:600;color:#0a1628;line-height:1.4}
+        .faq-q .faq-chevron{width:28px;height:28px;border-radius:8px;background:#f8f9fc;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s}
+        .faq-item.active .faq-chevron{background:#fdf9ef;transform:rotate(180deg)}
+        .faq-item.active .faq-chevron svg{color:#b08a32}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.25,.46,.45,.94)}
+        .faq-a-inner{padding:0 20px 18px;font-size:13px;color:#5a82be;line-height:1.75}
+
+        .map-wrapper{border-radius:20px;overflow:hidden;border:1px solid #e8ecf2;transition:all .4s}
+        .map-wrapper:hover{border-color:#dce4f2;box-shadow:0 12px 36px -10px rgba(10,22,40,0.1)}
+
+        .tt{transform:translateY(80px);opacity:0;transition:all .4s}.tt.on{transform:translateY(0);opacity:1}
+
+        @media(max-width:639px){.contact-card{padding:22px 20px}}
+    </style>
+</head>
+<body class="bg-white text-navy-900 antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-[68px]">
+                <a href="index.html" class="flex items-center gap-2.5 flex-shrink-0">
+                    <div class="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center">
+                        <i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i>
+                    </div>
+                    <span class="lt font-bold text-[15px] sm:text-[16px] tracking-tight">Vijaya Makkala Koota</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-6 xl:gap-8">
+                    <a href="index.html#why" class="nl">Why Us</a>
+                    <a href="index.html#about" class="nl">About</a>
+                    <a href="index.html#ach" class="nl">Achievements</a>
+                    <a href="index.html#fac" class="nl">Facilities</a>
+                    <a href="user.html" class="nl">News</a>
+                    <a href="index.html#gallery" class="nl">Gallery</a>
+                    <a href="index.html#test" class="nl">Testimonials</a>
+                    <a href="contact.html" class="nl" style="color:#e4b44a">Contact</a>
+                </div>
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="tel:+918012345678" class="hidden md:flex items-center gap-1.5 ph-text text-xs">
+                        <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                        <span class="hidden lg:inline">+91 80 1234 5678</span>
+                        <span class="lg:hidden">Call</span>
+                    </a>
+                    <a href="#enquiry" class="hidden sm:inline-flex items-center cta-btn bg-gold-500 hover:bg-gold-600 text-navy-900 text-xs font-bold px-4 sm:px-5 py-2.5 rounded-full transition-all">
+                        Admissions 2026
+                    </a>
+                    <button id="mt" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/10" aria-label="Menu">
+                        <i data-lucide="menu" class="lb-icon w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mo" class="mob-ov fixed inset-0 z-[55]  backdrop-blur-sm" onclick="cd()"></div>
+    <div id="md" class="mob fixed top-0 right-0 bottom-0 z-[60] w-[300px] bg-navy-900 shadow-2xl flex flex-col">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-white/5">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-400"></i></div>
+                <span class="text-sm font-bold text-white">Vijaya Makkala Koota</span>
+            </div>
+            <button onclick="cd()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5"><i data-lucide="x" class="w-4 h-4 text-white/40"></i></button>
+        </div>
+        <div class="flex-1 overflow-y-auto px-4 py-5 space-y-1">
+            <a href="index.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="home" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Home</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#why" class="dl mob-link"><div class="mob-ico"><i data-lucide="star" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Why Vijaya Makkala Koota</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#about" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#ach" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#fac" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Facilities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="user.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="newspaper" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">News & Events</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#gallery" class="dl mob-link"><div class="mob-ico"><i data-lucide="image" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="index.html#test" class="dl mob-link"><div class="mob-ico"><i data-lucide="message-circle" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Testimonials</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="contact.html" class="dl mob-link" style="background:rgba(201,168,76,0.08);color:#e4b44a">
+                <div class="mob-ico" style="background:rgba(201,168,76,0.12)"><i data-lucide="mail" class="w-[16px] h-[16px]" style="color:#e4b44a"></i></div>
+                <span class="mob-lbl">Contact Us</span>
+                <i data-lucide="chevron-right" class="mob-arr w-4 h-4" style="opacity:.6;transform:translateX(0)"></i>
+            </a>
+        </div>
+        <div class="px-5 py-5 border-t border-white/5 space-y-3">
+            <a href="#enquiry" class="dl flex items-center justify-center gap-2 w-full bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold py-3.5 rounded-xl transition-colors"><i data-lucide="graduation-cap" class="w-4 h-4"></i>Admissions 2026</a>
+            <a href="tel:+918012345678" class="dl flex items-center justify-center gap-2 w-full text-white/40 hover:text-white/60 text-xs font-medium py-2 transition-colors"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+        </div>
+    </div>
+
+    <!-- CONTACT INFO CARDS -->
+    <section class="pt-[100px] sm:pt-[108px] pb-14 sm:pb-18 lg:pb-20 bg-slate2 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-navy-100/30 rounded-full blur-[100px] -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gold-100/20 rounded-full blur-[90px] translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-lg mx-auto mb-10 sm:mb-12">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]">
+                    <span class="block text-sm sm:text-base font-semibold tracking-[0.14em] uppercase text-gold-500 mb-1">Contact Us</span>
+                    Get in Touch
+                </h1>
+                <p class="text-sm text-navy-400 font-light mt-3">We'd love to hear from you — whether it's about admissions, a campus visit, or just a question.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+                <a href="tel:+918012345678" class="contact-card card-phone group" style="text-decoration:none;display:block">
+                    <div class="contact-icon bg-navy-50 mb-4"><i data-lucide="phone" class="w-5 h-5 text-navy-600"></i></div>
+                    <h3 class="text-[15px] font-bold text-navy-900 mb-1.5">Call Us</h3>
+                    <p class="text-sm text-navy-500 font-medium leading-relaxed">+91 80 1234 5678</p>
+                    <p class="text-xs text-navy-300 mt-1.5 leading-relaxed">Mon – Sat, 8:00 AM – 3:00 PM</p>
+                    <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-navy-400 group-hover:text-navy-600 transition-colors">
+                        <span>Call now</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-0.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 12 19"/></svg>
+                    </div>
+                </a>
+                <a href="mailto:info@vijayamakkalakoota.edu.in" class="contact-card card-email group" style="text-decoration:none;display:block">
+                    <div class="contact-icon bg-green-50 mb-4"><i data-lucide="mail" class="w-5 h-5 text-green-600"></i></div>
+                    <h3 class="text-[15px] font-bold text-navy-900 mb-1.5">Email Us</h3>
+                    <p class="text-sm text-navy-500 font-medium leading-relaxed break-all">info@vijayamakkalakoota.edu.in</p>
+                    <p class="text-xs text-navy-300 mt-1.5 leading-relaxed">We reply within one working day</p>
+                    <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-navy-400 group-hover:text-green-600 transition-colors">
+                        <span>Send email</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-0.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 12 19"/></svg>
+                    </div>
+                </a>
+                <a href="https://maps.google.com/?q=42+Temple+Road+Jayanagar+Bangalore+560041" target="_blank" rel="noopener" class="contact-card card-address group" style="text-decoration:none;display:block">
+                    <div class="contact-icon bg-gold-50 mb-4"><i data-lucide="map-pin" class="w-5 h-5 text-gold-600"></i></div>
+                    <h3 class="text-[15px] font-bold text-navy-900 mb-1.5">Visit Us</h3>
+                    <p class="text-sm text-navy-500 font-medium leading-relaxed">42, Temple Road,<br>Jayanagar, Bangalore – 560041</p>
+                    <p class="text-xs text-navy-300 mt-1.5 leading-relaxed">Near Jayanagar 4th Block Bus Stand</p>
+                    <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-navy-400 group-hover:text-gold-600 transition-colors">
+                        <span>Get directions</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-0.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 12 19"/></svg>
+                    </div>
+                </a>
+                <div class="contact-card card-hours">
+                    <div class="contact-icon bg-purple-50 mb-4"><i data-lucide="clock" class="w-5 h-5 text-purple-600"></i></div>
+                    <h3 class="text-[15px] font-bold text-navy-900 mb-1.5">Office Hours</h3>
+                    <div class="space-y-1.5 mt-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-navy-500 font-medium">Mon – Fri</span>
+                            <span class="text-sm text-navy-900 font-semibold">8:00 AM – 2:30 PM</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-navy-500 font-medium">Saturday</span>
+                            <span class="text-sm text-navy-900 font-semibold">8:00 AM – 12:00 PM</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-navy-400 font-medium">Sunday</span>
+                            <span class="text-sm text-navy-300 font-semibold">Closed</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        <span class="text-xs text-green-600 font-medium" id="openStatus">Checking...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENQUIRY FORM + MAP -->
+    <section id="enquiry" class="py-14 sm:py-18 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-10">
+                <!-- FORM -->
+                <div class="lg:col-span-7">
+                    <div class="mb-6 sm:mb-8">
+                        <h2 class="text-2xl sm:text-3xl lg:text-[2rem] font-bold text-navy-900 tracking-tight leading-[1.12]">
+                            <span class="block text-sm sm:text-base font-semibold tracking-[0.14em] uppercase text-gold-500 mb-1">Admission Enquiry</span>
+                            Submit Your Details
+                        </h2>
+                        <p class="text-sm text-navy-400 font-light leading-relaxed mt-3 max-w-md">Fill out the form and our admissions team will reach out within one working day. Fields marked with <span class="text-gold-600">*</span> are required.</p>
+                    </div>
+                    <form id="cForm" class="bg-slate2 rounded-2xl p-5 sm:p-7 lg:p-8 border border-navy-100/40" onsubmit="return handleForm(event)" novalidate>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
+                            <div>
+                                <label class="cf-label" for="fName">Parent / Guardian Name <span class="text-gold-600">*</span></label>
+                                <input type="text" id="fName" class="cf-input" placeholder="Full name" required>
+                                <div class="cf-err" id="fNameErr">Please enter your name.</div>
+                            </div>
+                            <div>
+                                <label class="cf-label" for="fPhone">Phone Number <span class="text-gold-600">*</span></label>
+                                <input type="tel" id="fPhone" class="cf-input" placeholder="+91 00000 00000" required>
+                                <div class="cf-err" id="fPhoneErr">Please enter a valid 10-digit phone number.</div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
+                            <div>
+                                <label class="cf-label" for="fEmail">Email Address</label>
+                                <input type="email" id="fEmail" class="cf-input" placeholder="you@example.com">
+                                <div class="cf-err" id="fEmailErr">Please enter a valid email address.</div>
+                            </div>
+                            <div>
+                                <label class="cf-label" for="fGrade">Grade Applying For <span class="text-gold-600">*</span></label>
+                                <select id="fGrade" class="cf-input cf-select" required>
+                                    <option value="" disabled selected>Select grade</option>
+                                    <option value="lkg">LKG</option>
+                                    <option value="ukg">UKG</option>
+                                    <option value="1">Grade 1</option>
+                                    <option value="2">Grade 2</option>
+                                    <option value="3">Grade 3</option>
+                                    <option value="4">Grade 4</option>
+                                    <option value="5">Grade 5</option>
+                                    <option value="6">Grade 6</option>
+                                    <option value="7">Grade 7</option>
+                                    <option value="8">Grade 8</option>
+                                    <option value="9">Grade 9</option>
+                                    <option value="10">Grade 10</option>
+                                </select>
+                                <div class="cf-err" id="fGradeErr">Please select a grade.</div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
+                            <div>
+                                <label class="cf-label" for="fChild">Child's Name</label>
+                                <input type="text" id="fChild" class="cf-input" placeholder="Child's full name">
+                            </div>
+                            <div>
+                                <label class="cf-label" for="fSource">How did you hear about us?</label>
+                                <select id="fSource" class="cf-input cf-select">
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="referral">Friend / Family Referral</option>
+                                    <option value="social">Social Media</option>
+                                    <option value="google">Google Search</option>
+                                    <option value="newspaper">Newspaper</option>
+                                    <option value="hoarding">Hoarding / Banner</option>
+                                    <option value="walkin">Walk-in</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-4 sm:mb-5">
+                            <label class="cf-label" for="fMsg">Message</label>
+                            <textarea id="fMsg" class="cf-input" placeholder="Any specific questions, information about your child, or anything you'd like us to know..." rows="4"></textarea>
+                        </div>
+                        <div class="flex items-start gap-3 mb-5 sm:mb-6">
+                            <input type="checkbox" id="fConsent" class="mt-0.5 w-4 h-4 rounded border-navy-200 text-navy-900 focus:ring-navy-500 cursor-pointer accent-navy-900">
+                            <label for="fConsent" class="text-xs text-navy-400 leading-relaxed cursor-pointer">I agree to be contacted by Vijaya Makkala Koota regarding admissions and school updates. My information will be kept confidential.</label>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <button type="submit" id="fBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold px-7 py-3.5 rounded-lg transition-all">
+                                <span id="fBtnText">Submit Enquiry</span>
+                                <i data-lucide="send" class="w-4 h-4" id="fBtnIco"></i>
+                                <svg id="fBtnSpin" class="hidden animate-spin w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+                            </button>
+                            <p class="text-[11px] text-navy-300 leading-relaxed">We respect your privacy and never share your data.</p>
+                        </div>
+                        <div id="fSuccess" class="hidden mt-5 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start gap-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-600"></i></div>
+                            <div>
+                                <p class="text-[13px] font-semibold text-green-800">Thank you for your enquiry!</p>
+                                <p class="text-[12px] text-green-600 mt-0.5 leading-relaxed">Our admissions team will reach out to you within one working day. You can also call us directly at <a href="tel:+918012345678" class="font-semibold underline">+91 80 1234 5678</a>.</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- MAP -->
+                <div class="lg:col-span-5">
+                    <div class="lg:sticky lg:top-[84px] space-y-5">
+                        <div>
+                            <h3 class="text-lg font-bold text-navy-900 mb-1">Find Us on the Map</h3>
+                            <p class="text-xs text-navy-400 font-light leading-relaxed">42, Temple Road, Jayanagar, Bangalore – 560041</p>
+                        </div>
+                        <div class="map-wrapper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6!2d77.58!3d12.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU1JzQ4LjAiTiA3N8KwMzQnNDguMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="320" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Vijaya Makkala Koota Location"></iframe>
+                        </div>
+                        <div class="bg-slate2 rounded-2xl p-5 sm:p-6 border border-navy-100/40">
+                            <h4 class="text-sm font-bold text-navy-900 mb-3">Quick Contact</h4>
+                            <div class="space-y-3">
+                                <a href="tel:+918012345678" class="flex items-center gap-3 p-3 bg-white rounded-xl border border-navy-100/40 hover:border-navy-200 transition-all group" style="text-decoration:none">
+                                    <div class="w-9 h-9 bg-navy-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-navy-900 transition-colors">
+                                        <i data-lucide="phone" class="w-4 h-4 text-navy-600 group-hover:text-gold-400 transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-[12px] text-navy-400 font-medium">Phone</p>
+                                        <p class="text-sm text-navy-900 font-semibold">+91 80 1234 5678</p>
+                                    </div>
+                                </a>
+                                <a href="mailto:info@vijayamakkalakoota.edu.in" class="flex items-center gap-3 p-3 bg-white rounded-xl border border-navy-100/40 hover:border-navy-200 transition-all group" style="text-decoration:none">
+                                    <div class="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-600 transition-colors">
+                                        <i data-lucide="mail" class="w-4 h-4 text-green-600 group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-[12px] text-navy-400 font-medium">Email</p>
+                                        <p class="text-sm text-navy-900 font-semibold break-all">info@vijayamakkalakoota.edu.in</p>
+                                    </div>
+                                </a>
+                                <a href="https://wa.me/918012345678" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-xl border border-navy-100/40 hover:border-navy-200 transition-all group" style="text-decoration:none">
+                                    <div class="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-500 transition-colors">
+                                        <svg class="w-4 h-4 text-green-600 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-[12px] text-navy-400 font-medium">WhatsApp</p>
+                                        <p class="text-sm text-navy-900 font-semibold">+91 80 1234 5678</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="py-14 sm:py-16 lg:py-18 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-navy-800 to-navy-900 border border-navy-700/50 rounded-2xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-gold-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-[200px] h-[200px] bg-navy-500/10 rounded-full blur-[60px] pointer-events-none"></div>
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-2 bg-gold-500/10 border border-gold-500/20 rounded-full px-4 py-1.5 mb-5">
+                        <span class="w-1.5 h-1.5 bg-gold-400 rounded-full"></span>
+                        <span class="text-gold-300 text-xs font-medium">Admissions Open for 2026–27</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl lg:text-[2rem] font-bold text-white tracking-tight leading-snug mb-3">Schedule a Campus Visit Today</h2>
+                    <p class="text-sm text-navy-300 font-light leading-relaxed max-w-lg mx-auto mb-8">Seeing is believing. Walk through our classrooms, meet our teachers, and experience the Vijaya Makkala Koota difference first-hand.</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                        <a href="tel:+918012345678" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold px-7 py-3.5 rounded-lg transition-all shadow-lg shadow-gold-500/15">
+                            <i data-lucide="phone" class="w-4 h-4"></i>Call to Schedule
+                        </a>
+                        <a href="mailto:info@vijayamakkalakoota.edu.in?subject=Campus%20Visit%20Request" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-navy-600 hover:border-navy-500 text-navy-200 hover:text-white text-sm font-medium px-7 py-3.5 rounded-lg transition-all">
+                            <i data-lucide="mail" class="w-4 h-4"></i>Email Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-14 sm:py-18 lg:py-20 bg-slate2 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-navy-100/20 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none"></div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-10 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-900 tracking-tight leading-[1.12]">
+                    <span class="block text-sm sm:text-base font-semibold tracking-[0.14em] uppercase text-gold-500 mb-1">Frequently Asked</span>
+                    Common Questions
+                </h2>
+                <p class="text-sm text-navy-400 font-light mt-3">Quick answers to what parents ask most often.</p>
+            </div>
+            <div class="space-y-3" id="faqList">
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <h3>What is the admission process?</h3>
+                        <div class="faq-chevron"><i data-lucide="chevron-down" class="w-4 h-4 text-navy-300"></i></div>
+                    </div>
+                    <div class="faq-a"><div class="faq-a-inner">Submit an enquiry form on this page or call us. Our admissions team will schedule an interaction session. For LKG–Grade 1, we assess readiness through a gentle observation. For Grade 2 and above, there's a simple age-appropriate assessment. Documents required include birth certificate, previous school TC (if applicable), address proof, and passport-size photos.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <h3>What are the school fees?</h3>
+                        <div class="faq-chevron"><i data-lucide="chevron-down" class="w-4 h-4 text-navy-300"></i></div>
+                    </div>
+                    <div class="faq-a"><div class="faq-a-inner">Fee details vary by grade and are shared during the admissions interaction. We offer flexible payment plans — annual, semi-annual, and quarterly options. Sibling discounts are available. Please contact our office for the complete fee structure.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <h3>Is transport available?</h3>
+                        <div class="faq-chevron"><i data-lucide="chevron-down" class="w-4 h-4 text-navy-300"></i></div>
+                    </div>
+                    <div class="faq-a"><div class="faq-a-inner">Yes, we operate GPS-tracked school buses covering 15+ routes across Jayanagar, JP Nagar, BTM Layout, Banashankari, and surrounding areas. All buses have female attendants and first-aid kits. Route details and pickup timings are shared at the time of admission.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <h3>What extracurricular activities are offered?</h3>
+                        <div class="faq-chevron"><i data-lucide="chevron-down" class="w-4 h-4 text-navy-300"></i></div>
+                    </div>
+                    <div class="faq-a"><div class="faq-a-inner">We offer art, music, dance (Bharatanatyam and folk), yoga, karate, cricket, basketball, badminton, and athletics. Students also participate in science clubs, quiz competitions, and cultural events throughout the year. Activities are integrated into the weekly timetable from LKG onwards.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <h3>What safety measures are in place?</h3>
+                        <div class="faq-chevron"><i data-lucide="chevron-down" class="w-4 h-4 text-navy-300"></i></div>
+                    </div>
+                    <div class="faq-a"><div class="faq-a-inner">The campus has 60+ CCTV cameras, guarded entry/exit with visitor management system, female attendants on every floor and in washrooms, regular fire safety drills, and a school counsellor. All staff undergo background verification. Pick-up is through ID cards only — no child is handed over without proper verification.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <h3>Can I visit the campus before applying?</h3>
+                        <div class="faq-chevron"><i data-lucide="chevron-down" class="w-4 h-4 text-navy-300"></i></div>
+                    </div>
+                    <div class="faq-a"><div class="faq-a-inner">Absolutely! We encourage parents to visit before making a decision. Campus visits are conducted on weekdays between 9:30 AM and 12:30 PM. Call us at <a href="tel:+918012345678" class="text-navy-700 font-semibold hover:text-gold-600 transition-colors underline">+91 80 1234 5678</a> or submit the enquiry form above to schedule your visit.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <h3>What is the medium of instruction?</h3>
+                        <div class="faq-chevron"><i data-lucide="chevron-down" class="w-4 h-4 text-navy-300"></i></div>
+                    </div>
+                    <div class="faq-a"><div class="faq-a-inner">English is the medium of instruction for all subjects from LKG to Grade 10. Kannada and Hindi are taught as second and third languages as per CBSE guidelines. We also place emphasis on spoken English from the early years.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL CONNECT -->
+    <section class="py-14 sm:py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 tracking-tight leading-[1.12] mb-3">
+                <span class="block text-sm sm:text-base font-semibold tracking-[0.14em] uppercase text-navy-400 mb-1">Stay Connected</span>
+                Follow Us on Social Media
+            </h2>
+            <p class="text-sm text-navy-400 font-light leading-relaxed max-w-md mx-auto mb-8">Stay updated with school events, achievements, and day-to-day campus life.</p>
+            <div class="flex items-center justify-center gap-4">
+                <a href="#" class="group w-12 h-12 bg-slate2 hover:bg-navy-900 border border-navy-100/50 hover:border-navy-900 rounded-2xl flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-navy-900/10">
+                    <i data-lucide="facebook" class="w-5 h-5 text-navy-400 group-hover:text-white transition-colors"></i>
+                </a>
+                <a href="#" class="group w-12 h-12 bg-slate2 hover:bg-navy-900 border border-navy-100/50 hover:border-navy-900 rounded-2xl flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-navy-900/10">
+                    <i data-lucide="instagram" class="w-5 h-5 text-navy-400 group-hover:text-white transition-colors"></i>
+                </a>
+                <a href="#" class="group w-12 h-12 bg-slate2 hover:bg-navy-900 border border-navy-100/50 hover:border-navy-900 rounded-2xl flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-navy-900/10">
+                    <i data-lucide="youtube" class="w-5 h-5 text-navy-400 group-hover:text-white transition-colors"></i>
+                </a>
+                <a href="#" class="group w-12 h-12 bg-slate2 hover:bg-navy-900 border border-navy-100/50 hover:border-navy-900 rounded-2xl flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-navy-900/10">
+                    <i data-lucide="twitter" class="w-5 h-5 text-navy-400 group-hover:text-white transition-colors"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 text-white pt-12 sm:pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+                <div>
+                    <div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div>
+                    <p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from LKG to Grade 10 with care, confidence, and character since 2010.</p>
+                    <div class="flex items-center gap-2.5">
+                        <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="facebook" class="w-3.5 h-3.5 text-navy-300"></i></a>
+                        <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="instagram" class="w-3.5 h-3.5 text-navy-300"></i></a>
+                        <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="youtube" class="w-3.5 h-3.5 text-navy-300"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#about" class="text-sm text-navy-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="index.html#fac" class="text-sm text-navy-300 hover:text-white transition-colors">Facilities</a></li>
+                        <li><a href="index.html#ach" class="text-sm text-navy-300 hover:text-white transition-colors">Achievements</a></li>
+                        <li><a href="index.html#gallery" class="text-sm text-navy-300 hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="text-sm text-gold-400 hover:text-gold-300 transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Academics</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Pre-Primary (LKG–UKG)</a></li>
+                        <li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Primary (1–5)</a></li>
+                        <li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Middle (6–8)</a></li>
+                        <li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Secondary (9–10)</a></li>
+                        <li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Exam Results</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Contact</h4>
+                    <ul class="space-y-3.5">
+                        <li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">42, Temple Road, Jayanagar, Bangalore – 560041</span></li>
+                        <li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">+91 80 1234 5678</span></li>
+                        <li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">info@vijayamakkalakoota.edu.in</span></li>
+                        <li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-xs text-navy-500">© 2025 Vijaya Makkala Koota. All rights reserved.</p>
+                <div class="flex items-center gap-5">
+                    <a href="#" class="text-xs text-navy-500 hover:text-navy-300">Privacy</a>
+                    <a href="#" class="text-xs text-navy-500 hover:text-navy-300">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOAST -->
+    <div id="tst" class="tt fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] bg-navy-900 text-white text-sm px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-2.5 max-w-sm border border-navy-800">
+        <i data-lucide="info" class="w-4 h-4 text-gold-400 flex-shrink-0"></i>
+        <span id="tM2"></span>
+    </div>
+
+    <script>
+    lucide.createIcons();
+
+    /* ─── Nav scroll ─── */
+    const nb=document.querySelector('.nav-bar');
+    nb.classList.add('scrolled');
+    window.addEventListener('scroll',()=>{
+        if(window.scrollY>20) nb.classList.add('scrolled');
+        else nb.classList.remove('scrolled');
+    });
+
+    /* ─── Mobile menu ─── */
+    const md=document.getElementById('md'),mo=document.getElementById('mo');
+    function od(){md.classList.add('open');mo.classList.add('open');document.body.style.overflow='hidden'}
+    function cd(){md.classList.remove('open');mo.classList.remove('open');document.body.style.overflow=''}
+    document.getElementById('mt').addEventListener('click',od);
+    document.querySelectorAll('.dl').forEach(l=>l.addEventListener('click',cd));
+
+    /* ─── Open/Closed status ─── */
+    function updateStatus(){
+        const now=new Date();
+        const day=now.getDay();
+        const h=now.getHours();
+        const m=now.getMinutes();
+        const time=h*60+m;
+        const el=document.getElementById('openStatus');
+        if(day===0){
+            el.textContent='Closed now — opens Monday 8:00 AM';
+            el.className='text-xs text-navy-400 font-medium';
+        }else if(day===6){
+            if(time>=480&&time<720){
+                el.textContent='Open now — closes 12:00 PM';
+                el.className='text-xs text-green-600 font-medium';
+            }else if(time<480){
+                el.textContent='Opens at 8:00 AM today';
+                el.className='text-xs text-navy-400 font-medium';
+            }else{
+                el.textContent='Closed — opens Monday 8:00 AM';
+                el.className='text-xs text-navy-400 font-medium';
+            }
+        }else{
+            if(time>=480&&time<870){
+                el.textContent='Open now — closes 2:30 PM';
+                el.className='text-xs text-green-600 font-medium';
+            }else if(time<480){
+                el.textContent='Opens at 8:00 AM today';
+                el.className='text-xs text-navy-400 font-medium';
+            }else{
+                el.textContent='Closed — opens tomorrow 8:00 AM';
+                el.className='text-xs text-navy-400 font-medium';
+            }
+        }
+    }
+    updateStatus();
+    setInterval(updateStatus,30000);
+
+    /* ─── FAQ toggle ─── */
+    function toggleFaq(el){
+        const item=el.parentElement;
+        const answer=item.querySelector('.faq-a');
+        const isActive=item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(fi=>{
+            fi.classList.remove('active');
+            fi.querySelector('.faq-a').style.maxHeight='0';
+        });
+        if(!isActive){
+            item.classList.add('active');
+            answer.style.maxHeight=answer.scrollHeight+'px';
+        }
+    }
+
+    /* ─── Contact form ─── */
+    function handleForm(e){
+        e.preventDefault();
+        let valid=true;
+        const name=document.getElementById('fName'),phone=document.getElementById('fPhone'),email=document.getElementById('fEmail'),grade=document.getElementById('fGrade');
+        [name,phone,email,grade].forEach(el=>{
+            el.classList.remove('err');
+            const errEl=el.nextElementSibling;
+            if(errEl&&errEl.classList.contains('cf-err')) errEl.classList.remove('show');
+        });
+        document.getElementById('fSuccess').classList.add('hidden');
+        if(!name.value.trim()){name.classList.add('err');document.getElementById('fNameErr').classList.add('show');valid=false}
+        if(!phone.value.trim()||phone.value.replace(/\D/g,'').length<10){phone.classList.add('err');document.getElementById('fPhoneErr').classList.add('show');valid=false}
+        if(email.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){email.classList.add('err');document.getElementById('fEmailErr').classList.add('show');valid=false}
+        if(!grade.value){grade.classList.add('err');document.getElementById('fGradeErr').classList.add('show');valid=false}
+        if(!valid){
+            if(!name.value.trim()) name.focus();
+            else if(!phone.value.trim()) phone.focus();
+            else if(!grade.value) grade.focus();
+            return false;
+        }
+        const btn=document.getElementById('fBtn'),btnText=document.getElementById('fBtnText'),btnIco=document.getElementById('fBtnIco'),btnSpin=document.getElementById('fBtnSpin');
+        btn.disabled=true;btnText.textContent='Submitting...';btnIco.classList.add('hidden');btnSpin.classList.remove('hidden');
+        setTimeout(()=>{
+            btn.disabled=false;btnText.textContent='Submit Enquiry';btnIco.classList.remove('hidden');btnSpin.classList.add('hidden');
+            document.getElementById('fSuccess').classList.remove('hidden');
+            document.getElementById('cForm').reset();
+            lucide.createIcons();
+            document.getElementById('fSuccess').scrollIntoView({behavior:'smooth',block:'nearest'});
+        },1800);
+        return false;
+    }
+
+    ['fName','fPhone','fEmail','fGrade'].forEach(id=>{
+        document.getElementById(id).addEventListener('input',function(){
+            this.classList.remove('err');
+            const errEl=this.nextElementSibling;
+            if(errEl&&errEl.classList.contains('cf-err')) errEl.classList.remove('show');
+        });
+    });
+
+    /* ─── Toast ─── */
+    let tto;
+    function showToast(m){clearTimeout(tto);document.getElementById('tM2').textContent=m;document.getElementById('tst').classList.add('on');tto=setTimeout(()=>document.getElementById('tst').classList.remove('on'),4000)}
+
+    setTimeout(()=>lucide.createIcons(),300);
+    </script>
+</body>
+</html>

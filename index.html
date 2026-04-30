@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vijaya Makkala Koota — LKG to Grade 10</title>
+    <title>Vijaya Makkala Koota — Grade 1 to Grade 10</title>
     <meta name="description" content="Vijaya Makkala Koota offers nurturing education from 1 to Grade 10 with experienced faculty, modern infrastructure, and holistic development in a safe environment.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -154,7 +155,25 @@
         .nskel .nskel-title{height:16px;margin-bottom:10px;border-radius:6px;width:85%}
         .askel{border-radius:20px;overflow:hidden;border:1px solid #e8ecf2;flex-shrink:0;scroll-snap-align:start;background:#e8ecf2}
         .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;text-align:center}
-    </style>
+.tc-new{background:white;border-radius:16px;padding:22px 20px;border:1px solid #e8ecf2;transition:all .35s;position:relative;flex-shrink:0;scroll-snap-align:start;display:flex;flex-direction:column}
+
+
+.tc-new:hover{transform:translateY(-3px);box-shadow:0 12px 36px -10px rgba(10,22,40,0.1);border-color:#dce4f2}
+.tc-new .tc-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tc-new .tc-avatar{width:46px;height:46px;border-radius:12px;overflow:hidden;flex-shrink:0}
+.tc-new .tc-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.tc-new .tc-info{flex:1;min-width:0}
+.tc-new .tc-name{font-size:13.5px;font-weight:700;color:#0a1628;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tc-new .tc-role{font-size:11.5px;color:#8aa7d3;font-weight:500;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tc-new .tc-quote-icon{color:#e4b44a;margin-bottom:10px;flex-shrink:0}
+.tc-new .tc-text-wrap{flex:1;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1)}
+.tc-new .tc-text-wrap.collapsed{max-height:66px}
+.tc-new .tc-text-wrap.expanded{max-height:600px}
+.tc-new .tc-text{font-size:13px;color:#374151;line-height:1.75}
+.tc-new .tc-read-more{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:#b08a32;cursor:pointer;margin-top:10px;transition:all .25s;background:none;border:none;padding:0;font-family:'Inter',sans-serif}
+.tc-new .tc-read-more:hover{color:#926a2a}
+.tc-new .tc-read-more svg{transition:transform .3s ease}
+.tc-new .tc-read-more.expanded svg{transform:rotate(180deg)}    </style>
 </head>
 <body class="bg-white text-navy-900 antialiased">
 
@@ -162,10 +181,12 @@
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-[68px]">
                 <a href="#" class="flex items-center gap-2.5"><div class="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="lt font-bold text-[16px] tracking-tight">Vijaya Makkala Koota</span></a>
-                <div class="hidden xl:flex items-center gap-8"><a href="#why" class="nl">Why Vijaya Makkala Koota</a><a href="#about" class="nl">About</a><a href="#ach" class="nl">Achievements</a><a href="#fac" class="nl">Facilities</a><a href="user.html" class="nl">News</a><a href="#gallery" class="nl">Gallery</a><a href="#test" class="nl">Testimonials</a><a href="#contact" class="nl">Contact</a></div>
+                <div class="hidden xl:flex items-center gap-8"><a href="about.html" class="nl">About Us</a><a href="user.html" class="nl">Achievements</a>
+                <a href="extra.html" class="nl">Extra Curricular Activity</a>
+                <a href="#fac" class="nl">Facilities</a><a href="user.html" class="nl">News</a><a href="gallery.html" class="nl">Gallery</a><a href="contact.html" class="nl">Contact</a></div>
                 <div class="flex items-center gap-3">
                     <a href="tel:+918012345678" class="hidden lg:flex items-center gap-1.5 ph-text text-xs"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
-                    <a href="#contact" class="hidden sm:inline-flex items-center cta-btn bg-gold-500 hover:bg-gold-600 text-navy-900 text-xs font-bold px-5 py-2.5 rounded-full transition-all">Admissions 2026</a>
+                    <a href="contact.html" class="hidden sm:inline-flex items-center cta-btn bg-gold-500 hover:bg-gold-600 text-navy-900 text-xs font-bold px-5 py-2.5 rounded-full transition-all">Admissions 2026</a>
                     <button id="mt" class="xl:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/10" aria-label="Menu"><i data-lucide="menu" class="lb-icon w-5 h-5"></i></button>
                 </div>
             </div>
@@ -175,17 +196,17 @@
     <div id="md" class="mob fixed top-0 right-0 bottom-0 z-[60] w-[300px] bg-navy-900 shadow-2xl flex flex-col">
         <div class="flex items-center justify-between px-6 py-5 border-b border-white/5"><div class="flex items-center gap-2.5"><div class="w-8 h-8 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-400"></i></div><span class="text-sm font-bold text-white">Vijaya Makkala Koota</span></div><button onclick="cd()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5"><i data-lucide="x" class="w-4 h-4 text-white/40"></i></button></div>
         <div class="flex-1 overflow-y-auto px-4 py-5 space-y-1">
-            <a href="#why" class="dl mob-link"><div class="mob-ico"><i data-lucide="star" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Why Vijaya Makkala Koota</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="#about" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="#ach" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+                        <a href="about.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="user.html?tag=achievements" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             <a href="#fac" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Facilities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="extra.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="drama" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Extra Curricular Activity</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            
             <a href="user.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="newspaper" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">News & Events</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="#gallery" class="dl mob-link"><div class="mob-ico"><i data-lucide="image" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="#test" class="dl mob-link"><div class="mob-ico"><i data-lucide="message-circle" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Testimonials</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="#contact" class="dl mob-link"><div class="mob-ico"><i data-lucide="mail" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Contact Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="gallery.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="image" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+                        <a href="contact.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="mail" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Contact Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
         </div>
         <div class="px-5 py-5 border-t border-white/5 space-y-3">
-            <a href="#contact" class="dl flex items-center justify-center gap-2 w-full bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold py-3.5 rounded-xl transition-colors"><i data-lucide="graduation-cap" class="w-4 h-4"></i>Admissions 2026</a>
+            <a href="contact.html" class="dl flex items-center justify-center gap-2 w-full bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold py-3.5 rounded-xl transition-colors"><i data-lucide="graduation-cap" class="w-4 h-4"></i>Admissions 2026</a>
             <a href="tel:+918012345678" class="dl flex items-center justify-center gap-2 w-full text-white/40 hover:text-white/60 text-xs font-medium py-2 transition-colors"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
         </div>
     </div>
@@ -197,9 +218,9 @@
         <div class="absolute inset-0 bg-gradient-to-t from-navy-950/30 via-transparent to-navy-950/10"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full py-36">
             <div class="max-w-xl">
-                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-5 py-2 mb-8 fu"><span class="w-1.5 h-1.5 bg-gold-400 rounded-full"></span><span class="text-white/85 text-xs font-medium">CBSE · LKG to Grade 10</span></div>
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-5 py-2 mb-8 fu"><span class="w-1.5 h-1.5 bg-gold-400 rounded-full"></span><span class="text-white/85 text-xs font-medium">Grade 1 to Grade 10</span></div>
                 <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] xl:text-[4rem] font-extrabold text-white leading-[1.06] tracking-tight mb-5 fu fd1">Where Learning<br>Becomes an <span class="text-gold-300">Adventure</span></h1>
-                <p class="text-[15px] sm:text-base text-white/55 font-light leading-relaxed max-w-md mb-9 fu fd2">A nurturing space where young minds from LKG explore, grow, and build the foundation for a bright future.</p>
+                <p class="text-[15px] sm:text-base text-white/55 font-light leading-relaxed max-w-md mb-9 fu fd2">A nurturing space where young minds from Grade 1 explore, grow, and build the foundation for a bright future.</p>
                 <div class="flex flex-wrap gap-3 fu fd3">
                     <a href="#contact" class="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold px-7 py-3.5 rounded-full transition-all shadow-lg shadow-gold-500/20">Admissions Open <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                     <a href="#about" class="inline-flex items-center gap-2 bg-white/8 hover:bg-white/14 backdrop-blur-sm border border-white/15 text-white text-sm font-medium px-7 py-3.5 rounded-full transition-all">Discover Vijaya Makkala Koota</a>
@@ -224,16 +245,16 @@
                         <div class="why-stat text-center"><div class="w-10 h-10 bg-gold-50 rounded-xl flex items-center justify-center mx-auto mb-2.5"><i data-lucide="heart-handshake" class="w-5 h-5 text-gold-600"></i></div><span class="block text-xl font-extrabold text-navy-900 leading-none">15+</span><span class="block text-[9.5px] text-navy-400 font-medium mt-1 tracking-wide uppercase leading-snug">Years of<br>Trust</span></div>
                     </div>
                     <div>
-                        <div class="why-feat"><div class="why-feat-icon bg-navy-900"><i data-lucide="baby" class="w-[18px] h-[18px] text-gold-400"></i></div><div><h3 class="text-[13px] font-bold text-navy-900 mb-0.5">Gentle Start from LKG</h3><p class="text-xs text-navy-400 leading-relaxed">Play-based early learning that builds confidence.</p></div></div>
+                        <div class="why-feat"><div class="why-feat-icon bg-navy-900"><i data-lucide="baby" class="w-[18px] h-[18px] text-gold-400"></i></div><div><h3 class="text-[13px] font-bold text-navy-900 mb-0.5">Gentle Start from Grade 1</h3><p class="text-xs text-navy-400 leading-relaxed">Play-based early learning that builds confidence.</p></div></div>
                         <div class="why-feat"><div class="why-feat-icon bg-gold-500"><i data-lucide="graduation-cap" class="w-[18px] h-[18px] text-navy-900"></i></div><div><h3 class="text-[13px] font-bold text-navy-900 mb-0.5">100% Board Results Since 2020</h3><p class="text-xs text-navy-400 leading-relaxed">Every student has passed with distinction.</p></div></div>
                         <div class="why-feat"><div class="why-feat-icon bg-navy-900"><i data-lucide="palette" class="w-[18px] h-[18px] text-gold-400"></i></div><div><h3 class="text-[13px] font-bold text-navy-900 mb-0.5">Beyond Textbooks</h3><p class="text-xs text-navy-400 leading-relaxed">Art, music, dance, sports woven into daily life.</p></div></div>
                         <div class="why-feat"><div class="why-feat-icon bg-gold-500"><i data-lucide="shield-check" class="w-[18px] h-[18px] text-navy-900"></i></div><div><h3 class="text-[13px] font-bold text-navy-900 mb-0.5">Campus Safety First</h3><p class="text-xs text-navy-400 leading-relaxed">CCTV, guarded entry, female attendants, safety drills.</p></div></div>
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="rounded-2xl overflow-hidden shadow-xl shadow-navy-900/6"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80&auto=format&fit=crop" alt="Campus" class="w-full h-[340px] sm:h-[400px] lg:h-[480px] object-cover" loading="lazy"></div>
-                    <div class="absolute -left-3 sm:-left-6 top-6 sm:top-8 bg-white rounded-2xl p-3.5 sm:p-4 shadow-lg shadow-navy-900/8 border border-navy-100/50 flex items-center gap-3"><div class="w-11 h-11 sm:w-12 sm:h-12 bg-gold-50 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="trophy" class="w-5 h-5 sm:w-6 sm:h-6 text-gold-600"></i></div><div><span class="block text-base sm:text-lg font-extrabold text-navy-900 leading-none">100%</span><span class="block text-[9.5px] sm:text-[10px] text-navy-400 font-medium mt-0.5">Board Results</span><span class="block text-[9px] sm:text-[9.5px] text-gold-600 font-semibold">Since 2020</span></div></div>
-                    <div class="absolute -right-2 sm:-right-4 top-6 sm:top-8 bg-gold-500 rounded-xl sm:rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-lg shadow-gold-500/20"><span class="block text-[11px] sm:text-xs font-extrabold text-navy-900 tracking-wide">CBSE Affiliated</span><span class="block text-[8.5px] sm:text-[9px] text-navy-900/55 font-medium mt-0.5">LKG – Grade 10</span></div>
+                    <div class="rounded-2xl overflow-hidden shadow-xl shadow-navy-900/6"><img src="uploads/3.png" alt="Campus" class="w-full h-[340px] sm:h-[400px] lg:h-[480px] object-cover" loading="lazy"></div>
+                    <div class="absolute -left-3 sm:-left-6 top-2 sm:top-2 bg-white rounded-2xl p-3.5 sm:p-4 shadow-lg shadow-navy-900/8 border border-navy-100/50 flex items-center gap-3"><div class="w-11 h-11 sm:w-12 sm:h-12 bg-gold-50 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="trophy" class="w-5 h-5 sm:w-6 sm:h-6 text-gold-600"></i></div><div><span class="block text-base sm:text-lg font-extrabold text-navy-900 leading-none">100%</span><span class="block text-[9.5px] sm:text-[10px] text-navy-400 font-medium mt-0.5">Board Results</span><span class="block text-[9px] sm:text-[9.5px] text-gold-600 font-semibold">Since 2020</span></div></div>
+                    <div class="absolute -right-2 sm:-right-4 top-6 sm:top-8 bg-gold-500 rounded-xl sm:rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-lg shadow-gold-500/20"><span class="block text-[11px] sm:text-xs font-extrabold text-navy-900 tracking-wide">From Grade</span><span class="block text-[8.5px] sm:text-[9px] text-navy-900/55 font-medium mt-0.5">1 to 10th</span></div>
                     <div class="absolute -right-2 sm:-right-4 bottom-20 sm:bottom-24 bg-navy-900 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-xl shadow-navy-900/25 flex items-center gap-2.5 sm:gap-3"><div class="flex -space-x-2"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80&auto=format&fit=crop" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-900 object-cover" alt="" loading="lazy"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&auto=format&fit=crop" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-900 object-cover" alt="" loading="lazy"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80&auto=format&fit=crop" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-900 object-cover" alt="" loading="lazy"></div><div><span class="block text-xs sm:text-sm font-bold text-white leading-none">1800+</span><span class="block text-[9px] sm:text-[10px] text-white/40 font-medium mt-0.5">Students</span></div></div>
                     <div class="absolute -bottom-2 left-10 right-10 h-1 bg-gradient-to-r from-transparent via-gold-400/30 to-transparent rounded-full"></div>
                 </div>
@@ -245,11 +266,11 @@
     <section id="about" class="py-16 sm:py-20 lg:py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16"><h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]"><span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-gold-500 mb-1">About Us</span>A School That Feels Like Family</h2><p class="text-sm text-navy-400 font-light leading-relaxed mt-4 max-w-lg mx-auto">Where every child is known by name, and every family is part of our community.</p></div>
-            <div class="rounded-2xl overflow-hidden mb-10 sm:mb-14 shadow-xl shadow-navy-900/5"><img src="https://images.unsplash.com/photo-1562774053-701939374585?w=1400&q=80&auto=format&fit=crop" alt="Campus" class="w-full h-[200px] sm:h-[280px] lg:h-[360px] object-cover" loading="lazy"></div>
+            <div class="rounded-2xl overflow-hidden mb-10 sm:mb-14 shadow-xl shadow-navy-900/5"><img src="uploads/school.png" alt="Campus" class="w-full h-[200px] sm:h-[280px] lg:h-[360px] object-cover" loading="lazy"></div>
             <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14 sm:mb-20">
                 <div class="lg:col-span-5">
-                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">Founded in 2010 with a simple belief — that every child deserves to be seen, heard, and nurtured — Vijaya Makkala Koota has grown from a small neighborhood school into one of the most trusted CBSE institutions in Bangalore.</p>
-                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">Today, we serve over 1800 students from LKG through Grade 10. Our classrooms are bright and inviting, our teachers are deeply invested, and our campus is designed so children feel safe, curious, and happy every single day.</p>
+                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">Founded in 2010 with a simple belief — that every child deserves to be seen, heard, and nurtured — Vijaya Makkala Koota has grown from a small neighborhood school into one of the most trusted institutions in Kundapura.</p>
+                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">Today, we serve over 1800 students from Grade 1 through Grade 10. Our classrooms are bright and inviting, our teachers are deeply invested, and our campus is designed so children feel safe, curious, and happy every single day.</p>
                     <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-8">We don't just prepare students for exams. We prepare them for life — with empathy, confidence, and the ability to think for themselves.</p>
                     <div class="flex items-center gap-4">
                         <a href="#" onclick="showToast('Detailed about page coming soon.');return false" class="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold px-6 py-3 rounded-full transition-all">Know More <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
@@ -264,7 +285,7 @@
             </div>
             <div class="bg-navy-900 rounded-2xl p-8 sm:p-12 lg:p-14 text-center">
                 <h3 class="text-xl sm:text-2xl lg:text-[1.7rem] font-bold text-white tracking-tight leading-snug mb-3">Begin Your Child's Journey with Vijaya Makkala Koota</h3>
-                <p class="text-sm text-navy-300 font-light leading-relaxed max-w-lg mx-auto mb-8">Admissions are open for the 2026–27 academic year from LKG to Grade 10. Schedule a campus visit or submit an enquiry to get started.</p>
+                <p class="text-sm text-navy-300 font-light leading-relaxed max-w-lg mx-auto mb-8">Admissions are open for the 2026–27 academic year from Grade 1 to Grade 10. Schedule a campus visit or submit an enquiry to get started.</p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold px-7 py-3.5 rounded-lg transition-all">Submit an Enquiry</a>
                     <a href="tel:+918012345678" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-navy-700 hover:border-navy-600 text-navy-200 hover:text-white text-sm font-medium px-7 py-3.5 rounded-lg transition-all">Call +91 80 1234 5678</a>
@@ -283,14 +304,14 @@
     <!-- FACILITIES -->
     <section id="fac" class="py-16 sm:py-20 lg:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-            <div class="text-center max-w-lg mx-auto mb-12 sm:mb-14"><h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]"><span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-navy-400 mb-1">Facilities</span>Spaces That Inspire</h2><p class="text-sm text-navy-400 font-light mt-3">Designed with care for every age group, from LKG to Grade 10.</p></div>
+            <div class="text-center max-w-lg mx-auto mb-12 sm:mb-14"><h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-[1.12]"><span class="block text-base sm:text-lg font-semibold tracking-[0.14em] uppercase text-navy-400 mb-1">Facilities</span>Spaces That Inspire</h2><p class="text-sm text-navy-400 font-light mt-3">Designed with care for every age group, from Grade 1 to Grade 10.</p></div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80&auto=format&fit=crop" alt="Classrooms" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-navy-50"><i data-lucide="monitor" class="w-4 h-4 text-navy-600"></i></div><h3 class="fh-name">Bright Classrooms</h3></div><p class="fh-desc">Natural light, interactive smart boards, and age-appropriate furniture for every grade.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="layout-grid" class="w-3 h-3"></i>40+ Rooms</span><span class="fh-meta"><i data-lucide="wifi" class="w-3 h-3"></i>Smart Boards</span></div></div></div>
-                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&q=80&auto=format&fit=crop" alt="Labs" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-gold-50"><i data-lucide="flask-conical" class="w-4 h-4 text-gold-600"></i></div><h3 class="fh-name">Science Laboratories</h3></div><p class="fh-desc">Separate junior and senior labs with full equipment for hands-on experiments.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="beaker" class="w-3 h-3"></i>3 Labs</span><span class="fh-meta"><i data-lucide="pipette" class="w-3 h-3"></i>Fully Equipped</span></div></div></div>
-                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&q=80&auto=format&fit=crop" alt="Library" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-navy-50"><i data-lucide="library" class="w-4 h-4 text-navy-600"></i></div><h3 class="fh-name">Reading Library</h3></div><p class="fh-desc">8000+ books, a story corner for LKG kids, and quiet study zones for seniors.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="book-open" class="w-3 h-3"></i>8,000+ Books</span><span class="fh-meta"><i data-lucide="armchair" class="w-3 h-3"></i>Reading Zone</span></div></div></div>
-                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700&q=80&auto=format&fit=crop" alt="Sports" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-gold-50"><i data-lucide="trophy" class="w-4 h-4 text-gold-600"></i></div><h3 class="fh-name">Playground & Sports</h3></div><p class="fh-desc">Age-separated play areas, cricket nets, basketball court, and indoor games room.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="medal" class="w-3 h-3"></i>5+ Sports</span><span class="fh-meta"><i data-lucide="home" class="w-3 h-3"></i>Indoor Games</span></div></div></div>
-                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80&auto=format&fit=crop" alt="Computer Lab" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-navy-50"><i data-lucide="cpu" class="w-4 h-4 text-navy-600"></i></div><h3 class="fh-name">Computer Lab</h3></div><p class="fh-desc">Individual workstations with age-appropriate software from LKG through Grade 10.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="monitor" class="w-3 h-3"></i>40 Systems</span><span class="fh-meta"><i data-lucide="wifi" class="w-3 h-3"></i>Internet Access</span></div></div></div>
-                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80&auto=format&fit=crop" alt="Transport" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-gold-50"><i data-lucide="bus" class="w-4 h-4 text-gold-600"></i></div><h3 class="fh-name">Safe Transport</h3></div><p class="fh-desc">GPS-tracked buses with female attendants covering all major residential areas.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="map-pin" class="w-3 h-3"></i>15+ Routes</span><span class="fh-meta"><i data-lucide="shield-check" class="w-3 h-3"></i>GPS Tracked</span></div></div></div>
+                <div class="fhcard"><div class="fh-img"><img src="uploads/class.png" alt="Classrooms" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-navy-50"><i data-lucide="monitor" class="w-4 h-4 text-navy-600"></i></div><h3 class="fh-name">Bright Classrooms</h3></div><p class="fh-desc">Natural light, interactive smart boards, and age-appropriate furniture for every grade.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="layout-grid" class="w-3 h-3"></i>10+ Rooms</span></div></div></div>
+                <div class="fhcard"><div class="fh-img"><img src="uploads/yaksh.png" alt="Labs" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-gold-50"><i data-lucide="drama" class="w-4 h-4 text-gold-600"></i></div><h3 class="fh-name">Hobby Classes</h3></div><p class="fh-desc">Engaging hobby programs including arts,music,and cultural activities to enhance students talents.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="zap" class="w-3 h-3"></i>karate</span><span class="fh-meta"><i data-lucide="music" class="w-3 h-3"></i>Singing</span><span class="fh-meta"><i data-lucide="Star" class="w-3 h-3"></i>Dance</span></div></div></div>
+                <div class="fhcard"><div class="fh-img"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&q=80&auto=format&fit=crop" alt="Library" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-navy-50"><i data-lucide="library" class="w-4 h-4 text-navy-600"></i></div><h3 class="fh-name">Reading Library</h3></div><p class="fh-desc">8000+ books, a story corner for Grade 1 kids, and quiet study zones for seniors.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="book-open" class="w-3 h-3"></i>8,000+ Books</span><span class="fh-meta"><i data-lucide="armchair" class="w-3 h-3"></i>Reading Zone</span></div></div></div>
+                <div class="fhcard"><div class="fh-img"><img src="uploads/pg.png" alt="Sports" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-gold-50"><i data-lucide="trophy" class="w-4 h-4 text-gold-600"></i></div><h3 class="fh-name">Playground & Sports</h3></div><p class="fh-desc">Age-separated play areas, cricket nets, basketball court, and indoor games room.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="medal" class="w-3 h-3"></i>5+ Sports</span><span class="fh-meta"><i data-lucide="home" class="w-3 h-3"></i>Indoor Games</span></div></div></div>
+                <div class="fhcard"><div class="fh-img"><img src="uploads/lab.png" alt="Computer Lab" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-navy-50"><i data-lucide="cpu" class="w-4 h-4 text-navy-600"></i></div><h3 class="fh-name">Computer Lab</h3></div><p class="fh-desc">Individual workstations with age-appropriate software from Grade 1 through Grade 10.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="monitor" class="w-3 h-3"></i>20 Systems</span><span class="fh-meta"><i data-lucide="wifi" class="w-3 h-3"></i>Internet Access</span></div></div></div>
+                <div class="fhcard"><div class="fh-img"><img src="uploads/bus.png" alt="Transport" loading="lazy"></div><div class="fh-body"><div class="fh-head"><div class="fh-ico bg-gold-50"><i data-lucide="bus" class="w-4 h-4 text-gold-600"></i></div><h3 class="fh-name">Safe Transport</h3></div><p class="fh-desc">GPS-tracked buses with female attendants covering all major residential areas.</p><div class="fh-metas"><span class="fh-meta"><i data-lucide="map-pin" class="w-3 h-3"></i>8+ Routes</span></div></div></div>
             </div>
         </div>
     </section>
@@ -309,6 +330,8 @@
         </div>
         <div class="gal-deck mb-4 sm:mb-5" id="galUpper"></div>
         <div class="gal-deck" id="galLower"></div>
+        <div class="flex justify-center mt-8 sm:mt-10"><a href="user.html"  class="prof-btn">View All Updates <i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
+        
     </section>
 
     <!-- GALLERY LIGHTBOX -->
@@ -340,7 +363,7 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
                     <div><label class="cf-label" for="fEmail">Email Address</label><input type="email" id="fEmail" class="cf-input" placeholder="you@example.com"><div class="cf-err" id="fEmailErr">Please enter a valid email.</div></div>
-                    <div><label class="cf-label" for="fGrade">Grade Applying For <span class="text-gold-600">*</span></label><select id="fGrade" class="cf-input cf-select" required><option value="" disabled selected>Select grade</option><option value="lkg">LKG</option><option value="ukg">UKG</option><option value="1">Grade 1</option><option value="2">Grade 2</option><option value="3">Grade 3</option><option value="4">Grade 4</option><option value="5">Grade 5</option><option value="6">Grade 6</option><option value="7">Grade 7</option><option value="8">Grade 8</option><option value="9">Grade 9</option><option value="10">Grade 10</option></select><div class="cf-err" id="fGradeErr">Please select a grade.</div></div>
+                    <div><label class="cf-label" for="fGrade">Grade Applying For <span class="text-gold-600">*</span></label><select id="fGrade" class="cf-input cf-select" required><option value="" disabled selected>Select grade</option><option value="Grade 1">Grade 1</option><option value="ukg">UKG</option><option value="1">Grade 1</option><option value="2">Grade 2</option><option value="3">Grade 3</option><option value="4">Grade 4</option><option value="5">Grade 5</option><option value="6">Grade 6</option><option value="7">Grade 7</option><option value="8">Grade 8</option><option value="9">Grade 9</option><option value="10">Grade 10</option></select><div class="cf-err" id="fGradeErr">Please select a grade.</div></div>
                 </div>
                 <div class="mb-4 sm:mb-5"><label class="cf-label" for="fChild">Child's Name</label><input type="text" id="fChild" class="cf-input" placeholder="Child's full name"></div>
                 <div class="mb-5 sm:mb-6"><label class="cf-label" for="fMsg">Message</label><textarea id="fMsg" class="cf-input" placeholder="Any specific questions or information you'd like to share..." rows="4"></textarea></div>
@@ -357,10 +380,23 @@
     <footer class="bg-navy-900 text-white pt-12 sm:pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
-                <div><div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div><p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from LKG to Grade 10 with care, confidence, and character since 2010.</p><div class="flex items-center gap-2.5"><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="facebook" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="instagram" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="youtube" class="w-3.5 h-3.5 text-navy-300"></i></a></div></div>
+                <div><div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div><p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from Grade 1 to Grade 10 with care, confidence, and character since 2010.</p>
+                
+                <div class="flex items-center gap-2.5">
+  <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center">
+    <i class="fab fa-facebook-f text-navy-300"></i>
+  </a>
+  <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center">
+    <i class="fab fa-instagram text-navy-300"></i>
+  </a>
+  <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center">
+    <i class="fab fa-youtube text-navy-300"></i>
+  </a>
+</div>                
+                </div>
                 <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Quick Links</h4><ul class="space-y-3"><li><a href="#about" class="text-sm text-navy-300 hover:text-white transition-colors">About Us</a></li><li><a href="#fac" class="text-sm text-navy-300 hover:text-white transition-colors">Facilities</a></li><li><a href="#ach" class="text-sm text-navy-300 hover:text-white transition-colors">Achievements</a></li><li><a href="#gallery" class="text-sm text-navy-300 hover:text-white transition-colors">Gallery</a></li></ul></div>
-                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Academics</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Pre-Primary (LKG–UKG)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Primary (1–5)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Middle (6–8)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Secondary (9–10)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Exam Results</a></li></ul></div>
-                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Contact</h4><ul class="space-y-3.5"><li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">42, Temple Road, Jayanagar, Bangalore – 560041</span></li><li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">+91 80 1234 5678</span></li><li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">info@vijayamakkalakoota.edu.in</span></li><li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li></ul></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Academics</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Primary (1–5)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Middle (6–7)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">High School (8–10)</a></li></ul></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Contact</h4><ul class="space-y-3.5"><li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Athradi Kundapura – 560041</span></li><li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">+91 80 1234 5678</span></li><li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">info@vijayamakkalakoota.edu.in</span></li><li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li></ul></div>
             </div>
             <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-xs text-navy-500">© 2025 Vijaya Makkala Koota. All rights reserved.</p><div class="flex items-center gap-5"><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Privacy</a><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Terms</a></div></div>
         </div>
@@ -496,25 +532,72 @@
     achObs.observe(document.getElementById('ach'));
 
     /* ─── Testimonials (static) ─── */
-    const testBP=[{br:640,n:1},{br:1280,n:2},{br:99999,n:3}];
-    const avatarColors=['#274377','#b08a32','#0a1628','#3b66aa','#785428'];
-    const testData=[
-        {n:'Pradeep Kumar',r:'Father of Arjun (Grade 5)',q:'ಎಲ್ಲರಿಗೂ ನಮಸ್ಕಾರ ನನ್ನ ಮಗ ಸಮರ್ಥ್ ಚಿಟ್ಟಾಣಿ ವಿಜಯ ಮಕ್ಕಳ ಕೂಟ ಶಾಲೆಗೆ ಸೇರಿ ಎರಡು ವರ್ಷ ಆಯಿತು. ಮೊದಲು ಕನ್ನಡ ಮೀಡಿಯಂ ಶಾಲೆಗೆ ಹೋಗುತ್ತಿದ್ದ ಈಗ ನಮ್ಮ ವಿಜಯಮಕ್ಕಳ ಕೂಟ ಶಾಲೆಯಲ್ಲಿ ಕಲಿತು ಇಂಗ್ಲೀಷ್ನಲಿ ಒಂದೇ ವರ್ಷದಲ್ಲಿ ಪರಿಪೂರ್ಣತೆ ಹೊಂದಿರುದಲ್ಲದೆ,ಒಳ್ಳೆಯ ವಿದ್ಯಾರ್ಥಿ ಆಗಿದ್ದಾನೆ ಬರೀ ಕಲಿಕೆಯಲ್ಲಿ ಮಾತ್ರವಲ್ಲದೆ ಅವನು ಬೇರೆ ಬೇರೆ ಚಟುವಟಿಕೆಯಲ್ಲಿ ಬಹಳ ಆಸಕ್ತಿಯಿಂದ ಭಾಗವಹಿಸುತ್ತಾನೆ..  ಮತ್ತು ಶಾಲೆಯ ಸುತ್ತಮುತ್ತಲಿನ ಪರಿಸರ... ಶಾಲೆಯ ಮುಖ್ಯ ಶಿಕ್ಷಕರು ಮತ್ತು ಸಹಶಿಕ್ಷಕರು ಮಕ್ಕಳೊಂದಿಗೆ ತುಂಬಾ ಒಳ್ಳೆಯ ಶಿಕ್ಷಣದ ಜೊತೆಗೆ ಒಳ್ಳೆಯ ಹವ್ಯಾಸಗಳನ್ನು ಕಲಿಸುತ್ತಿದ್ದಾರೆ... ಈ ಶಾಲೆಯ ವಿಶೇಷತೆ ಎಂದರೆ ನಮ್ಮ ಸಂಸ್ಕೃತಿಯ ಬಗ್ಗೆ  ಅಂದರೆ ಕುಣಿತ ಭಜನೆ ಯಕ್ಷಗಾನ ವಿವಿಧ ಹಬ್ಬಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ತಿಳಿಸಿಕೊಡುತ್ತಾರೆ ತುಂಬಾ ಧನ್ಯವಾದಗಳು'},
-        {n:'Meera Krishnan',r:'Mother of Kavya (Grade 3)',q:'ಇನ್ನೂ ಶಾಲೆಯ ವಾತಾವರಣವಾಗಲಿ, ಸೌಲಭ್ಯಗಳಾಗಲಿ—ಎಲ್ಲವೂ ವಿದ್ಯಾರ್ಥಿಗಳ ಕಲಿಕೆಗೆ ಪೂರಕವಾಗಿದ್ದು, ಅವರನ್ನು ಪ್ರತಿಯೊಂದು ಹಂತದಲ್ಲೂ ಪ್ರೋತ್ಸಾಹಿಸುತ್ತಿದೆ . ಶಾಲೆಯಲ್ಲಿನ ಶಿಕ್ಷಕರು ಪಠ್ಯದ ಜೊತೆಗೆ ಪಠ್ಯಪೂರಕ ಚಟುವಟಿಕೆಗಳಿಗೂ ಉತ್ತೇಜನ ನೀಡುತ್ತಾ, ಮಕ್ಕಳು ವಿವಿಧ ಸ್ಪರ್ಧೆಗಳಲ್ಲಿ ಭಾಗವಹಿಸಿ ಯಶಸ್ಸು ಸಾಧಿಸುವಂತೆ ಮಾರ್ಗದರ್ಶನ ಮಾಡುತ್ತಿದ್ದಾರೆ.ನನ್ನ ಮಗಳ ಸಮಗ್ರ ಅಭಿವೃದ್ಧಿಗೆ ಪೂರಕವಾದ ಶಿಕ್ಷಣ, ಸಂಸ್ಕಾರ ಮತ್ತು ಮಾರ್ಗದರ್ಶನ ನೀಡುತ್ತಿರುವ ವಿಜಯ ಮಕ್ಕಳ ಕೂಟ ಶಾಲೆಯ ಆಡಳಿತ ಮಂಡಳಿ ಹಾಗೂ ಶಿಕ್ಷಕ ವೃಂದಕ್ಕೆ ನನ್ನ ಹೃತ್ಪೂರ್ವಕ ಧನ್ಯವಾದಗಳು. ಇಂತಹ ಉತ್ತಮ ಶಿಕ್ಷಣ ಸಂಸ್ಥೆಯೊಂದರ ಭಾಗವಾಗಿರುವುದು ನಮ್ಮ ಪಾಲಿಗೆ ಹೆಮ್ಮೆಯ ವಿಷಯ. ಮುಂದಿನ ದಿನಗಳಲ್ಲಿಯೂ ಇದೇ ರೀತಿ ಇನ್ನಷ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ಉತ್ತಮ ನಾಗರಿಕರನ್ನಾಗಿ ರೂಪಿಸಲಿ ಎಂಬ ಹಾರೈಕೆಯೊಂದಿಗೆ ನನ್ನ ಮಾತುಗಳನ್ನು ಇಲ್ಲಿಗೆ ಮುಕ್ತಾಯಗೊಳಿಸುತ್ತೇನೆ. ಧನ್ಯವಾದಗಳು.'},
-        {n:'Suresh Babu',r:'Father of Nitin (Grade 10)',q:'The board exam preparation was thorough. Teachers stayed after school for extra classes. Nitin scored 94%.'},
-        {n:'Anjali Rao',r:'Mother of Priya (LKG)',q:'As a first-time parent, sending my child to school was emotional. The teachers made the settling-in period so gentle.'},
-        {n:'Vikram Shetty',r:'Father of Rahul (Grade 8)',q:'The sports program is excellent. Rahul represented the school at state level in cricket.'}
-    ];
-    document.getElementById('testTrack').innerHTML=testData.map((d,i)=>{const initials=d.n.split(' ').map(w=>w[0]).join('');const color=avatarColors[i%avatarColors.length];return`<div class="tc" data-card><span class="tc-quote">"</span><p class="tc-text">${d.q}</p><div class="tc-bottom"><div class="tc-avatar" style="background:${color}">${initials}</div><div><div class="tc-name">${d.n}</div><div class="tc-role">${d.r}</div></div></div></div>`}).join('');
+/* ─── Testimonials (static) ─── */
+const testBP=[{br:640,n:1},{br:1280,n:2},{br:99999,n:3}];
+const testData=[
+    {n:'Pradeep Kumar',r:'Father of Arjun (Grade 5)',img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80&auto=format&fit=crop',q:'ಎಲ್ಲರಿಗೂ ನಮಸ್ಕಾರ ನನ್ನ ಮಗ ಸಮರ್ಥ್ ಚಿಟ್ಟಾಣಿ ವಿಜಯ ಮಕ್ಕಳ ಕೂಟ ಶಾಲೆಗೆ ಸೇರಿ ಎರಡು ವರ್ಷ ಆಯಿತು. ಮೊದಲು ಕನ್ನಡ ಮೀಡಿಯಂ ಶಾಲೆಗೆ ಹೋಗುತ್ತಿದ್ದ ಈಗ ನಮ್ಮ ವಿಜಯಮಕ್ಕಳ ಕೂಟ ಶಾಲೆಯಲ್ಲಿ ಕಲಿತು ಇಂಗ್ಲೀಷ್ನಲಿ ಒಂದೇ ವರ್ಷದಲ್ಲಿ ಪರಿಪೂರ್ಣತೆ ಹೊಂದಿರುದಲ್ಲದೆ,ಒಳ್ಳೆಯ ವಿದ್ಯಾರ್ಥಿ ಆಗಿದ್ದಾನೆ ಬರೀ ಕಲಿಕೆಯಲ್ಲಿ ಮಾತ್ರವಲ್ಲದೆ ಅವನು ಬೇರೆ ಬೇರೆ ಚಟುವಟಿಕೆಯಲ್ಲಿ ಬಹಳ ಆಸಕ್ತಿಯಿಂದ ಭಾಗವಹಿಸುತ್ತಾನೆ..  ಮತ್ತು ಶಾಲೆಯ ಸುತ್ತಮುತ್ತಲಿನ ಪರಿಸರ... ಶಾಲೆಯ ಮುಖ್ಯ ಶಿಕ್ಷಕರು ಮತ್ತು ಸಹಶಿಕ್ಷಕರು ಮಕ್ಕಳೊಂದಿಗೆ ತುಂಬಾ ಒಳ್ಳೆಯ ಶಿಕ್ಷಣದ ಜೊತೆಗೆ ಒಳ್ಳೆಯ ಹವ್ಯಾಸಗಳನ್ನು ಕಲಿಸುತ್ತಿದ್ದಾರೆ... ಈ ಶಾಲೆಯ ವಿಶೇಷತೆ ಎಂದರೆ ನಮ್ಮ ಸಂಸ್ಕೃತಿಯ ಬಗ್ಗೆ  ಅಂದರೆ ಕುಣಿತ ಭಜನೆ ಯಕ್ಷಗಾನ ವಿವಿಧ ಹಬ್ಬಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ತಿಳಿಸಿಕೊಡುತ್ತಾರೆ ತುಂಬಾ ಧನ್ಯವಾದಗಳು'},
+    {n:'Meera Krishnan',r:'Mother of Kavya (Grade 3)',img:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80&auto=format&fit=crop',q:'ಇನ್ನೂ ಶಾಲೆಯ ವಾತಾವರಣವಾಗಲಿ, ಸೌಲಭ್ಯಗಳಾಗಲಿ—ಎಲ್ಲವೂ ವಿದ್ಯಾರ್ಥಿಗಳ ಕಲಿಕೆಗೆ ಪೂರಕವಾಗಿದ್ದು, ಅವರನ್ನು ಪ್ರತಿಯೊಂದು ಹಂತದಲ್ಲೂ ಪ್ರೋತ್ಸಾಹಿಸುತ್ತಿದೆ . ಶಾಲೆಯಲ್ಲಿನ ಶಿಕ್ಷಕರು ಪಠ್ಯದ ಜೊತೆಗೆ ಪಠ್ಯಪೂರಕ ಚಟುವಟಿಕೆಗಳಿಗೂ ಉತ್ತೇಜನ ನೀಡುತ್ತಾ, ಮಕ್ಕಳು ವಿವಿಧ ಸ್ಪರ್ಧೆಗಳಲ್ಲಿ ಭಾಗವಹಿಸಿ ಯಶಸ್ಸು ಸಾಧಿಸುವಂತೆ ಮಾರ್ಗದರ್ಶನ ಮಾಡುತ್ತಿದ್ದಾರೆ.ನನ್ನ ಮಗಳ ಸಮಗ್ರ ಅಭಿವೃದ್ಧಿಗೆ ಪೂರಕವಾದ ಶಿಕ್ಷಣ, ಸಂಸ್ಕಾರ ಮತ್ತು ಮಾರ್ಗದರ್ಶನ ನೀಡುತ್ತಿರುವ ವಿಜಯ ಮಕ್ಕಳ ಕೂಟ ಶಾಲೆಯ ಆಡಳಿತ ಮಂಡಳಿ ಹಾಗೂ ಶಿಕ್ಷಕ ವೃಂದಕ್ಕೆ ನನ್ನ ಹೃತ್ಪೂರ್ವಕ ಧನ್ಯವಾದಗಳು. ಇಂತಹ ಉತ್ತಮ ಶಿಕ್ಷಣ ಸಂಸ್ಥೆಯೊಂದರ ಭಾಗವಾಗಿರುವುದು ನಮ್ಮ ಪಾಲಿಗೆ ಹೆಮ್ಮೆಯ ವಿಷಯ. ಮುಂದಿನ ದಿನಗಳಲ್ಲಿಯೂ ಇದೇ ರೀತಿ ಇನ್ನಷ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ಉತ್ತಮ ನಾಗರಿಕರನ್ನಾಗಿ ರೂಪಿಸಲಿ ಎಂಬ ಹಾರೈಕೆಯೊಂದಿಗೆ ನನ್ನ ಮಾತುಗಳನ್ನು ಇಲ್ಲಿಗೆ ಮುಕ್ತಾಯಗೊಳಿಸುತ್ತೇನೆ. ಧನ್ಯವಾದಗಳು.'},
+    {n:'Suresh Babu',r:'Father of Nitin (Grade 10)',img:'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80&auto=format&fit=crop',q:'The board exam preparation was thorough. Teachers stayed after school for extra classes. Nitin scored 94%.'},
+    {n:'Anjali Rao',r:'Mother of Priya (Grade 1)',img:'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&q=80&auto=format&fit=crop',q:'As a first-time parent, sending my child to school was emotional. The teachers made the settling-in period so gentle.'},
+    {n:'Vikram Shetty',r:'Father of Rahul (Grade 8)',img:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80&auto=format&fit=crop',q:'The sports program is excellent. Rahul represented the school at state level in cricket.'}
+];
 
-    function applyStatic(){
-        applyWidths('testWrap','testTrack',testBP,285,24);
+function buildTestCard(d,i){
+    var charLimit=120;
+    var needsReadMore=d.q.length>charLimit;
+    var uid='tw-'+i;
+    return '<div class="tc-new" data-card>'+
+        '<div class="tc-header">'+
+            '<div class="tc-avatar"><img src="'+d.img+'" alt="'+d.n+'" loading="lazy"></div>'+
+            '<div class="tc-info">'+
+                '<div class="tc-name">'+d.n+'</div>'+
+                '<div class="tc-role">'+d.r+'</div>'+
+            '</div>'+
+        '</div>'+
+        '<div class="tc-quote-icon">'+
+            '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>'+
+        '</div>'+
+        '<div class="tc-text-wrap collapsed" id="'+uid+'">'+
+            '<p class="tc-text">'+d.q+'</p>'+
+        '</div>'+
+        (needsReadMore?'<button class="tc-read-more" data-target="'+uid+'" onclick="toggleTest(event,this)">'+
+            'Read more'+
+            ' <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>'+
+        '</button>':'')+
+    '</div>';
+}
+
+document.getElementById('testTrack').innerHTML=testData.map(function(d,i){return buildTestCard(d,i)}).join('');
+
+/* THIS LINE prevents all cards from stretching when one expands */
+document.getElementById('testTrack').style.alignItems='flex-start';
+
+function toggleTest(e,btn){
+    e.stopPropagation();
+    e.preventDefault();
+    var targetId=btn.getAttribute('data-target');
+    var wrap=document.getElementById(targetId);
+    if(!wrap) return;
+    var isOpen=wrap.classList.contains('expanded');
+    if(isOpen){
+        wrap.classList.remove('expanded');
+        wrap.classList.add('collapsed');
+        btn.classList.remove('expanded');
+        btn.innerHTML='Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+    }else{
+        wrap.classList.remove('collapsed');
+        wrap.classList.add('expanded');
+        btn.classList.add('expanded');
+        btn.innerHTML='Read less <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
     }
-    applyStatic();
-    window.addEventListener('resize',()=>{applyStatic();applyNewsWidths();applyAchWidths()});
-    setupAutoScroll('testWrap',4500,310);
+}
 
-    /* ═══════════════════════════════════════════════════════
+function applyStatic(){
+    applyWidths('testWrap','testTrack',testBP,280,20);
+}
+applyStatic();
+window.addEventListener('resize',function(){applyStatic();applyNewsWidths();applyAchWidths()});
+setupAutoScroll('testWrap',4500,310);    /* ═══════════════════════════════════════════════════════
        NEWS — Dynamic fetch from /posts API
        ═══════════════════════════════════════════════════════ */
     const newsBP=[{br:640,n:1},{br:1280,n:2},{br:99999,n:3}];
