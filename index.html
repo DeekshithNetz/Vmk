@@ -330,7 +330,7 @@
         </div>
         <div class="gal-deck mb-4 sm:mb-5" id="galUpper"></div>
         <div class="gal-deck" id="galLower"></div>
-        <div class="flex justify-center mt-8 sm:mt-10"><a href="user.html"  class="prof-btn">View All Updates <i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
+        <div class="flex justify-center mt-8 sm:mt-10"><a href="user.html"  class="prof-btn">View Gallery<i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
         
     </section>
 
@@ -731,18 +731,18 @@ setupAutoScroll('testWrap',4500,310);    /* ════════════
     newsObs.observe(document.getElementById('news'));
 
     /* ─── Gallery Dual Deck ─── */
-    const gd=[
-        {s:'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=80&auto=format&fit=crop',a:'Campus'},
-        {s:'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=700&q=80&auto=format&fit=crop',a:'Library'},
-        {s:'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=700&q=80&auto=format&fit=crop',a:'Sports Ground'},
-        {s:'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=700&q=80&auto=format&fit=crop',a:'Science Lab'},
-        {s:'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=700&q=80&auto=format&fit=crop',a:'Classroom'},
-        {s:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=700&q=80&auto=format&fit=crop',a:'Art Room'},
-        {s:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&q=80&auto=format&fit=crop',a:'Computer Lab'},
-        {s:'https://images.unsplash.com/photo-1562774053-701939374585?w=700&q=80&auto=format&fit=crop',a:'Building'},
-        {s:'https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&q=80&auto=format&fit=crop',a:'Garden'},
-        {s:'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80&auto=format&fit=crop',a:'Auditorium'}
-    ];
+    const gd = [
+    { s: 'uploads/g11.jpg', a: 'Campus' },
+    { s: 'uploads/a1.jpg', a: 'Library' },
+    { s: 'uploads/g3.jpg', a: 'Sports Ground' },
+    { s: 'uploads/g4.jpg', a: 'Science Lab' },
+    { s: 'uploads/g5.jpg', a: 'Classroom' },
+    { s: 'uploads/g6.jpg', a: 'Art Room' },
+    { s: 'uploads/a3.jpg', a: 'Computer Lab' },
+    { s: 'uploads/g8.jpg', a: 'Building' },
+    { s: 'uploads/g13.jpg', a: 'Garden' },
+    { s: 'uploads/g10.jpg', a: 'Auditorium' }
+];
     const upperIdx=[0,1,2,3,4],lowerIdx=[5,6,7,8,9];
     function buildDeck(containerId,imgIndices,animClass){let oneSet='';imgIndices.forEach(idx=>{oneSet+=`<div class="gcard" style="width:280px;height:210px" onclick="olb(${idx})"><img src="${gd[idx].s}" alt="${gd[idx].a}" loading="lazy"><div class="gcard-ov"><span>${gd[idx].a}</span></div></div>`});document.getElementById(containerId).innerHTML=`<div class="gal-track ${animClass}">${oneSet}${oneSet}</div>`}
     buildDeck('galUpper',upperIdx,'anim-right');
