@@ -145,6 +145,33 @@
       opacity: 0; transition: all .3s ease; z-index: 200; white-space: nowrap;
     }
     .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+      #loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+      #loader::after {
+  content: "";
+  width: 45px;
+  height: 45px;
+  border: 5px solid #3b82f6; /* blue */
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
   </style>
 </head>
 <body>
@@ -167,7 +194,7 @@
 <div class="page-header">
   <div class="page-title">Blog Posts</div>
 </div>
-
+<div id="loader"></div>
 <div class="container" id="posts"></div>
 
 <div class="pagination" id="pagination">
@@ -195,6 +222,14 @@
 <div class="toast" id="toast">Deleted</div>
 
 <script>
+    function showLoader() {
+    document.getElementById("loader").style.display = "flex";
+  }
+
+  function hideLoader() {
+    document.getElementById("loader").style.display = "none";
+  }
+  
 const API = "https://vmk-production-d390.up.railway.app";
 let page = 1;
 const limit = 6;
@@ -219,8 +254,12 @@ function showToast(msg) {
 }
 
 async function load() {
+showLoader();
   const res = await fetch(`${API}/posts?page=${page}&limit=${limit}`);
   const result = await res.json();
+  hideLoader();
+  
+  
 
   const container = document.getElementById('posts');
   container.innerHTML = "";
@@ -313,9 +352,11 @@ async function prevPage() {
 }
 
 document.getElementById('confirmDelete').onclick = async () => {
+showLoader();
   if (!deleteTargetId) return;
   await fetch(`${API}/posts/${deleteTargetId}`, { method: 'DELETE' });
   closeModal();
+  hideLoader();
   showToast('Deleted');
   load();
 };

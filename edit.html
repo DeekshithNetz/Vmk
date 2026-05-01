@@ -103,6 +103,33 @@
       opacity: 0; transition: all .3s ease; z-index: 200; white-space: nowrap;
     }
     .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    #loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#loader::after {
+  content: "";
+  width: 45px;
+  height: 45px;
+  border: 5px solid #3b82f6; /* blue */
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+ 
   </style>
 </head>
 <body>
@@ -121,7 +148,7 @@
     <a href="dashboard.html"><i class="fas fa-chart-pie"></i>Dashboard</a>
   </div>
 </nav>
-
+<div id="loader"></div>
 <div class="container">
   <div class="page-title">Edit Blog</div>
 
@@ -157,6 +184,14 @@
 
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <script>
+    function showLoader() {
+    document.getElementById("loader").style.display = "flex";
+  }
+
+  function hideLoader() {
+    document.getElementById("loader").style.display = "none";
+  }
+  
 const quill = new Quill('#editor', {
   theme: 'snow',
   modules: {
@@ -231,6 +266,7 @@ quill.root.addEventListener('paste', (e) => {
 });
 
 async function load() {
+showLoader();
   const res = await fetch(`https://vmk-production-d390.up.railway.app/posts/${id}`);
   const data = await res.json();
   document.getElementById('title').value = data.title;
@@ -242,17 +278,24 @@ async function load() {
     img.src = data.thumbnail;
     img.style.display = 'block';
   }
+  hideLoader();
 }
 
 async function uploadThumbnail(file) {
+showLoader();
+
   const formData = new FormData();
   formData.append('file', file);
   const res = await fetch('https://vmk-production-d390.up.railway.app/upload-image', { method: 'POST', body: formData });
   const data = await res.json();
+  hideLoader();
+
   return data.url;
 }
 
 async function update() {
+showLoader();
+
   const title = document.getElementById('title').value;
   const content = quill.root.innerHTML;
   const tags = document.getElementById('tags').value;
@@ -267,6 +310,8 @@ async function update() {
   await fetch(`https://vmk-production-d390.up.railway.app/posts/${id}`, { method: 'PUT', body: formData });
   const toast = document.getElementById('toast');
   toast.classList.add('show');
+  hideLoader();
+  
   setTimeout(() => { window.location.href = "view.html"; }, 1200);
 }
 

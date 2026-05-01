@@ -155,6 +155,33 @@
     }
     .modal-cancel { background: #f0f1f3; color: #555; }
     .modal-confirm { background: #c62828; color: #fff; }
+       #loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#loader::after {
+  content: "";
+  width: 45px;
+  height: 45px;
+  border: 5px solid #3b82f6; /* blue */
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
   </style>
 </head>
 <body>
@@ -173,7 +200,7 @@
     <a href="dashboard.html"><i class="fas fa-chart-pie"></i>Dashboard</a>
   </div>
 </nav>
-
+<div id="loader"></div>
 <div class="container">
   <div class="page-title">Achievements</div>
 
@@ -217,6 +244,14 @@
 </div>
 
 <script>
+    function showLoader() {
+    document.getElementById("loader").style.display = "flex";
+  }
+
+  function hideLoader() {
+    document.getElementById("loader").style.display = "none";
+  }
+  
 let deleteTargetId = null;
 
 document.querySelectorAll('.nav-links a').forEach(a => {
@@ -262,6 +297,7 @@ async function uploadImage(file) {
 
 /* Add achievement */
 async function add() {
+showLoader();
   const title = document.getElementById('title').value;
   const file = document.getElementById('image').files[0];
 
@@ -283,11 +319,13 @@ async function add() {
   document.getElementById('uploadPreview').style.display = 'none';
 
   showToast('Added ✅');
+  hideLoader();
   load();
 }
 
 /* Load achievements */
 async function load() {
+showLoader();
   const res = await fetch('https://vmk-production-d390.up.railway.app/achievements');
   const data = await res.json();
 
@@ -296,6 +334,7 @@ async function load() {
 
   if (!data || data.length === 0) {
     list.innerHTML = `<div class="empty"><i class="fas fa-trophy"></i><p>No achievements yet</p></div>`;
+    hideLoader();
     return;
   }
 
@@ -322,6 +361,7 @@ async function load() {
 
     list.appendChild(div);
   });
+  hideLoader()
 }
 
 /* Delete */
