@@ -101,15 +101,17 @@
 <body class="bg-slate2 text-navy-900 antialiased">
 
     <!-- NAV -->
-    <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+   <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-[68px]">
-                <a href="index.html" class="flex items-center gap-2.5"><div class="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="lt font-bold text-[16px] tracking-tight">Vijaya Makkala Koota</span></a>
-                <div class="hidden xl:flex items-center gap-8"><a href="index.html#why" class="nl">Why Vijaya Makkala Koota</a><a href="index.html#about" class="nl">About</a><a href="index.html#ach" class="nl">Achievements</a><a href="index.html#fac" class="nl">Facilities</a><a href="user.html" class="nl">News</a><a href="gallery.html" class="nl" style="color:#0a1628;font-weight:700">Gallery</a><a href="index.html#test" class="nl">Testimonials</a><a href="index.html#contact" class="nl">Contact</a></div>
+                <a href="#" class="flex items-center gap-2.5"><div class="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="lt font-bold text-[16px] tracking-tight">Vijaya Makkala Koota</span></a>
+                <div class="hidden xl:flex items-center gap-8"><a href="about.html" class="nl">About Us</a><a href="user.html" class="nl">Achievements</a>
+                <a href="extra.html" class="nl">Extra Curricular Activity</a>
+                <a href="#fac" class="nl">Facilities</a><a href="user.html" class="nl">News</a><a href="gallery.html" class="nl">Gallery</a><a href="contact.html" class="nl">Contact</a></div>
                 <div class="flex items-center gap-3">
                     <a href="tel:+918012345678" class="hidden lg:flex items-center gap-1.5 ph-text text-xs"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
-                    <a href="index.html#contact" class="hidden sm:inline-flex items-center cta-btn text-xs font-bold px-5 py-2.5 rounded-full transition-all">Admissions 2026</a>
-                    <button id="mt" class="xl:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-navy-50" aria-label="Menu"><i data-lucide="menu" class="lb-icon w-5 h-5"></i></button>
+                    <a href="contact.html" class="hidden sm:inline-flex items-center cta-btn bg-gold-500 hover:bg-gold-600 text-navy-900 text-xs font-bold px-5 py-2.5 rounded-full transition-all">Admissions 2026</a>
+                    <button id="mt" class="xl:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/10" aria-label="Menu"><i data-lucide="menu" class="lb-icon w-5 h-5"></i></button>
                 </div>
             </div>
         </div>
@@ -118,34 +120,33 @@
     <div id="md" class="mob fixed top-0 right-0 bottom-0 z-[60] w-[300px] bg-navy-900 shadow-2xl flex flex-col">
         <div class="flex items-center justify-between px-6 py-5 border-b border-white/5"><div class="flex items-center gap-2.5"><div class="w-8 h-8 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-400"></i></div><span class="text-sm font-bold text-white">Vijaya Makkala Koota</span></div><button onclick="cd()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5"><i data-lucide="x" class="w-4 h-4 text-white/40"></i></button></div>
         <div class="flex-1 overflow-y-auto px-4 py-5 space-y-1">
-            <a href="index.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="home" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Home</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="index.html#why" class="dl mob-link"><div class="mob-ico"><i data-lucide="star" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Why Vijaya Makkala Koota</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="index.html#about" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="index.html#ach" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="index.html#fac" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Facilities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+                        <a href="about.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="user.html?tag=achievements" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="#fac" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Facilities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="extra.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="drama" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Extra Curricular Activity</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            
             <a href="user.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="newspaper" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">News & Events</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="gallery.html" class="mob-link" style="background:rgba(201,168,76,0.1);color:#e4b44a;border-radius:14px"><div class="mob-ico" style="background:rgba(201,168,76,0.15)"><i data-lucide="image" class="w-[16px] h-[16px] text-gold-400"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4" style="opacity:0.6;color:#e4b44a"></i></a>
-            <a href="index.html#test" class="dl mob-link"><div class="mob-ico"><i data-lucide="message-circle" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Testimonials</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="index.html#contact" class="dl mob-link"><div class="mob-ico"><i data-lucide="mail" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Contact Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            <a href="gallery.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="image" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+                        <a href="contact.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="mail" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Contact Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
         </div>
         <div class="px-5 py-5 border-t border-white/5 space-y-3">
-            <a href="index.html#contact" class="dl flex items-center justify-center gap-2 w-full bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold py-3.5 rounded-xl transition-colors"><i data-lucide="graduation-cap" class="w-4 h-4"></i>Admissions 2026</a>
+            <a href="contact.html" class="dl flex items-center justify-center gap-2 w-full bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold py-3.5 rounded-xl transition-colors"><i data-lucide="graduation-cap" class="w-4 h-4"></i>Admissions 2026</a>
             <a href="tel:+918012345678" class="dl flex items-center justify-center gap-2 w-full text-white/40 hover:text-white/60 text-xs font-medium py-2 transition-colors"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
         </div>
     </div>
-
     <!-- PAGE HERO -->
     <section class="relative pt-[68px] overflow-hidden">
         <div class="relative h-[280px] sm:h-[340px] lg:h-[380px]">
-            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80&auto=format&fit=crop" alt="Gallery" class="absolute inset-0 w-full h-full object-cover">
+            <img src="uploads/g15.jpg" alt="Gallery" class="absolute inset-0 w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-950/50 to-navy-950/20"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent"></div>
             <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-10 sm:pb-14">
                 <div class="fu">
                     <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-4 py-1.5 mb-4"><span class="w-1.5 h-1.5 bg-gold-400 rounded-full"></span><span class="text-white/85 text-[11px] font-medium">Photo Gallery</span></div>
                     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.08] mb-2">Campus <span class="text-gold-300">Gallery</span></h1>
-                    <p class="text-sm text-white/50 font-light max-w-md">A visual journey through the spaces, faces, and moments that make Vijaya Makkala Koota special.</p>
-                </div>
+                 <p class="text-sm text-white/70 font-semibold max-w-md">
+A visual journey through the spaces, faces, and moments that make Vijaya Makkala Koota special.
+</p>          </div>
             </div>
         </div>
     </section>
@@ -159,7 +160,7 @@
                     <i data-lucide="grid-3x3" class="w-3.5 h-3.5"></i>All<span class="fc" id="cAll">0</span>
                 </button>
                 <button class="fpill" data-cat="campus" onclick="filterGallery('campus',this)">Campus<span class="fc" id="cCampus">0</span></button>
-                <button class="fpill" data-cat="classroom" onclick="filterGallery('classroom',this)">Classrooms<span class="fc" id="cClassroom">0</span></button>
+                <button class="fpill" data-cat="achievements" onclick="filterGallery('achievements',this)">achievements<span class="fc" id="cAchievements">0</span></button>
                 <button class="fpill" data-cat="sports" onclick="filterGallery('sports',this)">Sports<span class="fc" id="cSports">0</span></button>
                 <button class="fpill" data-cat="labs" onclick="filterGallery('labs',this)">Labs<span class="fc" id="cLabs">0</span></button>
                 <button class="fpill" data-cat="library" onclick="filterGallery('library',this)">Library<span class="fc" id="cLibrary">0</span></button>
@@ -212,9 +213,9 @@
     <footer class="bg-navy-900 text-white pt-12 sm:pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
-                <div><div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div><p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from LKG to Grade 10 with care, confidence, and character since 2010.</p><div class="flex items-center gap-2.5"><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="facebook" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="instagram" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="youtube" class="w-3.5 h-3.5 text-navy-300"></i></a></div></div>
+                <div><div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div><p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from Grade 1 to Grade 10 with care, confidence, and character since 2010.</p><div class="flex items-center gap-2.5"><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="facebook" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="instagram" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="youtube" class="w-3.5 h-3.5 text-navy-300"></i></a></div></div>
                 <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Quick Links</h4><ul class="space-y-3"><li><a href="index.html#about" class="text-sm text-navy-300 hover:text-white transition-colors">About Us</a></li><li><a href="index.html#fac" class="text-sm text-navy-300 hover:text-white transition-colors">Facilities</a></li><li><a href="index.html#ach" class="text-sm text-navy-300 hover:text-white transition-colors">Achievements</a></li><li><a href="gallery.html" class="text-sm text-navy-300 hover:text-white transition-colors">Gallery</a></li></ul></div>
-                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Academics</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Pre-Primary (LKG–UKG)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Primary (1–5)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Middle (6–8)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Secondary (9–10)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Exam Results</a></li></ul></div>
+                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Academics</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Pre-Primary (Grade 1–UKG)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Primary (1–5)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Middle (6–8)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Secondary (9–10)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Exam Results</a></li></ul></div>
                 <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Contact</h4><ul class="space-y-3.5"><li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">42, Temple Road, Jayanagar, Bangalore – 560041</span></li><li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">+91 80 1234 5678</span></li><li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">info@vijayamakkalakoota.edu.in</span></li><li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li></ul></div>
             </div>
             <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-xs text-navy-500">© 2025 Vijaya Makkala Koota. All rights reserved.</p><div class="flex items-center gap-5"><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Privacy</a><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Terms</a></div></div>
@@ -262,47 +263,51 @@
        GALLERY DATA
        ═══════════════════════════════════════════════════════ */
     const allPhotos = [
-        // Campus
-        {id:1, src:'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80&auto=format&fit=crop', title:'Main Building Entrance', cat:'campus', h:320},
-        {id:2, src:'https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80&auto=format&fit=crop', title:'School Campus Aerial View', cat:'campus', h:280},
-        {id:3, src:'https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&q=80&auto=format&fit=crop', title:'Front Garden & Pathway', cat:'campus', h:360},
-        {id:4, src:'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80&auto=format&fit=crop', title:'School Auditorium', cat:'campus', h:300},
-        {id:5, src:'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80&auto=format&fit=crop', title:'Campus Greenery', cat:'campus', h:340},
-        // Classrooms
-        {id:6, src:'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&q=80&auto=format&fit=crop', title:'Smart Classroom Session', cat:'classroom', h:300},
-        {id:7, src:'https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80&auto=format&fit=crop', title:'Interactive Learning', cat:'classroom', h:320},
-        {id:8, src:'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80&auto=format&fit=crop', title:'Group Discussion', cat:'classroom', h:280},
-        {id:9, src:'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80&auto=format&fit=crop', title:'Kindergarten Activity Room', cat:'classroom', h:340},
-        // Sports
-        {id:10, src:'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=800&q=80&auto=format&fit=crop', title:'Cricket Practice Nets', cat:'sports', h:320},
-        {id:11, src:'https://images.unsplash.com/photo-1461896836934-bd45ba8a0a68?w=800&q=80&auto=format&fit=crop', title:'Annual Sports Day', cat:'sports', h:280},
-        {id:12, src:'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80&auto=format&fit=crop', title:'Basketball Court', cat:'sports', h:340},
-        {id:13, src:'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80&auto=format&fit=crop', title:'Track & Field Events', cat:'sports', h:300},
-        {id:14, src:'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80&auto=format&fit=crop', title:'Indoor Games Room', cat:'sports', h:290},
-        // Labs
-        {id:15, src:'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80&auto=format&fit=crop', title:'Science Laboratory', cat:'labs', h:320},
-        {id:16, src:'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80&auto=format&fit=crop', title:'Chemistry Lab Experiments', cat:'labs', h:300},
-        {id:17, src:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80&auto=format&fit=crop', title:'Computer Lab', cat:'labs', h:280},
-        {id:18, src:'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=800&q=80&auto=format&fit=crop', title:'Mathematics Lab', cat:'labs', h:340},
-        // Library
-        {id:19, src:'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&q=80&auto=format&fit=crop', title:'Main Library Hall', cat:'library', h:320},
-        {id:20, src:'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80&auto=format&fit=crop', title:'Reading Section', cat:'library', h:340},
-        {id:21, src:'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80&auto=format&fit=crop', title:'Story Corner for LKG', cat:'library', h:300},
-        // Events
-        {id:22, src:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80&auto=format&fit=crop', title:'Annual Day Celebrations', cat:'events', h:320},
-        {id:23, src:'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80&auto=format&fit=crop', title:'Republic Day Parade', cat:'events', h:280},
-        {id:24, src:'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80&auto=format&fit=crop', title:'School Festival', cat:'events', h:340},
-        {id:25, src:'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80&auto=format&fit=crop', title:'Graduation Ceremony', cat:'events', h:300},
-        {id:26, src:'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80&auto=format&fit=crop', title:'Prize Distribution', cat:'events', h:310},
-        // Activities
-        {id:27, src:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80&auto=format&fit=crop', title:'Art & Craft Session', cat:'activities', h:320},
-        {id:28, src:'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80&auto=format&fit=crop', title:'Music Class', cat:'activities', h:300},
-        {id:29, src:'https://images.unsplash.com/photo-1547153760-18fc86324498?w=800&q=80&auto=format&fit=crop', title:'Dance Practice', cat:'activities', h:340},
-        {id:30, src:'https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=800&q=80&auto=format&fit=crop', title:'Yoga & Meditation', cat:'activities', h:290},
-        {id:31, src:'https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=800&q=80&auto=format&fit=crop', title:'Science Exhibition', cat:'activities', h:310},
-        {id:32, src:'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80&auto=format&fit=crop', title:'Plantation Drive', cat:'activities', h:330},
-    ];
+    // Campus
+    {id:1, src:'uploads/g1.png', title:'Main Building Entrance', cat:'campus', h:320},
+    {id:2, src:'uploads/g2.jpg', title:'School Campus Aerial View', cat:'campus', h:280},
+    {id:3, src:'uploads/g3.jpg', title:'Front Garden & Pathway', cat:'campus', h:360},
+    {id:4, src:'uploads/g4.jpg', title:'School Auditorium', cat:'campus', h:300},
+    {id:5, src:'uploads/g5.jpg', title:'Campus Greenery', cat:'campus', h:340},
 
+    // Classrooms
+    {id:6, src:'uploads/g6.jpg', title:'Smart Classroom Session', cat:'classroom', h:300},
+    {id:7, src:'uploads/g7.jpg', title:'Interactive Learning', cat:'classroom', h:320},
+    {id:8, src:'uploads/g8.jpg', title:'Group Discussion', cat:'classroom', h:280},
+    {id:9, src:'uploads/g9.jpg', title:'Kindergarten Activity Room', cat:'classroom', h:340},
+
+    // Sports
+    {id:10, src:'uploads/g10.jpg', title:'Cricket Practice Nets', cat:'sports', h:320},
+    {id:11, src:'uploads/g11.jpg', title:'Annual Sports Day', cat:'sports', h:280},
+    {id:12, src:'uploads/g12.jpg', title:'Basketball Court', cat:'sports', h:340},
+    {id:13, src:'uploads/g13.jpg', title:'Track & Field Events', cat:'sports', h:300},
+    {id:14, src:'uploads/g14.jpg', title:'Indoor Games Room', cat:'sports', h:290},
+
+    // Labs
+    {id:15, src:'uploads/g15.jpg', title:'Science Laboratory', cat:'labs', h:320},
+    {id:16, src:'uploads/g16.jpg', title:'Chemistry Lab Experiments', cat:'labs', h:300},
+    {id:17, src:'uploads/g17.jpg', title:'Computer Lab', cat:'labs', h:280},
+    {id:18, src:'uploads/g18.jpg', title:'Mathematics Lab', cat:'labs', h:340},
+
+    // Library
+    {id:19, src:'uploads/g19.jpg', title:'Main Library Hall', cat:'library', h:320},
+    {id:20, src:'uploads/g20.jpg', title:'Reading Section', cat:'library', h:340},
+    {id:21, src:'uploads/g21.jpg', title:'Story Corner for Grade 1', cat:'library', h:300},
+
+    // Events
+    {id:22, src:'uploads/a1.jpg', title:'Annual Day Celebrations', cat:'achievements', h:320},
+    {id:23, src:'uploads/a2.jpg', title:'Republic Day Parade', cat:'achievements', h:280},
+    {id:24, src:'uploads/a3.jpg', title:'School Festival', cat:'achievements', h:340},
+    {id:25, src:'uploads/a4.jpg', title:'Graduation Ceremony', cat:'achievements', h:300},
+    {id:26, src:'uploads/a5.jpg', title:'Prize Distribution', cat:'achievements', h:310},
+
+    {id:27, src:'uploads/a6.jpg', title:'Art & Craft Session', cat:'achievements', h:320},
+    {id:28, src:'uploads/a7.jpg', title:'Music Class', cat:'achievements', h:300},
+    {id:29, src:'uploads/a8.jpg', title:'Dance Practice', cat:'achievements', h:340},
+    {id:30, src:'uploads/a9.jpg', title:'Yoga & Meditation', cat:'achievements', h:290},
+    {id:31, src:'uploads/a10.jpg', title:'Science Exhibition', cat:'achievements', h:310},
+    {id:32, src:'uploads/a11.jpg', title:'Plantation Drive', cat:'achievements', h:330},
+    ];
     /* ─── State ─── */
     let currentCat = 'all';
     let currentLayout = 'grid';
@@ -312,7 +317,7 @@
 
     /* ─── Count categories ─── */
     function updateCounts() {
-        const cats = ['all','campus','classroom','sports','labs','library','events','activities'];
+        const cats = ['all','campus','achievements','sports','labs','library','events','activities'];
         cats.forEach(c => {
             const count = c === 'all' ? allPhotos.length : allPhotos.filter(p => p.cat === c).length;
             const el = document.getElementById('c' + c.charAt(0).toUpperCase() + c.slice(1));
