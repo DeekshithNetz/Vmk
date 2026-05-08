@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery — Vijaya Makkala Koota</title>
     <meta name="description" content="Explore campus life at Vijaya Makkala Koota through our gallery — classrooms, events, sports, labs, and everyday moments.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -101,29 +103,44 @@
 <body class="bg-slate2 text-navy-900 antialiased">
 
     <!-- NAV -->
-   <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+     <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-[68px]">
-                <a href="#" class="flex items-center gap-2.5"><div class="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="lt font-bold text-[16px] tracking-tight">Vijaya Makkala Koota</span></a>
-                <div class="hidden xl:flex items-center gap-8"><a href="about.html" class="nl">About Us</a><a href="user.html" class="nl">Achievements</a>
+                <a href="index.html" class="flex items-center gap-2.5">
+    
+    <div class="w-9 h-9 rounded-lg overflow-hidden flex items-center justify-center bg-white">
+        <img src="uploads/logo.png" alt="Vijaya Makkala Koota Logo" class="w-full h-full object-contain">
+    </div>
+
+    <span class="lt font-bold text-[16px] tracking-tight">
+        Vijaya Makkala Koota
+    </span>
+
+</a>                <div class="hidden xl:flex items-center gap-8">
+                    <a href="index.html" class="nl">Home</a><a href="about.html" class="nl">About Us</a><a href="user.html?tag=achievements" class="nl">Achievements</a>
                 <a href="extra.html" class="nl">Extra Curricular Activity</a>
-                <a href="#fac" class="nl">Facilities</a><a href="user.html" class="nl">News</a><a href="gallery.html" class="nl">Gallery</a><a href="contact.html" class="nl">Contact</a></div>
+                <a href="user.html" class="nl">News</a><a href="gallery.html" class="nl">Gallery</a><a href="contact.html" class="nl">Contact</a></div>
                 <div class="flex items-center gap-3">
-                    <a href="tel:+918012345678" class="hidden lg:flex items-center gap-1.5 ph-text text-xs"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+                    <a href="tel:+918012345678" class="hidden lg:flex items-center gap-1.5 ph-text text-xs"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 9880262644</a>
                     <a href="contact.html" class="hidden sm:inline-flex items-center cta-btn bg-gold-500 hover:bg-gold-600 text-navy-900 text-xs font-bold px-5 py-2.5 rounded-full transition-all">Admissions 2026</a>
                     <button id="mt" class="xl:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/10" aria-label="Menu"><i data-lucide="menu" class="lb-icon w-5 h-5"></i></button>
                 </div>
             </div>
         </div>
     </nav>
+    
     <div id="mo" class="mob-ov fixed inset-0 z-[55] bg-black/60 backdrop-blur-sm" onclick="cd()"></div>
     <div id="md" class="mob fixed top-0 right-0 bottom-0 z-[60] w-[300px] bg-navy-900 shadow-2xl flex flex-col">
-        <div class="flex items-center justify-between px-6 py-5 border-b border-white/5"><div class="flex items-center gap-2.5"><div class="w-8 h-8 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-400"></i></div><span class="text-sm font-bold text-white">Vijaya Makkala Koota</span></div><button onclick="cd()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5"><i data-lucide="x" class="w-4 h-4 text-white/40"></i></button></div>
+        <div class="flex items-center justify-between px-6 py-5 border-b border-white/5"><div class="flex items-center gap-2.5"><div class="w-8 h-8 bg-white rounded-lg overflow-hidden flex items-center justify-center">
+    <img src="uploads/logo.png" alt="Vijaya Makkala Koota Logo" class="w-full h-full object-contain">
+</div><span class="text-sm font-bold text-white">Vijaya Makkala Koota</span></div><button onclick="cd()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5"><i data-lucide="x" class="w-4 h-4 text-white/40"></i></button></div>
         <div class="flex-1 overflow-y-auto px-4 py-5 space-y-1">
+            <a href="index.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Home</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            
+            
                         <a href="about.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             <a href="user.html?tag=achievements" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="#fac" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Facilities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="extra.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="drama" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Extra Curricular Activity</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+                        <a href="extra.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="drama" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Extra Curricular Activity</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             
             <a href="user.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="newspaper" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">News & Events</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             <a href="gallery.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="image" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
@@ -131,9 +148,10 @@
         </div>
         <div class="px-5 py-5 border-t border-white/5 space-y-3">
             <a href="contact.html" class="dl flex items-center justify-center gap-2 w-full bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold py-3.5 rounded-xl transition-colors"><i data-lucide="graduation-cap" class="w-4 h-4"></i>Admissions 2026</a>
-            <a href="tel:+918012345678" class="dl flex items-center justify-center gap-2 w-full text-white/40 hover:text-white/60 text-xs font-medium py-2 transition-colors"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+            <a href="tel:+918012345678" class="dl flex items-center justify-center gap-2 w-full text-white/40 hover:text-white/60 text-xs font-medium py-2 transition-colors"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 9880262644</a>
         </div>
     </div>
+
     <!-- PAGE HERO -->
     <section class="relative pt-[68px] overflow-hidden">
         <div class="relative h-[280px] sm:h-[340px] lg:h-[380px]">
@@ -202,7 +220,7 @@ A visual journey through the spaces, faces, and moments that make Vijaya Makkala
                     <p class="text-sm text-navy-300 font-light leading-relaxed max-w-lg mx-auto mb-8">Schedule a campus visit and experience the Vijaya Makkala Koota difference firsthand. We'd love to show you around.</p>
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                         <a href="index.html#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold px-7 py-3.5 rounded-lg transition-all">Schedule a Visit</a>
-                        <a href="tel:+918012345678" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-navy-700 hover:border-navy-600 text-navy-200 hover:text-white text-sm font-medium px-7 py-3.5 rounded-lg transition-all">Call +91 80 1234 5678</a>
+                        <a href="tel:+919880262644" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-navy-700 hover:border-navy-600 text-navy-200 hover:text-white text-sm font-medium px-7 py-3.5 rounded-lg transition-all">Call +919880262644</a>
                     </div>
                 </div>
             </div>
@@ -210,17 +228,149 @@ A visual journey through the spaces, faces, and moments that make Vijaya Makkala
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-navy-900 text-white pt-12 sm:pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
-                <div><div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div><p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from Grade 1 to Grade 10 with care, confidence, and character since 2010.</p><div class="flex items-center gap-2.5"><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="facebook" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="instagram" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="youtube" class="w-3.5 h-3.5 text-navy-300"></i></a></div></div>
-                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Quick Links</h4><ul class="space-y-3"><li><a href="index.html#about" class="text-sm text-navy-300 hover:text-white transition-colors">About Us</a></li><li><a href="index.html#fac" class="text-sm text-navy-300 hover:text-white transition-colors">Facilities</a></li><li><a href="index.html#ach" class="text-sm text-navy-300 hover:text-white transition-colors">Achievements</a></li><li><a href="gallery.html" class="text-sm text-navy-300 hover:text-white transition-colors">Gallery</a></li></ul></div>
-                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Academics</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Pre-Primary (Grade 1–UKG)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Primary (1–5)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Middle (6–8)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Secondary (9–10)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Exam Results</a></li></ul></div>
-                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Contact</h4><ul class="space-y-3.5"><li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">42, Temple Road, Jayanagar, Bangalore – 560041</span></li><li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">+91 80 1234 5678</span></li><li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">info@vijayamakkalakoota.edu.in</span></li><li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li></ul></div>
+   <footer class="bg-navy-900 text-white pt-12 sm:pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+
+            <!-- ABOUT -->
+            <div>
+                <div class="flex items-center gap-2.5 mb-5">
+                    <div class="w-9 h-9 bg-white rounded-lg overflow-hidden flex items-center justify-center">
+    <img src="uploads/logo.png" alt="Vijaya Makkala Koota Logo" class="w-full h-full object-contain">
+</div>
+                    <span class="font-bold text-[15px]">Vijaya Makkala Koota</span>
+                </div>
+
+                <p class="text-sm text-navy-300 leading-relaxed mb-5">
+                    Nurturing young learners from Grade 1 to Grade 10 with care, confidence, and character since 2012.
+                </p>
+
+                <div class="flex items-center gap-2.5">
+                    <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-facebook-f text-navy-300"></i>
+                    </a>
+
+                    <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-instagram text-navy-300"></i>
+                    </a>
+
+                    <a href="https://youtu.be/F2p533YjFSc?si=yX8WMoLymb1xz4L_" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-youtube text-navy-300"></i>
+                    </a>
+                </div>
             </div>
-            <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-xs text-navy-500">© 2025 Vijaya Makkala Koota. All rights reserved.</p><div class="flex items-center gap-5"><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Privacy</a><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Terms</a></div></div>
+
+            <!-- QUICK LINKS -->
+            <div>
+                <h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">
+                    Quick Links
+                </h4>
+
+                <ul class="space-y-3">
+                    <li>
+                        <a href="about.html" class="text-sm text-navy-300 hover:text-white transition-colors">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#fac" class="text-sm text-navy-300 hover:text-white transition-colors">
+                            Facilities
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="user.html?tag=achievements" class="text-sm text-navy-300 hover:text-white transition-colors">
+                            Achievements
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="gallery.html" class="text-sm text-navy-300 hover:text-white transition-colors">
+                            Gallery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user.html" class="text-sm text-navy-300 hover:text-white transition-colors">
+                            News and Blogs
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div>
+                <h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">
+                    Contact
+                </h4>
+
+                <ul class="space-y-3.5">
+                    <li class="flex gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                        <span class="text-sm text-navy-300">
+                            Holmage Bhaskar Shetty Compound, Market Road, Vandse Post & Village, Kundapura Taluk, Udupi District - 576 233
+                        </span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                        <span class="text-sm text-navy-300">
+                            +919880262644, 9535673435
+
+                        </span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                        <span class="text-sm text-navy-300">
+                            vijayamakkalakoota@gmail.com
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- MAP -->
+            <!-- MAP -->
+<div>
+    <h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">
+        Location Map
+    </h4>
+
+    <div class="overflow-hidden rounded-2xl border border-white/10 shadow-lg">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7752.659795923779!2d74.7438574!3d13.6984586!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbc8f2518bae927%3A0x98a6dfed22d70b03!2sVijaya%20Makkala%20Koota%20English%20Medium%20School!5e0!3m2!1sen!2sin!4v1778211867615!5m2!1sen!2sin"
+            width="100%"
+            height="220"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
         </div>
-    </footer>
+
+        <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p class="text-xs text-navy-500">
+                © 2025 Vijaya Makkala Koota. All rights reserved.
+            </p>
+
+                        <p class="text-xs text-navy-500">
+    Developed with ❤️ by 
+    <a 
+        href="https://wa.me/919481289511?text=Hi%20deekshith"
+        target="_blank"
+        class="hover:text-navy-300 underline"
+    >
+        Freelancer
+    </a>
+</p>        </div>
+
+    </div>
+</footer>
 
     <!-- LIGHTBOX -->
     <div id="lb" class="lb fixed inset-0 z-[100] bg-navy-950/95 flex items-center justify-center p-4" onclick="clb()">

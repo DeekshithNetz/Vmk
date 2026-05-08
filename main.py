@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime,Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
-from datetime import datetime
+from datetime import datetime 
 import shutil, uuid, os
 
 DATABASE_URL = "postgresql://postgres:CJIzUofmYwJiWzpvxPxyhdNZEKLoRZHn@metro.proxy.rlwy.net:15598/railway"
@@ -113,7 +113,6 @@ def create_post(
     db: Session = Depends(get_db)
 ):
     excerpt = generate_excerpt(content)
-    tags=tags.lower()
 
     post = Post(
         title=title,
@@ -169,7 +168,6 @@ def update_post(
     tags: str = Form(""),
     db: Session = Depends(get_db)
 ):
-    tags=tags.lower()
     post = db.query(Post).filter(Post.id == post_id).first()
 
     if not post:

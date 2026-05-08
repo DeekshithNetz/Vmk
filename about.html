@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us — Vijaya Makkala Koota</title>
     <meta name="description" content="Learn about Vijaya Makkala Koota — our founder's vision, campus, and the values that guide us from Grade 1 to Grade 10.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -55,29 +57,44 @@
 <body class="bg-slate2 text-navy-900 antialiased">
 
     <!-- NAV -->
-    <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
+      <nav class="nav-bar fixed top-0 left-0 right-0 z-50">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-[68px]">
-                <a href="#" class="flex items-center gap-2.5"><div class="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="lt font-bold text-[16px] tracking-tight">Vijaya Makkala Koota</span></a>
-                <div class="hidden xl:flex items-center gap-8"><a href="about.html" class="nl">About Us</a><a href="user.html" class="nl">Achievements</a>
+                <a href="#" class="flex items-center gap-2.5">
+    
+    <div class="w-9 h-9 rounded-lg overflow-hidden flex items-center justify-center bg-white">
+        <img src="uploads/logo.png" alt="Vijaya Makkala Koota Logo" class="w-full h-full object-contain">
+    </div>
+
+    <span class="lt font-bold text-[16px] tracking-tight">
+        Vijaya Makkala Koota
+    </span>
+
+</a>                <div class="hidden xl:flex items-center gap-8">
+                    <a href="index.html" class="nl">Home</a><a href="about.html" class="nl">About Us</a><a href="user.html?tag=achievements" class="nl">Achievements</a>
                 <a href="extra.html" class="nl">Extra Curricular Activity</a>
-                <a href="#fac" class="nl">Facilities</a><a href="user.html" class="nl">News</a><a href="gallery.html" class="nl">Gallery</a><a href="contact.html" class="nl">Contact</a></div>
+                <a href="user.html" class="nl">News</a><a href="gallery.html" class="nl">Gallery</a><a href="contact.html" class="nl">Contact</a></div>
                 <div class="flex items-center gap-3">
-                    <a href="tel:+918012345678" class="hidden lg:flex items-center gap-1.5 ph-text text-xs"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+                    <a href="tel:+918012345678" class="hidden lg:flex items-center gap-1.5 ph-text text-xs"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 9880262644</a>
                     <a href="contact.html" class="hidden sm:inline-flex items-center cta-btn bg-gold-500 hover:bg-gold-600 text-navy-900 text-xs font-bold px-5 py-2.5 rounded-full transition-all">Admissions 2026</a>
                     <button id="mt" class="xl:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/10" aria-label="Menu"><i data-lucide="menu" class="lb-icon w-5 h-5"></i></button>
                 </div>
             </div>
         </div>
     </nav>
+    
     <div id="mo" class="mob-ov fixed inset-0 z-[55] bg-black/60 backdrop-blur-sm" onclick="cd()"></div>
     <div id="md" class="mob fixed top-0 right-0 bottom-0 z-[60] w-[300px] bg-navy-900 shadow-2xl flex flex-col">
-        <div class="flex items-center justify-between px-6 py-5 border-b border-white/5"><div class="flex items-center gap-2.5"><div class="w-8 h-8 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-400"></i></div><span class="text-sm font-bold text-white">Vijaya Makkala Koota</span></div><button onclick="cd()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5"><i data-lucide="x" class="w-4 h-4 text-white/40"></i></button></div>
+        <div class="flex items-center justify-between px-6 py-5 border-b border-white/5"><div class="flex items-center gap-2.5"><div class="w-8 h-8 bg-white rounded-lg overflow-hidden flex items-center justify-center">
+    <img src="uploads/logo.png" alt="Vijaya Makkala Koota Logo" class="w-full h-full object-contain">
+</div><span class="text-sm font-bold text-white">Vijaya Makkala Koota</span></div><button onclick="cd()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5"><i data-lucide="x" class="w-4 h-4 text-white/40"></i></button></div>
         <div class="flex-1 overflow-y-auto px-4 py-5 space-y-1">
+            <a href="index.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Home</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+            
+            
                         <a href="about.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="info" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">About Us</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             <a href="user.html?tag=achievements" class="dl mob-link"><div class="mob-ico"><i data-lucide="trophy" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Achievements</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="#fac" class="dl mob-link"><div class="mob-ico"><i data-lucide="layout-grid" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Facilities</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
-            <a href="extra.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="drama" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Extra Curricular Activity</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
+                        <a href="extra.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="drama" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Extra Curricular Activity</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             
             <a href="user.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="newspaper" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">News & Events</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
             <a href="gallery.html" class="dl mob-link"><div class="mob-ico"><i data-lucide="image" class="w-[16px] h-[16px] text-white/40"></i></div><span class="mob-lbl">Gallery</span><i data-lucide="chevron-right" class="mob-arr w-4 h-4 text-white/30"></i></a>
@@ -85,9 +102,10 @@
         </div>
         <div class="px-5 py-5 border-t border-white/5 space-y-3">
             <a href="contact.html" class="dl flex items-center justify-center gap-2 w-full bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold py-3.5 rounded-xl transition-colors"><i data-lucide="graduation-cap" class="w-4 h-4"></i>Admissions 2026</a>
-            <a href="tel:+918012345678" class="dl flex items-center justify-center gap-2 w-full text-white/40 hover:text-white/60 text-xs font-medium py-2 transition-colors"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 80 1234 5678</a>
+            <a href="tel:+918012345678" class="dl flex items-center justify-center gap-2 w-full text-white/40 hover:text-white/60 text-xs font-medium py-2 transition-colors"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 9880262644</a>
         </div>
     </div>
+
 
     <!-- HERO -->
     <section class="relative pt-[68px] overflow-hidden">
@@ -97,7 +115,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-navy-950/50 via-transparent to-transparent"></div>
             <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-10 sm:pb-14">
                 <div class="fu">
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-4 py-1.5 mb-4"><span class="w-1.5 h-1.5 bg-gold-400 rounded-full"></span><span class="text-white/85 text-[11px] font-medium">Established 2010</span></div>
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-4 py-1.5 mb-4"><span class="w-1.5 h-1.5 bg-gold-400 rounded-full"></span><span class="text-white/85 text-[11px] font-medium">Established 2012</span></div>
                     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.08] mb-2">About <span class="text-gold-300">Vijaya Makkala Koota</span></h1>
                     <p class="text-sm text-white/50 font-light max-w-md">A trusted CBSinstitution nurturing children with care, character, and confidence.</p>
                 </div>
@@ -112,19 +130,19 @@
                 <div class="order-2 lg:order-1">
                     <div class="inline-flex items-center gap-2 bg-gold-50 rounded-full px-4 py-1.5 mb-5"><span class="w-1.5 h-1.5 bg-gold-500 rounded-full"></span><span class="text-gold-700 text-[11px] font-semibold tracking-[0.08em] uppercase">Our Story</span></div>
                     <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight leading-[1.12] mb-5">From a Small Dream to a <span class="text-gold-600">Thriving Community</span></h2>
-                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">Vijaya Makkala Koota was founded in 2010 with a simple yet powerful belief — that every child deserves to be seen, heard, and 
-                    nurtured. What began as a small neighborhood school with just 80 students and 6 teachers has grown into one of the most trusted  institutions in Bangalore.</p>
+                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">Vijaya Makkala Koota was founded in 2012 with a simple yet powerful belief — that every child deserves to be seen, heard, and 
+                    nurtured. What began as a small neighborhood school with just 80 students and 6 teachers has grown into one of the most trusted  institutions in Byndoor Taluk.</p>
                     <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">The name translates to "Victorious Children's Association" — a name that reflects our deepest aspiration: to see every child leave as a confident, capable, and compassionate young person.</p>
-                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-8">Today, we serve over 1800 students from Grade 1 through Grade 10 with smart classrooms, equipped laboratories, a sprawling library, dedicated sports facilities, and safe transport — all designed so children feel secure, curious, and happy every single day.</p>
+                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-8">Today, we serve over 800 students from Grade 1 through Grade 10 with smart classrooms, equipped laboratories, a sprawling library, dedicated sports facilities, and safe transport — all designed so children feel secure, curious, and happy every single day.</p>
                     <div class="grid grid-cols-3 gap-4">
-                        <div class="bg-slate2 rounded-2xl p-4 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">15+</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Years</span></div>
-                        <div class="bg-slate2 rounded-2xl p-4 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">1800+</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Students</span></div>
-                        <div class="bg-slate2 rounded-2xl p-4 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">85+</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Faculty</span></div>
+                        <div class="bg-slate2 rounded-2xl p-4 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">13+</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Years</span></div>
+                        <div class="bg-slate2 rounded-2xl p-4 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">800+</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Students</span></div>
+                        <div class="bg-slate2 rounded-2xl p-4 border border-navy-100/40 text-center"><span class="block text-2xl sm:text-3xl font-extrabold text-navy-900 leading-none">10+</span><span class="block text-[10px] text-navy-400 font-medium mt-2 tracking-[0.1em] uppercase">Faculty</span></div>
                     </div>
                 </div>
                 <div class="order-1 lg:order-2 relative">
                     <div class="rounded-2xl overflow-hidden shadow-xl shadow-navy-900/6"><img src="uploads/girls.png" alt="Campus" class="w-full h-[340px] sm:h-[400px] lg:h-[460px] object-cover" loading="lazy"></div>
-                    <div class="absolute -left-3 sm:-left-6 top-6 sm:top-8 bg-white rounded-2xl p-3.5 sm:p-4 shadow-lg shadow-navy-900/8 border border-navy-100/50 flex items-center gap-3"><div class="w-11 h-11 sm:w-12 sm:h-12 bg-gold-50 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="calendar" class="w-5 h-5 sm:w-6 sm:h-6 text-gold-600"></i></div><div><span class="block text-base sm:text-lg font-extrabold text-navy-900 leading-none">2010</span><span class="block text-[9.5px] sm:text-[10px] text-navy-400 font-medium mt-0.5">Year Founded</span></div></div>
+                    <div class="absolute -left-3 sm:-left-6 top-6 sm:top-8 bg-white rounded-2xl p-3.5 sm:p-4 shadow-lg shadow-navy-900/8 border border-navy-100/50 flex items-center gap-3"><div class="w-11 h-11 sm:w-12 sm:h-12 bg-gold-50 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="calendar" class="w-5 h-5 sm:w-6 sm:h-6 text-gold-600"></i></div><div><span class="block text-base sm:text-lg font-extrabold text-navy-900 leading-none">2012</span><span class="block text-[9.5px] sm:text-[10px] text-navy-400 font-medium mt-0.5">Year Founded</span></div></div>
                     <div class="absolute -right-2 sm:-right-4 bottom-16 sm:bottom-20 bg-gold-500 rounded-xl sm:rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-lg shadow-gold-500/20"><span class="block text-[11px] sm:text-xs font-extrabold text-navy-900 tracking-wide">Affiliated</span><span class="block text-[8.5px] sm:text-[9px] text-navy-900/55 font-medium mt-0.5">Grade 1 – Grade 10</span></div>
                     <div class="absolute -bottom-2 left-10 right-10 h-1 bg-gradient-to-r from-transparent via-gold-400/30 to-transparent rounded-full"></div>
                 </div>
@@ -132,31 +150,38 @@
         </div>
     </section>
 
-    <!-- CHAIRMAN'S MESSAGE -->
+    <!-- Principal 'S MESSAGE -->
     <section class="py-16 sm:py-20 lg:py-24 bg-slate2 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-gold-100/20 rounded-full blur-[100px] -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-lg mx-auto mb-10 sm:mb-14">
-                <div class="inline-flex items-center gap-2 bg-gold-50 rounded-full px-4 py-1.5 mb-4"><span class="w-1.5 h-1.5 bg-gold-500 rounded-full"></span><span class="text-gold-700 text-[11px] font-semibold tracking-[0.08em] uppercase">Chairman's Message</span></div>
-                <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight leading-[1.12]">A Word from Our <span class="text-gold-600">Chairman</span></h2>
+                <div class="inline-flex items-center gap-2 bg-gold-50 rounded-full px-4 py-1.5 mb-4"><span class="w-1.5 h-1.5 bg-gold-500 rounded-full"></span><span class="text-gold-700 text-[11px] font-semibold tracking-[0.08em] uppercase">Principal 's Message</span></div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight leading-[1.12]">A Word from Our <span class="text-gold-600">Principal </span></h2>
             </div>
             <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
                 <div class="lg:col-span-2 flex justify-center lg:justify-start">
                     <div class="relative">
-                        <div class="w-[220px] sm:w-[260px] rounded-2xl overflow-hidden shadow-xl shadow-navy-900/8 border-2 border-white"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop" alt="Chairman" class="w-full h-[280px] sm:h-[320px] object-cover object-top" loading="lazy"></div>
-                        <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-navy-900 rounded-xl px-4 py-2 shadow-lg shadow-navy-900/25 whitespace-nowrap"><span class="text-[11px] font-bold text-white">Sri. R. Krishnamurthy</span></div>
+                        <div class="w-[220px] sm:w-[260px] rounded-2xl overflow-hidden shadow-xl shadow-navy-900/8 border-2 border-white"><img src="uploads/mam.jpg" alt="Principal " class="w-full h-[280px] sm:h-[320px] object-cover object-top" loading="lazy"></div>
+                        <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-navy-900 rounded-xl px-4 py-2 shadow-lg shadow-navy-900/25 whitespace-nowrap"><span class="text-[11px] font-bold text-white">Deepika Shubash</span></div>
                         <div class="absolute -top-3 -right-3 w-12 h-12 bg-gold-500 rounded-xl flex items-center justify-center shadow-lg shadow-gold-500/20"><i data-lucide="quote" class="w-5 h-5 text-navy-900"></i></div>
                     </div>
                 </div>
                 <div class="lg:col-span-3">
                     <div class="quote-block mb-6">
                         <span class="qq">"</span>
-                        <p class="text-[14.5px] text-navy-600 leading-[1.9] italic">Education is not just about filling a child's mind with information — it is about lighting a fire within them. At Vijaya Makkala Koota, we believe every child carries a unique spark. Our role is to nurture that spark with patience, love, and the right environment so it grows into a flame that lights up their future.</p>
+                        
+                        <p class="text-[14.5px] text-navy-600 leading-[1.9] italic">Education is the most powerful tool to shape the future
+</p>
                     </div>
-                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">When I started this school in 2010, my vision was simple: to create a space where children from all walks of life could receive quality education without feeling overwhelmed. I wanted a school where a child from Grade 1 feels as safe and loved as at home, and a Grade 10 student feels challenged and ready for the world.</p>
-                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">Over the years, I have watched thousands of children walk through our gates — some shy, some energetic, some unsure. Watching them transform into confident young individuals is the greatest reward. This happens because of our dedicated teachers, supportive parents, and our commitment to keeping the child at the center of every decision.</p>
-                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-6">We are not just building academic achievers. We are building good human beings — children who are kind, curious, culturally rooted, and globally aware. That is the Vijaya Makkala Koota promise.</p>
-                    <div class="flex items-center gap-3 pt-2"><div class="w-10 h-px bg-gold-400"></div><div><span class="block text-sm font-bold text-navy-900">Sri. R. Krishnamurthy</span><span class="block text-[11px] text-navy-400 font-medium">Founder & Chairman</span></div></div>
+                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">It gives me immense pleasure to welcome you to Vijaya Makkala Koota English Medium School, Athradi.</p>
+
+                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">Our school stands as a center of excellence where education is blended with values, discipline, and creativity. We believe that every child is unique and has the potential to achieve great success when guided with care and encouragement.
+</p>
+                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">We are proud to share that our students have consistently achieved excellent SSLC results, secured top ranks in the Byndoor zoneand state leveland actively participated in cultural, sports, and scout activities at various levels. These achievements reflect the dedication of our students, teachers, and parents.
+</p>
+                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-6">Our aim is not only academic success but also the overall development of students—building confidence, leadership, and moral values. With the strong support of our staff and parents, we continue to shape responsible and capable future citizens.
+</p>
+                    <div class="flex items-center gap-3 pt-2"><div class="w-10 h-px bg-gold-400"></div><div><span class="block text-sm font-bold text-navy-900">Deepika Shubash</span><span class="block text-[11px] text-navy-400 font-medium">Principal</span></div></div>
                 </div>
             </div>
         </div>
@@ -190,7 +215,7 @@
                         <h3 class="text-2xl sm:text-[1.7rem] font-bold text-navy-900 tracking-tight leading-snug mb-4">Our Mission</h3>
                         <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-6">To provide affordable, high-quality  education in a safe and nurturing environment, where experienced teachers use modern methods to bring out the best in every child — academically, creatively, and morally.</p>
                         <div class="flex flex-wrap gap-3">
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[12px] font-medium text-navy-600 border border-navy-100/60"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-600"></i>Quality CBSE</span>
+                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[12px] font-medium text-navy-600 border border-navy-100/60"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-600"></i>Quality education</span>
                             <span class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[12px] font-medium text-navy-600 border border-navy-100/60"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-600"></i>Safe Environment</span>
                             <span class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[12px] font-medium text-navy-600 border border-navy-100/60"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-600"></i>Modern Methods</span>
                         </div>
@@ -210,8 +235,8 @@
                     <h3 class="text-xl sm:text-2xl lg:text-[1.7rem] font-bold text-white tracking-tight leading-snug mb-3">See Our Campus for Yourself</h3>
                     <p class="text-sm text-navy-300 font-light leading-relaxed max-w-lg mx-auto mb-8">Schedule a visit and experience the Vijaya Makkala Koota difference in person.</p>
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-                        <a href="index.html#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold px-7 py-3.5 rounded-lg transition-all">Schedule a Visit</a>
-                        <a href="tel:+918012345678" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-navy-700 hover:border-navy-600 text-navy-200 hover:text-white text-sm font-medium px-7 py-3.5 rounded-lg transition-all">Call +91 80 1234 5678</a>
+                        <a href="contact.html#enquiry" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 text-sm font-bold px-7 py-3.5 rounded-lg transition-all">Schedule a Visit</a>
+                        <a href="tel:+919880262644" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-navy-700 hover:border-navy-600 text-navy-200 hover:text-white text-sm font-medium px-7 py-3.5 rounded-lg transition-all">Call +91 9880262644 </a>
                     </div>
                 </div>
             </div>
@@ -220,16 +245,148 @@
 
     <!-- FOOTER -->
     <footer class="bg-navy-900 text-white pt-12 sm:pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
-                <div><div class="flex items-center gap-2.5 mb-5"><div class="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-gold-400"></i></div><span class="font-bold text-[15px]">Vijaya Makkala Koota</span></div><p class="text-sm text-navy-300 leading-relaxed mb-5">Nurturing young learners from Grade 1 to Grade 10 with care, confidence, and character since 2010.</p><div class="flex items-center gap-2.5"><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="facebook" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="instagram" class="w-3.5 h-3.5 text-navy-300"></i></a><a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center"><i data-lucide="youtube" class="w-3.5 h-3.5 text-navy-300"></i></a></div></div>
-                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Quick Links</h4><ul class="space-y-3"><li><a href="about.html" class="text-sm text-navy-300 hover:text-white transition-colors">About Us</a></li><li><a href="index.html#fac" class="text-sm text-navy-300 hover:text-white transition-colors">Facilities</a></li><li><a href="index.html#ach" class="text-sm text-navy-300 hover:text-white transition-colors">Achievements</a></li><li><a href="gallery.html" class="text-sm text-navy-300 hover:text-white transition-colors">Gallery</a></li></ul></div>
-                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Academics</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Primary (1–5)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Middle (6–8)</a></li><li><a href="#" class="text-sm text-navy-300 hover:text-white transition-colors">Secondary (9–10)</a></li></ul></div>
-                <div><h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">Contact</h4><ul class="space-y-3.5"><li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">42, Temple Road, Jayanagar, Bangalore – 560041</span></li><li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">+91 80 1234 5678</span></li><li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">info@vijayamakkalakoota.edu.in</span></li><li class="flex gap-3"><i data-lucide="clock" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i><span class="text-sm text-navy-300">Mon – Sat: 8:00 AM – 2:30 PM</span></li></ul></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+
+            <!-- ABOUT -->
+            <div>
+                <div class="flex items-center gap-2.5 mb-5">
+                    <div class="w-9 h-9 bg-white rounded-lg overflow-hidden flex items-center justify-center">
+    <img src="uploads/logo.png" alt="Vijaya Makkala Koota Logo" class="w-full h-full object-contain">
+</div>
+                    <span class="font-bold text-[15px]">Vijaya Makkala Koota</span>
+                </div>
+
+                <p class="text-sm text-navy-300 leading-relaxed mb-5">
+                    Nurturing young learners from Grade 1 to Grade 10 with care, confidence, and character since 2012.
+                </p>
+
+                <div class="flex items-center gap-2.5">
+                    <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-facebook-f text-navy-300"></i>
+                    </a>
+
+                    <a href="#" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-instagram text-navy-300"></i>
+                    </a>
+
+                    <a href="https://youtu.be/F2p533YjFSc?si=yX8WMoLymb1xz4L_" class="w-8 h-8 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-youtube text-navy-300"></i>
+                    </a>
+                </div>
             </div>
-            <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-xs text-navy-500">© 2025 Vijaya Makkala Koota. All rights reserved.</p><div class="flex items-center gap-5"><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Privacy</a><a href="#" class="text-xs text-navy-500 hover:text-navy-300">Terms</a></div></div>
+
+            <!-- QUICK LINKS -->
+            <div>
+                <h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">
+                    Quick Links
+                </h4>
+
+                <ul class="space-y-3">
+                    <li>
+                        <a href="about.html" class="text-sm text-navy-300 hover:text-white transition-colors">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#fac" class="text-sm text-navy-300 hover:text-white transition-colors">
+                            Facilities
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="user.html?tag=achievements" class="text-sm text-navy-300 hover:text-white transition-colors">
+                            Achievements
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="gallery.html" class="text-sm text-navy-300 hover:text-white transition-colors">
+                            Gallery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user.html" class="text-sm text-navy-300 hover:text-white transition-colors">
+                            News and Blogs
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div>
+                <h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">
+                    Contact
+                </h4>
+
+                <ul class="space-y-3.5">
+                    <li class="flex gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                        <span class="text-sm text-navy-300">
+                            Holmage Bhaskar Shetty Compound, Market Road, Vandse Post & Village, Kundapura Taluk, Udupi District - 576 233
+                        </span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <i data-lucide="phone" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                        <span class="text-sm text-navy-300">
+                            +919880262644, 9535673435
+
+                        </span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <i data-lucide="mail" class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                        <span class="text-sm text-navy-300">
+                            vijayamakkalakoota@gmail.com
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- MAP -->
+            <!-- MAP -->
+<div>
+    <h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">
+        Location Map
+    </h4>
+
+    <div class="overflow-hidden rounded-2xl border border-white/10 shadow-lg">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7752.659795923779!2d74.7438574!3d13.6984586!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbc8f2518bae927%3A0x98a6dfed22d70b03!2sVijaya%20Makkala%20Koota%20English%20Medium%20School!5e0!3m2!1sen!2sin!4v1778211867615!5m2!1sen!2sin"
+            width="100%"
+            height="220"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
         </div>
-    </footer>
+
+        <div class="border-t border-white/6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p class="text-xs text-navy-500">
+                © 2025 Vijaya Makkala Koota. All rights reserved.
+            </p>
+
+                        <p class="text-xs text-navy-500">
+    Developed with ❤️ by 
+    <a 
+        href="https://wa.me/919481289511?text=Hi%20deekshith"
+        target="_blank"
+        class="hover:text-navy-300 underline"
+    >
+        Freelancer
+    </a>
+</p>        </div>
+
+    </div>
+</footer>
 
     <!-- BACK TO TOP -->
     <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i data-lucide="arrow-up" class="w-5 h-5"></i></button>
