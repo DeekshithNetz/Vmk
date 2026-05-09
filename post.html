@@ -287,7 +287,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- CTA BAND -->
     <section id="ctaBand" class="bg-navy-900 py-14 sm:py-16 hidden">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
@@ -516,7 +516,7 @@
 
     async function loadPost(){
         if(!id){
-            showError('Missing post ID','No post ID was provided in the URL.');
+            showError('Post Not Found','Refresh and Try again');
             return;
         }
 
@@ -583,8 +583,9 @@
             document.getElementById('skeletonState').classList.add('hidden');
             document.getElementById('articleState').classList.remove('hidden');
             document.getElementById('ctaBand').classList.remove('hidden');
-            document.getElementById('footerBand').classList.remove('hidden');
-
+            document.getElementById('errorState').classList.add('hidden');
+            document.getElementById('errorState').classList.add('hidden');
+             
             /* Re-init lucide for any icons in content */
             setTimeout(()=>lucide.createIcons(),100);
 
@@ -600,8 +601,7 @@
         document.getElementById('skeletonState').classList.add('hidden');
         document.getElementById('errorState').classList.remove('hidden');
         document.getElementById('ctaBand').classList.remove('hidden');
-        document.getElementById('footerBand').classList.remove('hidden');
-    }
+            }
 
     /* ═══════════════════════════════════════════
        SHARE FUNCTIONS
