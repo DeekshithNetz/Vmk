@@ -48,6 +48,9 @@
         .quote-block{position:relative;padding:28px 28px 28px 52px;border-radius:20px;background:white;border:1px solid #e8ecf2}
         .quote-block::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,#c9a84c,#b08a32);border-radius:4px 0 0 4px}
         .quote-block .qq{position:absolute;top:16px;left:18px;font-size:36px;line-height:1;font-weight:900;color:#faf0d4;font-family:Georgia,serif;pointer-events:none;user-select:none}
+        .quote-block-dark{position:relative;padding:28px 28px 28px 52px;border-radius:20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08)}
+        .quote-block-dark::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,#c9a84c,#b08a32);border-radius:4px 0 0 4px}
+        .quote-block-dark .qq{position:absolute;top:16px;left:18px;font-size:36px;line-height:1;font-weight:900;color:rgba(201,168,76,0.15);font-family:Georgia,serif;pointer-events:none;user-select:none}
         .btt{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:14px;background:#0a1628;color:white;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(10,22,40,0.25);opacity:0;visibility:hidden;transform:translateY(12px);transition:all .35s;cursor:pointer;border:none;z-index:40}
         .btt.on{opacity:1;visibility:visible;transform:translateY(0)}
         .btt:hover{background:#162240;transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,22,40,0.3)}
@@ -117,7 +120,7 @@
                 <div class="fu">
                     <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-4 py-1.5 mb-4"><span class="w-1.5 h-1.5 bg-gold-400 rounded-full"></span><span class="text-white/85 text-[11px] font-medium">Established 2012</span></div>
                     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.08] mb-2">About <span class="text-gold-300">Vijaya Makkala Koota</span></h1>
-                    <p class="text-sm text-white/50 font-light max-w-md">A trusted CBSinstitution nurturing children with care, character, and confidence.</p>
+                    <p class="text-sm text-white/50 font-light max-w-md">A trusted CBS institution nurturing children with care, character, and confidence.</p>
                 </div>
             </div>
         </div>
@@ -150,7 +153,133 @@
         </div>
     </section>
 
-    <!-- Principal 'S MESSAGE -->
+    <!-- CHAIRMAN'S MESSAGE -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        .chairman-section{background:linear-gradient(160deg,#fdf8ee 0%,#faf3e0 40%,#fdf6e8 100%);position:relative}
+        .chairman-section::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+        .heritage-border{border:2px solid transparent;background:linear-gradient(#fdf8ee,#fdf8ee) padding-box,linear-gradient(135deg,#c9a84c,#e4b44a,#926a2a,#c9a84c) border-box;border-radius:20px}
+        .ornament-line{display:flex;align-items:center;gap:12px;margin:20px 0}
+        .ornament-line::before,.ornament-line::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,#c9a84c,transparent)}
+        .ornament-diamond{width:8px;height:8px;background:#c9a84c;transform:rotate(45deg);flex-shrink:0}
+        .chairman-quote-wrap{position:relative;padding:24px 28px;background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.04));border-radius:16px;border-left:3px solid #c9a84c;border-right:3px solid #c9a84c}
+        .chairman-quote-wrap::before{content:'\275D';position:absolute;top:-10px;left:16px;font-size:48px;color:#c9a84c;opacity:0.3;font-family:'Cormorant Garamond',serif;line-height:1}
+        .kannada-text{font-family:'Cormorant Garamond','Georgia',serif;font-size:16px;line-height:2;color:#3d2b0e;letter-spacing:0.01em}
+        .photo-frame{position:relative;padding:10px;background:linear-gradient(135deg,#c9a84c,#e4b44a,#926a2a,#c9a84c);border-radius:20px}
+        .photo-frame-inner{border-radius:12px;overflow:hidden;background:white}
+        .corner-ornament{position:absolute;width:28px;height:28px;pointer-events:none}
+        .corner-ornament svg{width:100%;height:100%}
+    </style>
+    <section class="chairman-section py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+        <!-- decorative top & bottom borders -->
+            <div class="absolute top-0 left-0 right-0 h-[5px]" style="background:linear-gradient(to right,transparent,#c9a84c,#e4b44a,#c9a84c,transparent)"></div>
+   <div class="absolute bottom-0 left-0 right-0 h-[5px]" style="background:linear-gradient(to right,transparent,#c9a84c,#e4b44a,#c9a84c,transparent)"></div>
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+
+            <!-- Section heading -->
+            <!-- Section heading -->
+<div class="text-center mb-10 sm:mb-14">
+
+    <div class="ornament-line w-full flex justify-center items-center gap-2 mb-5">
+        <div class="ornament-diamond"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-diamond"></div>
+    </div>
+
+    <p class="text-[10px] font-bold tracking-[0.25em] uppercase mb-2"
+       style="color:#926a2a;font-family:'Cormorant Garamond',serif;letter-spacing:0.3em">
+        ✦ ಅಧ್ಯಕ್ಷರ ಸಂದೇಶ ✦
+    </p>
+
+    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-[1.12]"
+        style="font-family:'Cormorant Garamond',serif;color:#1e1206">
+        Chairman's <span style="color:#926a2a">Message</span>
+    </h2>
+
+    <div class="ornament-line w-full flex justify-center items-center gap-2 mt-4">
+        <div class="ornament-diamond"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-diamond"></div>
+    </div>
+
+</div>            <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+
+                <!-- Photo — right side -->
+                <div class="lg:col-span-2 flex justify-center lg:justify-end lg:order-2">
+                    <div class="relative">
+                        <!-- gold gradient frame -->
+                        <div class="photo-frame shadow-2xl" style="box-shadow:0 20px 60px rgba(146,106,42,0.25)">
+                            <div class="photo-frame-inner">
+                                <img src="uploads/chairman.jpg" alt="Chairman" class="w-[200px] sm:w-[240px] h-[260px] sm:h-[300px] object-cover object-top" loading="lazy">
+                            </div>
+                        </div>
+                        <!-- corner ornaments SVG -->
+                        <div class="corner-ornament" style="top:-8px;left:-8px">
+                            <svg viewBox="0 0 28 28" fill="none"><path d="M2 26 L2 2 L26 2" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/><circle cx="2" cy="2" r="3" fill="#c9a84c"/></svg>
+                        </div>
+                        <div class="corner-ornament" style="top:-8px;right:-8px">
+                            <svg viewBox="0 0 28 28" fill="none"><path d="M26 26 L26 2 L2 2" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/><circle cx="26" cy="2" r="3" fill="#c9a84c"/></svg>
+                        </div>
+                        <div class="corner-ornament" style="bottom:-8px;left:-8px">
+                            <svg viewBox="0 0 28 28" fill="none"><path d="M2 2 L2 26 L26 26" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/><circle cx="2" cy="26" r="3" fill="#c9a84c"/></svg>
+                        </div>
+                        <div class="corner-ornament" style="bottom:-8px;right:-8px">
+                            <svg viewBox="0 0 28 28" fill="none"><path d="M26 2 L26 26 L2 26" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/><circle cx="26" cy="26" r="3" fill="#c9a84c"/></svg>
+                        </div>
+                        <!-- name badge -->
+                        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap px-5 py-2.5 rounded-xl shadow-lg" style="background:linear-gradient(135deg,#1e1206,#3d2b0e);border:1px solid rgba(201,168,76,0.3)">
+                            <span class="block text-[11px] font-bold text-white tracking-wide">Chairman's Name</span>
+                            <span class="block text-[9px] text-center mt-0.5" style="color:#c9a84c">ಅಧ್ಯಕ್ಷರು</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content — left side -->
+                <div class="lg:col-span-3 lg:order-1 mt-6 lg:mt-0">
+
+                    <!-- heritage bordered content card -->
+                    <div class="heritage-border p-6 sm:p-8 shadow-lg" style="box-shadow:0 8px 40px rgba(146,106,42,0.10)">
+
+                        <!-- opening quote -->
+                        <div class="chairman-quote-wrap mb-6">
+                            <p class="kannada-text text-center italic font-semibold" style="font-size:17px;color:#5c3d11">"ವಿದ್ಯೆಯು ಮನುಷ್ಯನನ್ನು ರೂಪಿಸುವ ಅತ್ಯಂತ ಶಕ್ತಿಶಾಲಿ ಸಾಧನ — The strength of an institution lies not in its walls, but in the values it instils in every child."</p>
+                        </div>
+
+                        <div class="ornament-line"><div class="ornament-diamond"></div></div>
+
+                        <p class="kannada-text text-justify italic font-semibold"    style="font-size:12px;color:#5c3d11" >ವಿಜಯ ಮಕ್ಕಳ ಕೂಟ ಸಂಸ್ಥೆಯು ವಿದ್ಯಾರ್ಥಿಗಳ ಸರ್ವಾಂಗಿಣ ಬೆಳವಣಿಗೆಯ ಗುರಿ ಮತ್ತು ಉದ್ದೇಶಗಳನ್ನು ಇಟ್ಟುಕೊಂಡು ಶೈಕ್ಷಣಿಕ ಸೇವೆಯನ್ನು ಸಮಾಜಕ್ಕೆ ನೀಡಲು ಅಸ್ತಿತ್ವಕ್ಕೆ ಬಂದ ಸಂಸ್ಥೆ. ಈ ನಿಟ್ಟಿನಲ್ಲಿ ಸಂಸ್ಥೆಯಲ್ಲಿ ದಾಖಲೆಗೊಂಡ ಪ್ರತಿಯೊಂದು ಮಗುವಿಗೂ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣವನ್ನು ಹಾಗೂ ಮಗುವಿನ ವ್ಯಕ್ತಿತ್ವದಲ್ಲಿ ಸರ್ವಾಂಗಿನ ಬೆಳವಣಿಗೆಗೆ ಸದಾ ಕಾರ್ಯಪ್ರವೃತ್ತರಾಗಿರುತ್ತದೆ. ಕಳೆದ <span style="font-style:normal;font-weight:bold;font-family:Arial, sans-serif;">
+13
+</span> ವರ್ಷಗಳ ಶೈಕ್ಷಣಿಕ ಸೇವೆಯಲ್ಲಿ ತನ್ನ ಸಂಸ್ಥೆಯ ಪ್ರತಿ ಮಗುವಿನ ವೈಯಕ್ತಿಕ ಭಿನ್ನತೆಯನ್ನು ಗಮನದಲ್ಲಿಟ್ಟುಕೊಂಡು ಮಗುವಿನಲ್ಲಿ ಅಡಗಿದ ಅತ್ಯುತ್ತಮವಾದ ಶಿಕ್ಷಣ ಮೌಲ್ಯವನ್ನು ಗುರುತಿಸಿ ಬೆಳೆಸುವಲ್ಲಿ ಸಂಸ್ಥೆ ಸತತ ಪ್ರಯತ್ನಿಸುತ್ತಿದೆ. ಈ ಪ್ರಯುಕ್ತ ಸಂಸ್ಥೆಯು <span style="font-style:normal;font-weight:bold;font-family:Arial, sans-serif;">
+5
+</span>  ವರ್ಷದ ಎಸ್ ಎಸ್ ಎಲ್ ಸಿ ಫಲಿತಾಂಶದಲ್ಲಿ ಶೇಕಡ <span style="font-style:normal;font-weight:bold;font-family:Arial, sans-serif;">
+100
+</span>  ಫಲಿತಾಂಶ ದಾಖಲೆಯಾಗುವುದರೊಂದಿಗೆ ಎಸ್ ಎಸ್ ಎಲ್ ಸಿ ಫಲಿತಾಂಶದಲ್ಲಿ ಬೈಂದೂರು ವಲಯದಲ್ಲಿ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣದಲ್ಲಿ ಪ್ರಥಮ ಸ್ಥಾನವನ್ನು ಗಳಿಸಿರುವುದು ನಮ್ಮ ಪಾಲಿಗೆ ಹೆಮ್ಮೆಯ ವಿಚಾರ. ಅಲ್ಲದೆ ಸಂಸ್ಥೆಯು ಪ್ರತಿ ವರ್ಷ ರಾಜ್ಯದಲ್ಲಿ ಬ್ಯಾಂಕ್ ದಾಖಲಿಸುವುದರೊಂದಿಗೆ ಬಹುತೇಕ ವಿದ್ಯಾರ್ಥಿಗಳು ವಿಶಿಷ್ಟ ತೇರ್ಗಡೆಯಾಗುತ್ತಿರುವುದು ಸಂಸ್ಥೆಯಲ್ಲಿನ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣಕ್ಕೆ ಸಾಕ್ಷಿಯಾಗಿದೆ.</p>
+
+                      <p class="kannada-text text-justify italic font-semibold"    style="font-size:12px;color:#5c3d11" >ನಮ್ಮ ಸಂಸ್ಥೆಯು ವಿದ್ಯಾರ್ಥಿಗಳ ಸಾಂಸ್ಕೃತಿಕ ಮೌಲ್ಯ ಬೆಳೆಸುವುದಕ್ಕಾಗಿ 'ಕನ್ನಡಮ್ಮನ ಹರಕೆಯಿದು ಮರೆಯದಿರು ಚಿನ್ನ' ಸಾಂಸ್ಕೃತಿಕ ವೇದಿಕೆಯಲ್ಲಿ ಬಯಲಾಟ ಎನ್ನುವ ನಾಮಾಂಕಿತ ದಡಿಯಲ್ಲಿ ವೈವಿಧ್ಯಮಯ ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮ ಯಕ್ಷಗಾನ, ಭಜನೆ, ಹುಲಿವೇಷ ಕುಣಿತ, ಜನಪದ ಹಾಡು, ಕುಣಿತ, ಡೊಳ್ಳು ಕುಣಿತ, ಇತ್ಯಾದಿಗಳನ್ನು
+
+ಅನುಕ್ರಮವಾಗಿ ಪ್ರತಿ ವರ್ಷವೂ ಕಾರ್ಯಕ್ರಮ ಜರುಗಿಸಿ ವಿದ್ಯಾರ್ಥಿಗಳು ದಕ್ಷವಾಗಿ ಭಾಗವಹಿಸುವಂತೆ ಮಾಡುವುದಲ್ಲದೆ ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ಸಾಂಸ್ಕೃತಿಕ ಮೌಲ್ಯ ಬೆಳೆಸುವಲ್ಲಿ ಬಯಲಾಟ ವೇದಿಕೆ ಮಹತ್ವದ ಪಾತ್ರ ವಹಿಸುತ್ತದೆ.</p>
+
+
+                        <p class="kannada-text text-justify italic font-semibold"    style="font-size:12px;color:#5c3d11" >ವಿಜಯ ಮಕ್ಕಳ ಕೂಟ ಗ್ರಾಮ ಸೇವಾ ಸಂಗಮ ( ರಿ) ಸೊಸೈಟಿ ಆಡಳಿತಕ್ಕೆ ಒಳಪಟ್ಟಿದ್ದು ಅತ್ಯುತ್ತಮವಾದ ನಿರ್ದೇಶಕರ ಮಂಡಳಿಯನ್ನು ಹೊಂದಿದ್ದು ಸದಾ ಶೈಕ್ಷಣಿಕ ಸೇವೆಗೆ ಬದ್ಧರಾಗಿರುವ ಆಡಳಿತ ಮಂಡಳಿಯಾಗಿರುತ್ತದೆ. ಸಂಸ್ಥೆಯು ಅತ್ಯುತ್ತಮವಾದ ಗ್ರಂಥಾಲಯ, ಕೊಠಡಿ, ಶುದ್ಧ ಸ್ವಚ್ಚ ಕುಡಿಯುವ ನೀರು, ವಿಶಾಲವಾದ ಆಟದ ಮೈದಾನ ಹಚ್ಚ ಹಸಿರಿನ ಪರಿಸರ ಮಗುವಿನ ಕಲಿಕೆಗೆ ಪೂರಕ ಪ್ರೇರಕವಾಗಿರುವ ವಾತಾವರಣ ಸದಾ ಮಗುವಿನ ಕಲಿಕೆಗೆ ಸ್ಪಂದಿಸುವ ನುರಿತ ಸಿಬ್ಬಂದಿ ವರ್ಗ ಸಂಸ್ಥೆಯಲ್ಲಿದೆ.</p>
+
+                        <div class="ornament-line"><div class="ornament-diamond"></div></div>
+
+                        <!-- signature block -->
+                        <div class="flex items-center gap-4 pt-2">
+                            <div class="flex flex-col">
+                                <span class="font-bold text-base" style="font-family:'Cormorant Garamond',serif;color:#1e1206;font-size:18px">Chairman's Name</span>
+                                <span class="text-[11px] font-medium mt-0.5" style="color:#926a2a">ಅಧ್ಯಕ್ಷರು — Vijaya Makkala Koota</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal'S MESSAGE -->
     <section class="py-16 sm:py-20 lg:py-24 bg-slate2 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-gold-100/20 rounded-full blur-[100px] -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
@@ -173,13 +302,13 @@
                         <p class="text-[14.5px] text-navy-600 leading-[1.9] italic">Education is the most powerful tool to shape the future
 </p>
                     </div>
-                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">It gives me immense pleasure to welcome you to Vijaya Makkala Koota English Medium School, Athradi.</p>
+                    <p class="text-[14.5px] text-navy-800 font-normal leading-[1.85] mb-5 text-justify">It gives me immense pleasure to welcome you to Vijaya Makkala Koota English Medium School, Athradi.</p>
 
-                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">Our school stands as a center of excellence where education is blended with values, discipline, and creativity. We believe that every child is unique and has the potential to achieve great success when guided with care and encouragement.
+                    <p class="text-[14.5px] text-navy-800 font-normal leading-[1.85] mb-5 text-justify">Our school stands as a center of excellence where education is blended with values, discipline, and creativity. We believe that every child is unique and has the potential to achieve great success when guided with care and encouragement.
 </p>
-                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-5">We are proud to share that our students have consistently achieved excellent SSLC results, secured top ranks in the Byndoor zoneand state leveland actively participated in cultural, sports, and scout activities at various levels. These achievements reflect the dedication of our students, teachers, and parents.
+                    <p class="text-[14.5px] text-navy-800 font-normal leading-[1.85] mb-5 text-justify">We are proud to share that our students have consistently achieved excellent SSLC results, secured top ranks in the Byndoor zone and state level and actively participated in cultural, sports, and scout activities at various levels. These achievements reflect the dedication of our students, teachers, and parents.
 </p>
-                    <p class="text-[14.5px] text-navy-500 font-light leading-[1.85] mb-6">Our aim is not only academic success but also the overall development of students—building confidence, leadership, and moral values. With the strong support of our staff and parents, we continue to shape responsible and capable future citizens.
+                    <p class="text-[14.5px] text-navy-800 font-normal leading-[1.85] mb-6 text-justify">Our aim is not only academic success but also the overall development of students—building confidence, leadership, and moral values. With the strong support of our staff and parents, we continue to shape responsible and capable future citizens.
 </p>
                     <div class="flex items-center gap-3 pt-2"><div class="w-10 h-px bg-gold-400"></div><div><span class="block text-sm font-bold text-navy-900">Deepika Subhas</span><span class="block text-[11px] text-navy-400 font-medium">Principal</span></div></div>
                 </div>
@@ -348,7 +477,6 @@
                 </ul>
             </div>
 
-            <!-- MAP -->
             <!-- MAP -->
 <div>
     <h4 class="text-xs font-bold mb-5 text-white/80 uppercase tracking-wider">
