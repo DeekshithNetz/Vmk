@@ -243,7 +243,7 @@ quill.getModule('toolbar').addHandler('image', () => {
     if (!file) return;
     const formData = new FormData();
     formData.append('file', file);
-    const res = await fetch('https://vmk-production-d390.up.railway.app/upload-image', { method: 'POST', body: formData });
+    const res = await fetch('https://vmk.onrender.com/upload-image', { method: 'POST', body: formData });
     const data = await res.json();
     const range = quill.getSelection() || { index: 0 };
     quill.insertEmbed(range.index, 'image', data.url);
@@ -267,7 +267,7 @@ quill.root.addEventListener('paste', (e) => {
 
 async function load() {
 showLoader();
-  const res = await fetch(`https://vmk-production-d390.up.railway.app/posts/${id}`);
+  const res = await fetch(`https://vmk.onrender.com/posts/${id}`);
   const data = await res.json();
   document.getElementById('title').value = data.title;
   document.getElementById('tags').value = data.tags || "";
@@ -286,7 +286,7 @@ showLoader();
 
   const formData = new FormData();
   formData.append('file', file);
-  const res = await fetch('https://vmk-production-d390.up.railway.app/upload-image', { method: 'POST', body: formData });
+  const res = await fetch('https://vmk.onrender.com/upload-image', { method: 'POST', body: formData });
   const data = await res.json();
   hideLoader();
 
@@ -307,7 +307,7 @@ showLoader();
   formData.append('content', content);
   formData.append('tags', tags);
   formData.append('thumbnail', thumbnailUrl);
-  await fetch(`https://vmk-production-d390.up.railway.app/posts/${id}`, { method: 'PUT', body: formData });
+  await fetch(`https://vmk.onrender.com/posts/${id}`, { method: 'PUT', body: formData });
   const toast = document.getElementById('toast');
   toast.classList.add('show');
   hideLoader();

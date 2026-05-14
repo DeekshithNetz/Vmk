@@ -588,9 +588,9 @@
         //console.log(currentTag);
         try{
         console.log("TAG:", currentTag);
-console.log("FINAL URL:", `https://vmk-production-d390.up.railway.app/posts?page=${currentPage}&limit=${POSTS_PER_PAGE}&tag=${currentTag}`);
+console.log("FINAL URL:", `https://vmk.onrender.com/posts?page=${currentPage}&limit=${POSTS_PER_PAGE}&tag=${currentTag}`);
             const res = await fetch(
-  `https://vmk-production-d390.up.railway.app/posts?page=${currentPage}&limit=${POSTS_PER_PAGE}&tag=${encodeURIComponent(currentTag || '')}`
+  `https://vmk.onrender.com/posts?page=${currentPage}&limit=${POSTS_PER_PAGE}&tag=${encodeURIComponent(currentTag || '')}`
 );            if(!res.ok) throw new Error('Server returned '+res.status);
             const result=await res.json();
             const posts=Array.isArray(result.data)?result.data:[];

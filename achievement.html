@@ -290,7 +290,7 @@ function closeModal() {
 async function uploadImage(file) {
   const formData = new FormData();
   formData.append('file', file);
-  const res = await fetch('https://vmk-production-d390.up.railway.app/upload-image', { method: 'POST', body: formData });
+  const res = await fetch('https://vmk.onrender.com/upload-image', { method: 'POST', body: formData });
   const data = await res.json();
   return data.url;
 }
@@ -312,7 +312,7 @@ showLoader();
   formData.append('title', title);
   formData.append('image', imageUrl);
 
-  await fetch('https://vmk-production-d390.up.railway.app/achievements', { method: 'POST', body: formData });
+  await fetch('https://vmk.onrender.com/achievements', { method: 'POST', body: formData });
 
   document.getElementById('title').value = '';
   document.getElementById('image').value = '';
@@ -326,7 +326,7 @@ showLoader();
 /* Load achievements */
 async function load() {
 showLoader();
-  const res = await fetch('https://vmk-production-d390.up.railway.app/achievements');
+  const res = await fetch('https://vmk.onrender.com/achievements');
   const data = await res.json();
 
   const list = document.getElementById('list');
@@ -367,7 +367,7 @@ showLoader();
 /* Delete */
 document.getElementById('confirmDelete').onclick = async () => {
   if (!deleteTargetId) return;
-  await fetch(`https://vmk-production-d390.up.railway.app/achievements/${deleteTargetId}`, { method: 'DELETE' });
+  await fetch(`https://vmk.onrender.com/achievements/${deleteTargetId}`, { method: 'DELETE' });
   closeModal();
   showToast('Deleted');
   load();
@@ -375,7 +375,7 @@ document.getElementById('confirmDelete').onclick = async () => {
 
 /* Move */
 async function move(id, dir) {
-  await fetch(`https://vmk-production-d390.up.railway.app/achievements/${id}/move?direction=${dir}`, { method: 'PUT' });
+  await fetch(`https://vmk.onrender.com/achievements/${id}/move?direction=${dir}`, { method: 'PUT' });
   load();
 }
 
